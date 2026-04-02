@@ -1,0 +1,431 @@
+{
+  "site": {
+    "name": "OM Ioga",
+    "tagline": "Cos. Ment. Respiració.",
+    "description": "Centre de ioga a Igualada. Classes personalitzades en grups reduïts per a tots els nivells.",
+    "contact": {
+      "address": "Carrer de les Gardènies, 20, baixos",
+      "city": "08700 Igualada, Barcelona",
+      "phone": "623 01 39 35",
+      "email": "omiogaigualada@gmail.com"
+    },
+    "nav": [
+      { "label": "Inici",        "href": "index.html" },
+      { "label": "Qui soc",      "href": "qui-soc.html" },
+      { "label": "El ioga",      "href": "tipus-ioga.html" },
+      { "label": "Les classes",  "href": "classes.html" },
+      { "label": "Horaris",      "href": "horaris.html" },
+      { "label": "Preus",        "href": "preus.html" },
+      { "label": "Contacte",     "href": "contacte.html" }
+    ],
+    "footer": {
+      "tagline": "Troba l'equilibri. Descobreix la calma.",
+      "copy": "© 2025 OM Ioga · Igualada"
+    }
+  },
+
+  "pages": {
+
+    "home": {
+      "images": {
+        "hero": "assets/images/omioga-logo.png",
+        "middle": "assets/images/bol.jpg"
+      },
+      "hero": {
+        "pretitle": "Benvingut a",
+        "title": "OM Ioga",
+        "subtitle": "Cos · Ment · Respiració",
+        "description": "Un espai de calma i connexió al cor d'Igualada. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
+        "cta_primary": { "label": "Descobreix les classes", "href": "classes.html" },
+        "cta_secondary": { "label": "Primera classe gratuïta", "href": "contacte.html" }
+      },
+      "intro": {
+        "title": "El ioga és per a tothom",
+        "text": "Independentment del teu nivell, edat o condició física. Cada postura s'adapta a tu, no tu a la postura. L'únic requisit és voler respirar millor i sentir-te bé.",
+        "highlight": "Grups de màxim 12 persones per a una atenció autènticament personalitzada."
+      },
+      "pillars": [
+        {
+          "icon": "breath",
+          "title": "Respiració conscient",
+          "text": "La connexió entre respiració i moviment és el cor de la pràctica. Cada sessió comença i acaba amb consciència de l'alè."
+        },
+        {
+          "icon": "body",
+          "title": "Cos respectat",
+          "text": "No és competitiu. Cada cos és diferent i cada dia és diferent. Treballem amb variants per adaptar-nos a cada moment."
+        },
+        {
+          "icon": "mind",
+          "title": "Ment present",
+          "text": "La pràctica regular cultiva la capacitat d'estar aquí, ara. Una calma que s'estén més enllà del matalàs."
+        }
+      ],
+      "quote": {
+        "text": "El ioga no és una pràctica que fas. És una manera de viure.",
+        "attribution": "Filosofia del ioga"
+      },
+      "cta_section": {
+        "title": "Comença amb una classe de prova gratuïta",
+        "text": "Sense compromís. Si decideixes continuar, la classe queda inclosa en la mensualitat.",
+        "cta": { "label": "Reserva la teva plaça", "href": "contacte.html" }
+      }
+    },
+
+    "qui-soc": {
+      "images": {
+        "hero": "assets/images/hero-quisoc.jpg",
+        "middle": "assets/images/bol.jpg",
+        "gallery": [
+          "assets/images/quisoc2.jpg",
+          "assets/images/entrada.jpg",
+          "assets/images/quisoc-3.jpg"
+        ]
+      },
+      "meta": {
+        "title": "Qui soc | OM Ioga",
+        "description": "Professora de ioga a Igualada des del 2013. Descobreix la meva historia i formació."
+      },
+      "hero": {
+        "pretitle": "La professora",
+        "title": "Qui soc"
+      },
+      "bio": {
+        "paragraphs": [
+          "Soc llicenciada en química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
+          "Practico ioga des dels 19 anys, i aquesta passió em va portar a formar-me com a professora. Inicialment vaig compaginar la feina amb classes de ioga, però ràpidament vaig decidir dedicar-m'hi completament.",
+          "Des del 2013, el ioga es va convertir en la meva professió principal. He impartit classes en diferents espais fins que, el juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
+          "Em sento molt afortunada de poder compartir els beneficis del ioga a nivell físic, mental, emocional i energètic, així com la seva filosofia de vida, que ajuda a viure amb més calma i equilibri.",
+          "Continuo formant-me constantment amb professors com Tomàs Zorzo, i el 2024 vaig iniciar estudis de sànscrit per aprofundir en els textos originals del ioga, descobrint-ne encara més profunditat i significat."
+        ]
+      },
+      "milestones": [
+        { "year": "19 anys", "text": "Inici de la pràctica personal de ioga" },
+        { "year": "2013",    "text": "El ioga es converteix en la professió principal" },
+        { "year": "2022",    "text": "Obertura del centre OM Ioga a Igualada" },
+        { "year": "2024",    "text": "Inici d'estudis de sànscrit i textos clàssics" }
+      ],
+      "values": {
+        "title": "La meva filosofia d'ensenyament",
+        "items": [
+          { "title": "Adaptació constant",   "text": "Cada alumne és únic. Les classes s'adapten al nivell, l'estat físic i l'energia del dia." },
+          { "title": "Formació contínua",    "text": "El ioga és un camí sense fi. Continuo aprenent per poder transmetre amb autenticitat." },
+          { "title": "Espai segur",          "text": "Un ambient càlid on sentir-se còmode per explorar sense judici ni competició." }
+        ]
+      }
+    },
+
+    "tipus-ioga": {
+      "images": {
+        "hero": "assets/images/hero-tipusioga.jpg",
+        "middle": "assets/images/middle-tipusioga.jpg",
+        "gallery": [
+          "assets/images/centre1.jpg",
+          "assets/images/centre2.jpg",
+          "assets/images/centre3.jpg"
+        ]
+      },
+      "meta": {
+        "title": "Què és el Ioga | OM Ioga",
+        "description": "Aprèn sobre el hatha ioga, els seus orígens i els beneficis de la pràctica regular."
+      },
+      "hero": {
+        "pretitle": "Coneixement",
+        "title": "Què és el ioga"
+      },
+      "intro": {
+        "title": "L'arrel de tot",
+        "paragraphs": [
+          "El ioga prové de l'arrel sànscrita yuj, que significa unir o vincular. És una pràctica que connecta cos, ment i respiració, ajudant a trobar equilibri, consciència corporal i presència en el moment actual.",
+          "El hatha ioga és la branca física del ioga basada en postures (asana). Existeixen diferents estils com el Sivananda, l'Astanga o l'Iyengar. Tot i les diferències en la manera de treballar, les postures són essencialment les mateixes."
+        ]
+      },
+      "origin": {
+        "title": "Krishnamacharya: el mestre dels mestres",
+        "text": "Aquests estils tenen origen en el mestre Krishnamacharya, considerat una figura clau del ioga modern. Una de les seves grans aportacions és la connexió entre respiració i moviment, que permet assolir un estat de concentració, consciència corporal i calma mental.",
+        "highlight": "A les classes es dona molta importància a la respiració conscient i tranquil·la."
+      },
+      "styles": [
+        {
+          "name": "Sivananda",
+          "description": "Un estil clàssic i holístic que integra postures, respiració, relaxació, dieta i pensament positiu. Ideal per a qui busca una aproximació completa al ioga."
+        },
+        {
+          "name": "Astanga",
+          "description": "Una seqüència fixa de postures vinculades per la respiració i el moviment. Dinàmic i estructurat, desenvolupa força, flexibilitat i concentració."
+        },
+        {
+          "name": "Iyengar",
+          "description": "Posa èmfasi en la precisió i l'alineació de les postures, sovint amb suport de material auxiliar. Excel·lent per a la consciència corporal profunda."
+        }
+      ],
+      "breath": {
+        "title": "Pranayama: l'art de la respiració",
+        "text": "El pranayama és el control conscient de la respiració. A través de tècniques específiques d'inhalació, retenció i exhalació, es calma el sistema nerviós, s'augmenta l'energia vital i es prepara la ment per a la meditació.",
+        "techniques": [
+          { "name": "Nadi Shodhana",    "desc": "Respiració alternant per equilibrar els dos hemisferis cerebrals." },
+          { "name": "Ujjayi",           "desc": "Respiració oceànica que escalfa el cos i focalitza la ment." },
+          { "name": "Kapalabhati",      "desc": "Respiració de foc que purifica i energitza el sistema nerviós." }
+        ]
+      }
+    },
+
+    "classes": {
+      "images": {
+        "hero": "assets/images/hero-classes.jpg",
+        "middle": "assets/images/middle-classes.jpg",
+        "gallery": [
+          "assets/images/classes-1.jpg",
+          "assets/images/classes-2.jpg",
+          "assets/images/classes-3.jpg",
+          "assets/images/classes-4.jpg",
+          "assets/images/classes-5.jpg",
+          "assets/images/classes-6.jpg",
+          "assets/images/classes-7.jpg",
+          "assets/images/classes-8.jpg"
+        ]
+      },
+      "meta": {
+        "title": "Les Classes | OM Ioga",
+        "description": "Classes de hatha ioga a Igualada. Grups reduïts, adaptades a tots els nivells."
+      },
+      "hero": {
+        "pretitle": "La pràctica",
+        "title": "Les classes"
+      },
+      "description": {
+        "title": "Pensades per a tu",
+        "paragraphs": [
+          "Les classes estan pensades per adaptar-se a cada persona, independentment del seu nivell, experiència o estat físic.",
+          "Cada postura té diferents variants per tal que cadascú pugui trobar la seva opció segons el moment: si és principiant, si té alguna lesió o segons el seu nivell d'energia.",
+          "El ioga no és competitiu. És una pràctica individual de connexió amb un mateix, tot i realitzar-se en grup. És fonamental respectar el propi cos i adaptar les postures a les necessitats personals per evitar lesions.",
+          "L'objectiu principal és respirar de manera conscient i sortir de la sessió en un millor estat que en entrar-hi."
+        ]
+      },
+      "features": [
+        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció autènticament personalitzada." },
+        { "title": "Tots els nivells",      "text": "Principiants, intermedis i avançats. Les variants permeten que tothom treballi al seu nivell." },
+        { "title": "Pranayama",             "text": "Control de la respiració integrat a cada sessió per calmar el sistema nerviós." },
+        { "title": "Meditació",             "text": "Moment de silenci i presència al final de cada classe per integrar la pràctica." },
+        { "title": "Sense competició",      "text": "Cada cos és diferent. Aquí treballem cap a dins, no cap als altres." },
+        { "title": "Classe de prova",       "text": "Primera classe totalment gratuïta. Sense compromís, sense pressions." }
+      ],
+      "structure": {
+        "title": "Estructura d'una sessió",
+        "steps": [
+          { "num": "01", "title": "Arribada i centrat",    "text": "Moments inicials de quietud per desconnectar del dia i connectar amb la respiració." },
+          { "num": "02", "title": "Escalfament",           "text": "Moviments suaus per preparar les articulacions i despertar el cos progressivament." },
+          { "num": "03", "title": "Postures (asana)",      "text": "Seqüència de postures amb variants, adaptades al grup i al moment." },
+          { "num": "04", "title": "Pranayama",             "text": "Tècniques de respiració conscient per regular el sistema nerviós." },
+          { "num": "05", "title": "Savasana",              "text": "Relaxació profunda per integrar tots els beneficis de la sessió." }
+        ]
+      }
+    },
+
+    "horaris": {
+      "images": {
+        "hero": "assets/images/hero-horaris.jpg",
+        "middle": "assets/images/middle-horaris.jpg",
+        "gallery": [
+          "assets/images/horaris-1.jpg",
+          "assets/images/horaris-2.jpg"
+        ]
+      },
+      "meta": {
+        "title": "Horaris | OM Ioga",
+        "description": "Consulta els horaris de les classes de ioga a Igualada."
+      },
+      "hero": {
+        "pretitle": "Organitza't",
+        "title": "Horaris"
+      },
+      "intro": "Trobaràs classes de dilluns a dissabte amb horaris matinals i vespertins per adaptar-te a la teva rutina. Contacta'ns per confirmar disponibilitat i reserves.",
+      "schedule": [
+        {
+          "day": "Dilluns",
+          "slots": [
+            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "18:30 – 19:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+          ]
+        },
+        {
+          "day": "Dimarts",
+          "slots": [
+            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "19:00 – 20:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+          ]
+        },
+        {
+          "day": "Dimecres",
+          "slots": [
+            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "18:30 – 19:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+          ]
+        },
+        {
+          "day": "Dijous",
+          "slots": [
+            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "19:00 – 20:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+          ]
+        },
+        {
+          "day": "Divendres",
+          "slots": [
+            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+          ]
+        },
+        {
+          "day": "Dissabte",
+          "slots": [
+            { "time": "10:00 – 11:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+          ]
+        }
+      ],
+      "note": "Els horaris poden variar. Contacta'ns per confirmar disponibilitat o per a qualsevol consulta sobre el calendari."
+    },
+
+    "preus": {
+      "images": {
+        "hero": "assets/images/hero-preus.jpg",
+        "middle": "assets/images/middle-preus.jpg",
+        "gallery": [
+          "assets/images/preus-1.jpg",
+          "assets/images/preus-2.jpg"
+        ]
+      },
+      "meta": {
+        "title": "Preus | OM Ioga",
+        "description": "Consulta les tarifes de les classes de ioga a Igualada. Sense matrícula."
+      },
+      "hero": {
+        "pretitle": "Transparent i flexible",
+        "title": "Preus"
+      },
+      "intro": "Sense matrícula. Quotes flexibles adaptades a la teva disponibilitat. Una classe de prova gratuïta per descobrir si el ioga és per a tu.",
+      "maintenance": {
+        "title": "Quota de manteniment",
+        "price": "15€",
+        "description": "Per conservar la plaça si no es pot assistir temporalment."
+      },
+      "monthly": {
+        "title": "Quotes mensuals",
+        "plans": [
+          { "days": "1 dia / setmana",  "price": "42€", "per": "mes", "highlight": false },
+          { "days": "2 dies / setmana", "price": "63€", "per": "mes", "highlight": true  },
+          { "days": "3 dies / setmana", "price": "77€", "per": "mes", "highlight": false }
+        ]
+      },
+      "single": {
+        "title": "Classe solta",
+        "price": "15€",
+        "description": "Per a qui vol assistir de manera puntual sense compromís mensual."
+      },
+      "bonus": {
+        "title": "Bonus trimestrals",
+        "description": "Flexibilitat màxima per usar quan vulguis, sense caducitat mensual.",
+        "packs": [
+          { "classes": "5 classes",  "price": "70€" },
+          { "classes": "10 classes", "price": "130€" },
+          { "classes": "15 classes", "price": "180€" }
+        ]
+      },
+      "trial": {
+        "title": "Primera classe gratuïta",
+        "text": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, queda inclosa dins la mensualitat; si no, no té cap cost.",
+        "cta": { "label": "Reserva la classe de prova", "href": "contacte.html" }
+      }
+    },
+
+    "condicions": {
+      "images": {
+        "hero": "assets/images/hero-condicions.jpg",
+        "middle": "assets/images/middle-condicions.jpg"
+      },
+      "meta": {
+        "title": "Condicions | OM Ioga",
+        "description": "Condicions generals del centre OM Ioga."
+      },
+      "hero": {
+        "pretitle": "Informació",
+        "title": "Condicions generals"
+      },
+      "sections": [
+        {
+          "title": "Inscripció i reserves",
+          "items": [
+            "No hi ha matrícula d'inscripció.",
+            "La plaça es reserva amb la primera mensualitat o bonus.",
+            "Les places són limitades (màxim 12 persones per classe).",
+            "La inscripció implica l'acceptació de les presents condicions."
+          ]
+        },
+        {
+          "title": "Pagaments",
+          "items": [
+            "El pagament de les mensualitats es realitza per avançat, a principis de mes.",
+            "En cas de no poder assistir temporalment, es pot activar la quota de manteniment (15€) per conservar la plaça.",
+            "Els bonus trimestrals no caduquen al mes; es poden usar amb flexibilitat.",
+            "La classe solta (15€) es paga en el moment d'assistir."
+          ]
+        },
+        {
+          "title": "Assistència i baixes",
+          "items": [
+            "En cas de no poder assistir, s'agrairà avisar amb antelació per gestionar la plaça.",
+            "Per donar de baixa al centre, cal comunicar-ho amb almenys una setmana d'antelació.",
+            "Les mensualitats no es retornen un cop iniciades, excepte en casos justificats."
+          ]
+        },
+        {
+          "title": "Salut i responsabilitat",
+          "items": [
+            "Es recomana informar la professora de qualsevol lesió, condició mèdica o embaràs.",
+            "El ioga és una pràctica segura quan es realitza amb atenció. Cada alumne és responsable de respectar els seus límits.",
+            "No s'aconsella practicar amb febre o en estats de salut compromesos."
+          ]
+        },
+        {
+          "title": "Normes de l'espai",
+          "items": [
+            "Cal arribar uns minuts abans de l'inici de la classe.",
+            "Els mòbils s'han de silenciar durant la sessió.",
+            "L'espai és un lloc de calma i respecte mutu.",
+            "El material del centre (matalassos, màndoles, etc.) s'ha de deixar net i ordenat."
+          ]
+        }
+      ]
+    },
+
+    "contacte": {
+      "images": {
+        "hero": "assets/images/hero-contacte.jpg",
+        "middle": "assets/images/middle-contacte.jpg",
+        "gallery": [
+          "assets/images/contacte-1.jpg",
+          "assets/images/contacte-2.jpg"
+        ]
+      },
+      "meta": {
+        "title": "Contacte | OM Ioga",
+        "description": "Contacta amb OM Ioga a Igualada per reservar la teva classe de prova gratuïta."
+      },
+      "hero": {
+        "pretitle": "Estem aquí",
+        "title": "Contacte"
+      },
+      "intro": "Té alguna pregunta? Vols reservar la teva primera classe gratuïta? Posa't en contacte amb nosaltres.",
+      "form": {
+        "fields": [
+          { "name": "nom",     "label": "Nom complet",       "type": "text",  "required": true  },
+          { "name": "email",   "label": "Correu electrònic", "type": "email", "required": true  },
+          { "name": "telefon", "label": "Telèfon",           "type": "tel",   "required": false },
+          { "name": "missatge","label": "Missatge",          "type": "textarea", "required": true, "placeholder": "Explica'ns el teu objectiu, el teu nivell de ioga, o qualsevol dubte que tinguis..." }
+        ],
+        "cta": "Envia el missatge",
+        "success": "Missatge enviat correctament. Et contactarem aviat.",
+        "trial_label": "M'interessa la classe de prova gratuïta"
+      }
+    }
+  }
+}

@@ -108,7 +108,7 @@ function buildFooter() {
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="nav-logo" href="index.html">
-            <img src="assets/omioga-logo.png" alt="OM Ioga" class="logo-img"> <span class="logo-text">${name}</span>
+            <img src="assets/images/logo-fondo-blanc.png" alt="OM Ioga" class="logo-img"> <span class="logo-text">${name}</span>
           </a>
           <p class="footer-tagline">${ft.tagline}</p>
           <div class="footer-contact-item">
@@ -125,11 +125,11 @@ function buildFooter() {
           </div>
         </div>
         <div class="footer-nav">
-          <h5>Navegació</h5>
+          <h5>${DATA.site.footer.nav_label}</h5>
           ${navHtml}
         </div>
         <div class="footer-nav">
-          <h5>El centre</h5>
+          <h5>${DATA.site.footer.centre_label}</h5>
           <a href="classes.html">Les classes</a>
           <a href="preus.html">Preus</a>
           <a href="condicions.html">Condicions</a>
@@ -320,7 +320,7 @@ function buildQuiSoc() {
           <aside class="bio-aside">
             <div class="bio-card reveal-scale">
               <span class="pretitle">Trajectòria</span>
-              <h3 style="margin-bottom:1.5rem; font-size:1.6rem;">Moments clau</h3>
+              <h3 style="margin-bottom:1.5rem; font-size:clamp(1.2rem, 5vw, 1.6rem);">Moments clau</h3>
               ${milestonesHtml.replace(/reveal stagger-\d+/g, '')}
             </div>
           </aside>
@@ -386,12 +386,21 @@ function buildTipusIoga() {
 
     <section>
       <div class="container">
-        <div style="max-width:760px; margin:0 auto;">
-          <span class="pretitle reveal">${p.intro.title}</span>
-          ${p.intro.paragraphs.map((par, i) => `
-            <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.05rem;">${par}</p>
-            ${i === 0 ? `<img src="${p.images.middle}" alt="" class="middle-image">` : ''}
-          `).join('')}
+        <div class="intro-gallery-grid">
+          <div style="max-width: 100%;">
+            <span class="pretitle reveal">${p.intro.title}</span>
+            ${p.intro.paragraphs.map((par, i) => `
+              <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.05rem;">${par}</p>
+              ${i === 0 ? `<img src="${p.images.middle}" alt="" class="middle-image">` : ''}
+            `).join('')}
+          </div>
+          <div class="reveal-right" style="display: flex; justify-content: center; align-items: center;">
+            ${p.intro.gallery ? p.intro.gallery.map((img, i) => `
+              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%;">
+                <img src="${img}" alt="Foto introducció" style="width: 100%; height: auto; object-fit: cover;">
+              </div>
+            `).join('') : ''}
+          </div>
         </div>
 
         <div class="origin-block reveal" style="margin-top:4rem;">
@@ -415,22 +424,6 @@ function buildTipusIoga() {
       </div>
     </section>
 
-    <section style="background: var(--cream-dark); padding: var(--section-gap) 0;">
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Galeria</span>
-          <h2 class="reveal stagger-1">Moments del centre</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-          ${p.images.gallery.map((img, i) => `
-            <div class="reveal stagger-${(i % 3) + 1}" style="overflow: hidden; border-radius: var(--radius-lg);">
-              <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 300px; object-fit: cover;">
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    </section>
-
     <section>
       <div class="container">
         <div class="section-header">
@@ -441,6 +434,22 @@ function buildTipusIoga() {
         </div>
         <div class="techniques-list">
           ${techHtml}
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--cream-dark); padding: var(--section-gap) 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="pretitle reveal">Galeria</span>
+          <h2 class="reveal stagger-1">Moments del centre</h2>
+        </div>
+        <div class="gallery-3col-grid">
+          ${p.images.gallery.map((img, i) => `
+            <div class="reveal stagger-${(i % 3) + 1}" style="overflow: hidden; border-radius: var(--radius-lg);">
+              <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 300px; object-fit: cover;">
+            </div>
+          `).join('')}
         </div>
       </div>
     </section>
@@ -485,43 +494,20 @@ function buildClasses() {
 
     <section>
       <div class="container">
-        <div class="intro-grid">
+        <div class="intro-grid classes-layout" style="flex-direction: row-reverse;">
           <div>
-            <span class="pretitle reveal">${p.description.title}</span>
+            <span class="pretitle reveal">La pràctica</span>
+            <h2 class="reveal stagger-1" style="margin-bottom:2rem;">${p.description.title}</h2>
             ${p.description.paragraphs.map((par, i) => `
               <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.02rem;">${par}</p>
-              ${i === 0 ? `<img src="${p.images.middle}" alt="" class="middle-image">` : ''}
             `).join('')}
           </div>
-          <div class="reveal-right" style="display:flex;justify-content:center;align-items:center; flex-direction: column;">
-            <div class="carousel-wrapper">
-              <div class="carousel-container">
-                <div class="carousel-track">
-                  ${p.images.gallery.map((img, i) => `
-                    <div class="carousel-slide" style="background-image: url('${img}'); background-size: cover; background-position: center;">
-                      <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 100%; object-fit: cover; visibility: hidden;">
-                    </div>
-                  `).join('')}
-                </div>
+          <div class="reveal-right" style="display:flex;justify-content:flex-start;align-items:flex-start; flex-direction: column; gap: 2rem;">
+            ${p.images.gallery.slice(0, 2).map((img, i) => `
+              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%;">
+                <img src="${img}" alt="Foto classe ${i + 1}" style="width: 100%; height: auto; object-fit: cover;">
               </div>
-              
-              <button class="carousel-nav carousel-prev" aria-label="Foto anterior">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
-              <button class="carousel-nav carousel-next" aria-label="Foto següent">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-              
-              <div class="carousel-dots">
-                ${p.images.gallery.map((_, i) => `
-                  <button class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}" aria-label="Diapositiva ${i + 1}"></button>
-                `).join('')}
-              </div>
-            </div>
+            `).join('')}
           </div>
         </div>
       </div>
@@ -547,9 +533,22 @@ function buildClasses() {
           <h2 class="reveal stagger-1">${p.structure.title}</h2>
           <span class="divider reveal stagger-2"></span>
         </div>
-        <div style="max-width:640px; margin:0 auto;">
-          <div class="session-steps">
-            ${stepsHtml}
+        <div style="max-width:1000px; margin:0 auto;">
+          <div class="session-steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            ${p.structure.steps.map((s, i) => `
+              <div class="reveal stagger-${(i % 3) + 1}">
+                <div style="overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; height: 250px;">
+                  <img src="${p.images.gallery[i]}" alt="${s.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="step-item" style="padding: 0;">
+                  <div class="step-num">${s.num}</div>
+                  <div class="step-content">
+                    <h4>${s.title}</h4>
+                    <p>${s.text}</p>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
           </div>
         </div>
       </div>
@@ -624,22 +623,6 @@ function buildHoraris() {
             <strong>Horaris flexibles</strong><br>
             ${p.note}
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background: var(--cream-dark); padding: var(--section-gap) 0;">
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Galeria</span>
-          <h2 class="reveal stagger-1">Moments del centre</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-          ${p.images.gallery.map((img, i) => `
-            <div class="reveal stagger-${(i % 2) + 1}" style="overflow: hidden; border-radius: var(--radius-lg);">
-              <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 300px; object-fit: cover;">
-            </div>
-          `).join('')}
         </div>
       </div>
     </section>
@@ -738,7 +721,7 @@ function buildPreus() {
         </div>
 
         <p style="text-align: center; margin-top: 2.5rem; color: var(--text-light); font-size: 0.9rem;">
-          💡 Els bonus no caduquen. Utilitza'ls quan et vagi bé i al teu ritme.
+          Els bonus no caduquen. Utilitza'ls quan et vagi bé i al teu ritme.
         </p>
       </div>
     </section>
@@ -757,22 +740,6 @@ function buildPreus() {
           <h3 style="color: var(--green-deep); margin-bottom: 1rem;">Per a grups i empreses</h3>
           <p style="max-width: 500px; margin: 0 auto 1.5rem;">¿Interessat en plans customitzats per a grups o empreses? Contacta'ns!</p>
           <a href="contacte.html" class="btn btn-secondary">Consulta'ns</a>
-        </div>
-      </div>
-    </section>
-
-    <section style="background: var(--cream-dark); padding: var(--section-gap) 0;">
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Galeria</span>
-          <h2 class="reveal stagger-1">Moments del centre</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-          ${p.images.gallery.map((img, i) => `
-            <div class="reveal stagger-${(i % 2) + 1}" style="overflow: hidden; border-radius: var(--radius-lg);">
-              <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 300px; object-fit: cover;">
-            </div>
-          `).join('')}
         </div>
       </div>
     </section>
@@ -929,22 +896,6 @@ function buildContacte() {
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             title="Mapa OM Ioga - Carrer de les Gardènies 20, Igualada">
           </iframe>
-        </div>
-      </div>
-    </section>
-
-    <section style="background: var(--cream-dark); padding: var(--section-gap) 0;">
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Galeria</span>
-          <h2 class="reveal stagger-1">Moments del centre</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-          ${p.images.gallery.map((img, i) => `
-            <div class="reveal stagger-${(i % 2) + 1}" style="overflow: hidden; border-radius: var(--radius-lg);">
-              <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 300px; object-fit: cover;">
-            </div>
-          `).join('')}
         </div>
       </div>
     </section>

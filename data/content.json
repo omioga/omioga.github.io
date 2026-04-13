@@ -1,4 +1,27 @@
 {
+  "_GUIDE_": {
+    "_TITLE": "🧘 GUIA RAPIDA - EDITA ELS TEXTOS DEL WEB FACILMENT",
+    "_INSTRUCCIONS": "Tot el que veus a la pàgina se'l control des d'aquí!",
+    "_MENU": {
+      "_1_dades_del_centre": "Nom, telèfon, adreça → Busca 'site' → 'contact' (La informació del centre)",
+      "_2_menu_navegacio": "Els botons del menú superior → Busca 'site' → 'nav' (Inici, Qui soc, El ioga, etc)",
+      "_3_peu_de_pagina": "El text al final de totes les pàgines → Busca 'site' → 'footer'",
+      "_4_pagina_inici": "Pàgina HOME - La primera cosa que veu la gent → Busca 'pages' → 'home'",
+      "_5_pagina_quisoc": "Informació sobre la professora → Busca 'pages' → 'qui-soc'",
+      "_6_pagina_tipusioga": "Explicació del ioga (estils, respiració, etc) → Busca 'pages' → 'tipus-ioga'",
+      "_7_pagina_classes": "Com són les classes, estructura → Busca 'pages' → 'classes'",
+      "_8_pagina_horaris": "Quan hi ha classes (dilluns, dimarts, etc) → Busca 'pages' → 'horaris'",
+      "_9_pagina_preus": "Preços, plans mensuals, bonus → Busca 'pages' → 'preus'",
+      "_10_pagina_condicions": "Normes del centre → Busca 'pages' → 'condicions'",
+      "_11_pagina_contacte": "Formulari de contacte → Busca 'pages' → 'contacte'"
+    },
+    "_COM_USANDO": "1) Usa Ctrl+F (o Cmd+F si sou mac) per buscar una paraula que vull canviar",
+    "_COM_CAMBIAR": "2) Modifica el text entre les cometes (exemple: 'Hola' → 'Adéu'). NO BORRIS les cometes!",
+    "_COM_IMATGES": "3) Les imatges estan al final de cada pàgina en 'images' → busca per 'assets/images/'",
+    "_IMPORTANT": "⚠️ NO BORRIS les estructures [...], {...} - només canvia el text dins de les COMETES!",
+    "_AYUDA": "Si veus un text estrany i no saps on es, busca-ho amb Ctrl+F i trobaràs el lloc!"
+  },
+
   "site": {
     "name": "OM Ioga",
     "tagline": "Cos. Ment. Respiració.",
@@ -20,7 +43,9 @@
     ],
     "footer": {
       "tagline": "Troba l'equilibri. Descobreix la calma.",
-      "copy": "© 2025 OM Ioga · Igualada"
+      "copy": "© 2025 OM Ioga · Igualada",
+      "nav_label": "Navegació",
+      "centre_label": "El centre"
     }
   },
 
@@ -138,6 +163,9 @@
         "paragraphs": [
           "El ioga prové de l'arrel sànscrita yuj, que significa unir o vincular. És una pràctica que connecta cos, ment i respiració, ajudant a trobar equilibri, consciència corporal i presència en el moment actual.",
           "El hatha ioga és la branca física del ioga basada en postures (asana). Existeixen diferents estils com el Sivananda, l'Astanga o l'Iyengar. Tot i les diferències en la manera de treballar, les postures són essencialment les mateixes."
+        ],
+        "gallery": [
+          "assets/images/tree.jpg"
         ]
       },
       "origin": {
@@ -244,41 +272,38 @@
         {
           "day": "Dilluns",
           "slots": [
-            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "18:30 – 19:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "10:00 – 11:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "18:00 – 19:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "19:45 – 21:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Dimarts",
           "slots": [
-            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:00 – 20:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "19:00 – 20:30", "type": "Hatha Ioga", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Dimecres",
           "slots": [
-            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "18:30 – 19:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "08:15 – 09:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "17:30 – 19:00", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "19:15 – 20:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Dijous",
           "slots": [
-            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:00 – 20:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "18:00 – 19:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "19:45 – 21:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Divendres",
           "slots": [
-            { "time": "09:30 – 10:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
-          ]
-        },
-        {
-          "day": "Dissabte",
-          "slots": [
-            { "time": "10:00 – 11:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "08:15 – 09:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
+            { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
           ]
         }
       ],

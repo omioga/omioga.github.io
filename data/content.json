@@ -66,24 +66,24 @@
       },
       "intro": {
         "title": "El ioga és per a tothom",
-        "text": "Independentment del teu nivell, edat o condició física. Cada postura s'adapta a tu, no tu a la postura. L'únic requisit és voler respirar millor i sentir-te bé.",
+        "text": "Independentment del teu nivell, edat o condició física. Cada postura s'adapta a tu, no tu a la postura. Fent aquella opció que et demani el cos. Escolatant-lo.",
         "highlight": "Grups de màxim 12 persones per a una atenció autènticament personalitzada."
       },
       "pillars": [
         {
           "icon": "breath",
           "title": "Respiració conscient",
-          "text": "La connexió entre respiració i moviment és el cor de la pràctica. Cada sessió comença i acaba amb consciència de l'alè."
+          "text": "La coordinació del moviment amb la respiració és clau. La respiració ens ajuda a entrar, a estar i a soritr de la postura de forma adequada. "
         },
         {
           "icon": "body",
-          "title": "Cos respectat",
-          "text": "No és competitiu. Cada cos és diferent i cada dia és diferent. Treballem amb variants per adaptar-nos a cada moment."
+          "title": "Respecte al cos",
+          "text": "Aprenem a observar i a escoltar el cos. Cada persona és diferent i cada dia també és diferent. Treballem amb diferents variants per adaptar-nos a cada situació."
         },
         {
           "icon": "mind",
           "title": "Ment present",
-          "text": "La pràctica regular cultiva la capacitat d'estar aquí, ara. Una calma que s'estén més enllà del matalàs."
+          "text": "La constància en la pràctica cultiva la capacitat d'estar ara i aquí. Una actitud que aprens a aplicar al teu dia a dia."
         }
       ],
       "quote": {
@@ -117,25 +117,25 @@
       },
       "bio": {
         "paragraphs": [
-          "Soc llicenciada en química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
-          "Practico ioga des dels 19 anys, i aquesta passió em va portar a formar-me com a professora. Inicialment vaig compaginar la feina amb classes de ioga, però ràpidament vaig decidir dedicar-m'hi completament.",
-          "Des del 2013, el ioga es va convertir en la meva professió principal. He impartit classes en diferents espais fins que, el juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
+          "Amb 18 anys vaig decidir estudiar química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
+          "Des dels 3 anys que feia dansa clàssica, contemporània, jazz... i amb 19 anys vaig descobrir el ioga. Des del principi que em va agradar. Era una altra manera de treballar amb el cos, però hi havia alguna cosa més. Una sensació de benestar diferent al què sentia quan ballava. En el moment de no saber què fer amb la meva vida professional, aquest amor pel ioga em va portar a formar-me com a professora. Inicialment vaig compaginar la feina de química amb classes de ioga, però ràpidament vaig decidir dedicar-m'hi completament.",
+          "Des del 2013, el ioga es va convertir en la meva professió principal. Vaig estar donant classes en diferents espais fins que, al juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
           "Em sento molt afortunada de poder compartir els beneficis del ioga a nivell físic, mental, emocional i energètic, així com la seva filosofia de vida, que ajuda a viure amb més calma i equilibri.",
-          "Continuo formant-me constantment amb professors com Tomàs Zorzo, i el 2024 vaig iniciar estudis de sànscrit per aprofundir en els textos originals del ioga, descobrint-ne encara més profunditat i significat."
+          "L'aprenentatge mai acaba, així que continuo formant-me constantment amb professors com Tomàs Zorzo. I encuriosida per entendre directament els textos de la filosfia del ioga,  al 2024 vaig iniciar estudis de sànscrit a la UB que mantinc actius."
         ]
       },
       "milestones": [
-        { "year": "19 anys", "text": "Inici de la pràctica personal de ioga" },
-        { "year": "2013",    "text": "El ioga es converteix en la professió principal" },
-        { "year": "2022",    "text": "Obertura del centre OM Ioga a Igualada" },
-        { "year": "2024",    "text": "Inici d'estudis de sànscrit i textos clàssics" }
+        { "year": "19 anys", "text": "" },
+        { "year": "2013",    "text": "" },
+        { "year": "2022",    "text": "" },
+        { "year": "2024",    "text": "" }
       ],
       "values": {
         "title": "La meva filosofia d'ensenyament",
         "items": [
-          { "title": "Adaptació constant",   "text": "Cada alumne és únic. Les classes s'adapten al nivell, l'estat físic i l'energia del dia." },
-          { "title": "Formació contínua",    "text": "El ioga és un camí sense fi. Continuo aprenent per poder transmetre amb autenticitat." },
-          { "title": "Espai segur",          "text": "Un ambient càlid on sentir-se còmode per explorar sense judici ni competició." }
+          { "title": "Adaptació constant",   "text": "Cada alumne és únic. Les classes són flexibles segons el nivell, l'estat físic i l'energia del dia dels practicants." },
+          { "title": "Formació contínua",    "text": "El ioga és un camí constant. Segueixo aprenent per poder transmetre i ensenyar amb uns bons fonaments." },
+          { "title": "Espai segur",          "text": "Un ambient càlid on sentir-se còmode per explorar lliurement sense judici ni competició." }
         ]
       }
     },
@@ -161,8 +161,8 @@
       "intro": {
         "title": "L'arrel de tot",
         "paragraphs": [
-          "El ioga prové de l'arrel sànscrita yuj, que significa unir o vincular. És una pràctica que connecta cos, ment i respiració, ajudant a trobar equilibri, consciència corporal i presència en el moment actual.",
-          "El hatha ioga és la branca física del ioga basada en postures (asana). Existeixen diferents estils com el Sivananda, l'Astanga o l'Iyengar. Tot i les diferències en la manera de treballar, les postures són essencialment les mateixes."
+          "El ioga prové de l'arrel sànscrita yuj, que significa vincular, sumar, connectar, ajuntar. Ioga bàsicament significa aplicació, execució, pràctica, mètode. És una pràctica que ens ajuda a controlar la ment, connectant cos, ment i respiració, per trobar l'equilibri, la consciència corporal i la presència en el moment actual.",
+          "El hatha ioga és la part física del ioga basada en una sèrie de postures (asana). Existeixen diferents estils com el Sivananda, l'Astanga o l'Iyengar. Les asana són essencialment les mateixes però canvia la manera de treballar-les."
         ],
         "gallery": [
           "assets/images/tree.jpg"
@@ -170,30 +170,30 @@
       },
       "origin": {
         "title": "Krishnamacharya: el mestre dels mestres",
-        "text": "Aquests estils tenen origen en el mestre Krishnamacharya, considerat una figura clau del ioga modern. Una de les seves grans aportacions és la connexió entre respiració i moviment, que permet assolir un estat de concentració, consciència corporal i calma mental.",
-        "highlight": "A les classes es dona molta importància a la respiració conscient i tranquil·la."
+        "text": "Krishnamacharya es pot considerar el pare del ioga modern. Una de les seves grans aportacions va ser la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
+        "highlight": "A les classes dono molta importància a la respiració conscient, suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
       "styles": [
         {
-          "name": "Sivananda",
-          "description": "Un estil clàssic i holístic que integra postures, respiració, relaxació, dieta i pensament positiu. Ideal per a qui busca una aproximació completa al ioga."
+          "name": "",
+          "description": " ."
         },
         {
-          "name": "Astanga",
-          "description": "Una seqüència fixa de postures vinculades per la respiració i el moviment. Dinàmic i estructurat, desenvolupa força, flexibilitat i concentració."
+          "name": "a",
+          "description": "en"
         },
         {
-          "name": "Iyengar",
-          "description": "Posa èmfasi en la precisió i l'alineació de les postures, sovint amb suport de material auxiliar. Excel·lent per a la consciència corporal profunda."
+          "name": "",
+          "description": " d"
         }
       ],
       "breath": {
         "title": "Pranayama: l'art de la respiració",
-        "text": "El pranayama és el control conscient de la respiració. A través de tècniques específiques d'inhalació, retenció i exhalació, es calma el sistema nerviós, s'augmenta l'energia vital i es prepara la ment per a la meditació.",
+        "text": "El pranayama és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, s'augmenta l'energia vital i es prepara la ment per a la meditació.",
         "techniques": [
-          { "name": "Nadi Shodhana",    "desc": "Respiració alternant per equilibrar els dos hemisferis cerebrals." },
-          { "name": "Ujjayi",           "desc": "Respiració oceànica que escalfa el cos i focalitza la ment." },
-          { "name": "Kapalabhati",      "desc": "Respiració de foc que purifica i energitza el sistema nerviós." }
+          { "name": "",    "desc": "" },
+          { "name": "",           "desc": "" },
+          { "name": "",      "desc": "." }
         ]
       }
     },

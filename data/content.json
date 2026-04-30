@@ -267,7 +267,7 @@
         "pretitle": "Organitza't",
         "title": "Horaris"
       },
-      "intro": "Trobaràs classes de dilluns a dissabte amb horaris matinals i vespertins per adaptar-te a la teva rutina. Contacta'ns per confirmar disponibilitat i reserves.",
+      "intro": "Trobaràs classes de dilluns a divendres amb horaris de matí, migdia i tarda- vespre per adaptar-te a la teva rutina. Contacta'ns per confirmar disponibilitat i reserves.",
       "schedule": [
         {
           "day": "Dilluns",
@@ -307,7 +307,7 @@
           ]
         }
       ],
-      "note": "Els horaris poden variar. Contacta'ns per confirmar disponibilitat o per a qualsevol consulta sobre el calendari."
+      "note": ""
     },
 
     "preus": {
@@ -336,9 +336,9 @@
       "monthly": {
         "title": "Quotes mensuals",
         "plans": [
-          { "days": "1 dia / setmana",  "price": "42€", "per": "mes", "highlight": false },
-          { "days": "2 dies / setmana", "price": "63€", "per": "mes", "highlight": true  },
-          { "days": "3 dies / setmana", "price": "77€", "per": "mes", "highlight": false }
+          { "days": "1 dia / setmana",  "price": "42€", "al": "mes", "highlight": false },
+          { "days": "2 dies / setmana", "price": "63€", "al": "mes", "highlight": true  },
+          { "days": "3 dies / setmana", "price": "77€", "al": "mes", "highlight": false }
         ]
       },
       "single": {
@@ -348,7 +348,7 @@
       },
       "bonus": {
         "title": "Bonus trimestrals",
-        "description": "Flexibilitat màxima per usar quan vulguis, sense caducitat mensual.",
+        "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos.",
         "packs": [
           { "classes": "5 classes",  "price": "70€" },
           { "classes": "10 classes", "price": "130€" },
@@ -357,7 +357,7 @@
       },
       "trial": {
         "title": "Primera classe gratuïta",
-        "text": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, queda inclosa dins la mensualitat; si no, no té cap cost.",
+        "text": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.",
         "cta": { "label": "Reserva la classe de prova", "href": "contacte.html" }
       }
     },
@@ -389,8 +389,8 @@
           "title": "Pagaments",
           "items": [
             "El pagament de les mensualitats es realitza per avançat, a principis de mes.",
-            "En cas de no poder assistir temporalment, es pot activar la quota de manteniment (15€) per conservar la plaça.",
-            "Els bonus trimestrals no caduquen al mes; es poden usar amb flexibilitat.",
+            "En cas de no poder assistir temporalment, es pot activar la quota de manteniment (15€) per a conservar la plaça.",
+            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat.",
             "La classe solta (15€) es paga en el moment d'assistir."
           ]
         },
@@ -414,9 +414,9 @@
           "title": "Normes de l'espai",
           "items": [
             "Cal arribar uns minuts abans de l'inici de la classe.",
-            "Els mòbils s'han de silenciar durant la sessió.",
+            "Els mòbils s'han de silenciar i treure les vibracions durant la sessió.",
             "L'espai és un lloc de calma i respecte mutu.",
-            "El material del centre (matalassos, màndoles, etc.) s'ha de deixar net i ordenat."
+            "El material del centre (estrilles, blocs, cinturons, mantes...) s'ha de deixar net i ordenat."
           ]
         }
       ]

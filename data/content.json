@@ -225,18 +225,17 @@
         "title": "Pensades per a tu",
         "paragraphs": [
           "Les classes estan pensades per adaptar-se a cada persona, independentment del seu nivell, experiència o estat físic.",
-          "Cada postura té diferents variants per tal que cadascú pugui trobar la seva opció segons el moment: si és principiant, si té alguna lesió o segons el seu nivell d'energia.",
+          "Cada postura té diferents variants per tal que cadascú pugui trobar la seva opció segons el moment: si és principiant, si té alguna lesió o segons el nivell d'energia d'aquell dia.",
           "El ioga no és competitiu. És una pràctica individual de connexió amb un mateix, tot i realitzar-se en grup. És fonamental respectar el propi cos i adaptar les postures a les necessitats personals per evitar lesions.",
-          "L'objectiu principal és respirar de manera conscient i sortir de la sessió en un millor estat que en entrar-hi."
+          "L'objectiu principal és respirar de manera conscient i sortir de la sessió en un millor estat que amb el què s'ha entrat."
         ]
       },
       "features": [
-        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció autènticament personalitzada." },
+        { "title": "Grups reduïts",        "text": "Màxim 12 persones per grup per poder oferir una atenció personalitzada." },
         { "title": "Tots els nivells",      "text": "Principiants, intermedis i avançats. Les variants permeten que tothom treballi al seu nivell." },
-        { "title": "Pranayama",             "text": "Control de la respiració integrat a cada sessió per calmar el sistema nerviós." },
-        { "title": "Meditació",             "text": "Moment de silenci i presència al final de cada classe per integrar la pràctica." },
-        { "title": "Sense competició",      "text": "Cada cos és diferent. Aquí treballem cap a dins, no cap als altres." },
-        { "title": "Classe de prova",       "text": "Primera classe totalment gratuïta. Sense compromís, sense pressions." }
+        { "title": "Respiració conscient",  "text": "Control de la respiració durant la pràctica d'asana per equilibrar el sistema nerviós." },
+        { "title": "Observació",            "text": "Observar les sensacions per connectar amb un mateix." },
+        { "title": "",       "text": "" }
       ],
       "structure": {
         "title": "Estructura d'una sessió",

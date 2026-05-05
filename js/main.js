@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScrollAnimations();
   initCarousel();
   initPageTransitions();
+
+  /* Reveal body after all content is built */
+  document.body.style.opacity = '1';
 });
 
 /* ─── Detect current page ─── */
@@ -32,7 +35,7 @@ function detectPage() {
 /* ─── Load JSON ─── */
 async function loadData() {
   try {
-    const res  = await fetch('data/content.json');
+    const res = await fetch('data/content.json');
     DATA = await res.json();
   } catch (e) {
     console.warn('No s\'ha pogut carregar content.json. Assegura\'t que el servidor és actiu.');
@@ -51,7 +54,7 @@ function buildNav() {
   logo.innerHTML = `<img src="assets/images/omioga-logo.png" alt="OM Ioga" class="logo-img"> <span class="logo-text">${DATA.site.name}</span>`;
 
   menu.innerHTML = DATA.site.nav.map(item => {
-    const href    = item.href;
+    const href = item.href;
     const current = isCurrentPage(href) ? ' class="active"' : '';
     return `<li><a href="${href}"${current}>${item.label}</a></li>`;
   }).join('');
@@ -64,9 +67,9 @@ function isCurrentPage(href) {
 
 /* ─── Nav behaviours ─── */
 function initNav() {
-  const nav    = document.getElementById('nav');
+  const nav = document.getElementById('nav');
   const toggle = document.getElementById('nav-toggle');
-  const menu   = document.getElementById('nav-menu');
+  const menu = document.getElementById('nav-menu');
 
   /* Scroll → sticky style */
   const onScroll = () => {
@@ -77,15 +80,17 @@ function initNav() {
 
   /* Hamburger */
   toggle?.addEventListener('click', () => {
-    toggle.classList.toggle('open');
-    menu.classList.toggle('open');
-    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    const isOpen = menu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   /* Close menu on link click */
   menu?.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       toggle?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
       menu.classList.remove('open');
       document.body.style.overflow = '';
     });
@@ -147,14 +152,14 @@ function buildFooter() {
 /* ─── Page builder dispatcher ─── */
 function buildPage() {
   switch (PAGE) {
-    case 'home':        buildHome();      break;
-    case 'qui-soc':     buildQuiSoc();    break;
-    case 'tipus-ioga':  buildTipusIoga(); break;
-    case 'classes':     buildClasses();   break;
-    case 'horaris':     buildHoraris();   break;
-    case 'preus':       buildPreus();     break;
-    case 'condicions':  buildCondicions();break;
-    case 'contacte':    buildContacte();  break;
+    case 'home':        buildHome();       break;
+    case 'qui-soc':     buildQuiSoc();     break;
+    case 'tipus-ioga':  buildTipusIoga();  break;
+    case 'classes':     buildClasses();    break;
+    case 'horaris':     buildHoraris();    break;
+    case 'preus':       buildPreus();      break;
+    case 'condicions':  buildCondicions(); break;
+    case 'contacte':    buildContacte();   break;
   }
   updateDocMeta();
 }
@@ -162,13 +167,8 @@ function buildPage() {
 /* ─── Update page meta ─── */
 function updateDocMeta() {
   if (!DATA?.pages) return;
-  const page = DATA.pages[PAGE === 'home' ? 'home' : PAGE.replace('-', '')
-    .replace('quisoc', 'qui-soc')
-    .replace('tipusioga', 'tipus-ioga')
-  ];
-  // Use the key as-is
   const p = DATA.pages[PAGE];
-  if (p?.meta?.title)       document.title = p.meta.title;
+  if (p?.meta?.title) document.title = p.meta.title;
   if (p?.meta?.description) {
     let m = document.querySelector('meta[name="description"]');
     if (!m) { m = document.createElement('meta'); m.name = 'description'; document.head.appendChild(m); }
@@ -180,7 +180,7 @@ function updateDocMeta() {
    HOME
 ═══════════════════════════════════════════ */
 function buildHome() {
-  const h   = DATA.pages.home;
+  const h = DATA.pages.home;
   const main = document.getElementById('main');
   if (!main) return;
 
@@ -276,16 +276,9 @@ function buildHome() {
    QUI SOC
 ═══════════════════════════════════════════ */
 function buildQuiSoc() {
-  const p   = DATA.pages['qui-soc'];
+  const p = DATA.pages['qui-soc'];
   const main = document.getElementById('main');
   if (!main) return;
-
-  const milestonesHtml = p.milestones.map((m, i) => `
-    <div class="milestone-item reveal stagger-${i + 1}">
-      <div class="milestone-year">${m.year}</div>
-      <div class="milestone-text">${m.text}</div>
-    </div>
-  `).join('');
 
   const valuesHtml = p.values.items.map((v, i) => `
     <div class="value-item reveal stagger-${i + 1}">
@@ -306,24 +299,18 @@ function buildQuiSoc() {
 
     <section>
       <div class="container">
-        <div class="bio-layout">
-          <div class="bio-text">
-            ${p.bio.paragraphs.map((par, i) => `
-              <div style="margin-bottom: 1.5rem;">
-                <p class="reveal stagger-${Math.min(i + 1, 5)}" style="margin-bottom: 1rem;">${par}</p>
-                ${i === 0 || i === 2 ? `
-                  <img src="${p.images.gallery[Math.floor(i / 2)]}" alt="Foto" class="middle-image" style="width: 100%; margin-bottom: 1rem;">
-                ` : ''}
-              </div>
-            `).join('')}
-          </div>
-          <aside class="bio-aside">
-            <div class="bio-card reveal-scale">
-              <span class="pretitle">Trajectòria</span>
-              <h3 style="margin-bottom:1.5rem; font-size:clamp(1.2rem, 5vw, 1.6rem);">Moments clau</h3>
-              ${milestonesHtml.replace(/reveal stagger-\d+/g, '')}
-            </div>
-          </aside>
+        <div class="bio-split">
+          ${(() => {
+      const gallery = p.images.gallery || [];
+      const paragraphs = p.bio.paragraphs || [];
+      const maxLen = Math.max(paragraphs.length, gallery.length);
+      let html = '';
+      for (let i = 0; i < maxLen; i++) {
+        if (paragraphs[i]) html += `<p class="bio-item bio-item--text reveal stagger-${Math.min(i + 1, 5)}">${paragraphs[i]}</p>`;
+        if (gallery[i]) html += `<img src="${gallery[i]}" alt="Foto ${i + 1}" class="bio-item bio-item--img">`;
+      }
+      return html;
+    })()}
         </div>
       </div>
     </section>
@@ -344,7 +331,7 @@ function buildQuiSoc() {
     <section class="cta-section">
       <div class="container">
         <span class="pretitle reveal">Benvingut</span>
-        <h2 class="reveal stagger-1">Ves vine a conèixer l'espai</h2>
+        <h2 class="reveal stagger-1">Vine a conèixer l'espai</h2>
         <p class="reveal stagger-2">La primera classe és gratuïta i sense compromís. Descobreix si el ioga és per a tu.</p>
         <a href="contacte.html" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
@@ -356,23 +343,9 @@ function buildQuiSoc() {
    TIPUS DE IOGA
 ═══════════════════════════════════════════ */
 function buildTipusIoga() {
-  const p    = DATA.pages['tipus-ioga'];
+  const p = DATA.pages['tipus-ioga'];
   const main = document.getElementById('main');
   if (!main) return;
-
-  const stylesHtml = p.styles.map((s, i) => `
-    <div class="style-card reveal stagger-${i + 1}">
-      <div class="style-name">${s.name}</div>
-      <p>${s.description}</p>
-    </div>
-  `).join('');
-
-  const techHtml = p.breath.techniques.map((t, i) => `
-    <div class="technique-item reveal stagger-${i + 1}">
-      <div class="technique-name">${t.name}</div>
-      <p>${t.desc}</p>
-    </div>
-  `).join('');
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
@@ -395,7 +368,7 @@ function buildTipusIoga() {
             `).join('')}
           </div>
           <div class="reveal-right" style="display: flex; justify-content: center; align-items: center;">
-            ${p.intro.gallery ? p.intro.gallery.map((img, i) => `
+            ${p.intro.gallery ? p.intro.gallery.map(img => `
               <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%;">
                 <img src="${img}" alt="Foto introducció" style="width: 100%; height: auto; object-fit: cover;">
               </div>
@@ -408,32 +381,10 @@ function buildTipusIoga() {
           <p>${p.origin.text}</p>
           <p class="origin-highlight">${p.origin.highlight}</p>
         </div>
-      </div>
-    </section>
 
-    <section style="padding-top:0; background: var(--cream-dark);">
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Estils</span>
-          <h2 class="reveal stagger-1">Principals estils de hatha ioga</h2>
-          <span class="divider reveal stagger-2"></span>
-        </div>
-        <div class="styles-grid">
-          ${stylesHtml}
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Respiració</span>
-          <h2 class="reveal stagger-1">${p.breath.title}</h2>
-          <span class="divider reveal stagger-2"></span>
-          <p class="reveal stagger-3">${p.breath.text}</p>
-        </div>
-        <div class="techniques-list">
-          ${techHtml}
+        <div class="origin-block reveal" style="margin-top:3rem;">
+          <h3>${p.breath.title}</h3>
+          <p>${p.breath.text}</p>
         </div>
       </div>
     </section>
@@ -453,6 +404,15 @@ function buildTipusIoga() {
         </div>
       </div>
     </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <span class="pretitle reveal">Comença avui</span>
+        <h2 class="reveal stagger-1">Prova una classe gratuïta</h2>
+        <p class="reveal stagger-2">Ven a descobrir el ioga sense compromís. La primera classe és totalment gratuïta.</p>
+        <a href="contacte.html" class="btn btn-gold reveal stagger-3">Reserva ara</a>
+      </div>
+    </section>
   `;
 }
 
@@ -460,7 +420,7 @@ function buildTipusIoga() {
    CLASSES
 ═══════════════════════════════════════════ */
 function buildClasses() {
-  const p    = DATA.pages.classes;
+  const p = DATA.pages.classes;
   const main = document.getElementById('main');
   if (!main) return;
 
@@ -529,27 +489,12 @@ function buildClasses() {
     <section>
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">Una sessió típica</span>
+          <span class="pretitle reveal">Com funciona</span>
           <h2 class="reveal stagger-1">${p.structure.title}</h2>
           <span class="divider reveal stagger-2"></span>
         </div>
-        <div style="max-width:1000px; margin:0 auto;">
-          <div class="session-steps-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-            ${p.structure.steps.map((s, i) => `
-              <div class="reveal stagger-${(i % 3) + 1}">
-                <div style="overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; height: 250px;">
-                  <img src="${p.images.gallery[i]}" alt="${s.title}" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="step-item" style="padding: 0;">
-                  <div class="step-num">${s.num}</div>
-                  <div class="step-content">
-                    <h4>${s.title}</h4>
-                    <p>${s.text}</p>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
+        <div class="steps-list">
+          ${stepsHtml}
         </div>
       </div>
     </section>
@@ -569,21 +514,17 @@ function buildClasses() {
    HORARIS
 ═══════════════════════════════════════════ */
 function buildHoraris() {
-  const p    = DATA.pages.horaris;
+  const p = DATA.pages.horaris;
   const main = document.getElementById('main');
   if (!main) return;
 
-  const scheduleHtml = p.schedule.map((day, i) => {
-    const morningSlots = day.slots.filter(s => parseInt(s.time.split(':')[0]) < 12);
-    const eveningSlots = day.slots.filter(s => parseInt(s.time.split(':')[0]) >= 12);
-    
-    return `
+  const scheduleHtml = p.schedule.map((day, i) => `
     <div class="schedule-day-card reveal stagger-${(i % 3) + 1}">
       <div class="schedule-day-header">
         <h3 class="schedule-day-name">${day.day}</h3>
       </div>
       <div class="schedule-slots">
-        ${day.slots.map((slot, idx) => `
+        ${day.slots.map(slot => `
           <div class="schedule-slot">
             <div class="slot-time-badge">${slot.time}</div>
             <div class="slot-info">
@@ -594,7 +535,7 @@ function buildHoraris() {
         `).join('')}
       </div>
     </div>
-  `}).join('');
+  `).join('');
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
@@ -612,17 +553,9 @@ function buildHoraris() {
           <p class="reveal" style="font-size:1.05rem; color: var(--text);">${p.intro}</p>
           <img src="${p.images.middle}" alt="" class="middle-image">
         </div>
-        
+
         <div class="schedule-modern-grid">
           ${scheduleHtml}
-        </div>
-
-        <div class="schedule-info-banner reveal">
-          <div class="banner-icon">ℹ</div>
-          <div class="banner-text">
-            <strong>Horaris flexibles</strong><br>
-            ${p.note}
-          </div>
         </div>
       </div>
     </section>
@@ -642,7 +575,7 @@ function buildHoraris() {
    PREUS
 ═══════════════════════════════════════════ */
 function buildPreus() {
-  const p    = DATA.pages.preus;
+  const p = DATA.pages.preus;
   const main = document.getElementById('main');
   if (!main) return;
 
@@ -651,7 +584,7 @@ function buildPreus() {
       ${plan.highlight ? '<span class="plan-badge">Més popular</span>' : ''}
       <div class="plan-frequency">${plan.days}</div>
       <div class="plan-price">${plan.price}</div>
-      <div class="plan-period">per ${plan.per}</div>
+      <div class="plan-period">per ${plan.al || 'mes'}</div>
       <a href="contacte.html" class="btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'} plan-cta">Comença ara</a>
     </div>
   `).join('');
@@ -660,7 +593,7 @@ function buildPreus() {
     <div class="bonus-pack-card reveal stagger-${i + 1}">
       <div class="bonus-value">${b.classes}</div>
       <div class="bonus-amount">${b.price}</div>
-      <small class="bonus-subtitle">Sense caducitat</small>
+      <small class="bonus-subtitle">Vàlid 3 mesos</small>
     </div>
   `).join('');
 
@@ -686,7 +619,7 @@ function buildPreus() {
             <span class="pretitle reveal">${p.monthly.title}</span>
             <h2 class="reveal stagger-1">Classes regulars</h2>
           </div>
-          
+
           <div class="pricing-plans-grid">
             ${plansHtml}
           </div>
@@ -721,7 +654,7 @@ function buildPreus() {
         </div>
 
         <p style="text-align: center; margin-top: 2.5rem; color: var(--text-light); font-size: 0.9rem;">
-          Els bonus no caduquen. Utilitza'ls quan et vagi bé i al teu ritme.
+          Els bonus caduquen als 3 mesos de la seva compra.
         </p>
       </div>
     </section>
@@ -738,7 +671,7 @@ function buildPreus() {
 
         <div style="text-align: center; margin-top: 4rem; padding: 3rem 2rem; background: var(--cream-dark); border-radius: var(--radius-lg);">
           <h3 style="color: var(--green-deep); margin-bottom: 1rem;">Per a grups i empreses</h3>
-          <p style="max-width: 500px; margin: 0 auto 1.5rem;">¿Interessat en plans customitzats per a grups o empreses? Contacta'ns!</p>
+          <p style="max-width: 500px; margin: 0 auto 1.5rem;">Interessat en plans personalitzats per a grups o empreses? Contacta'ns!</p>
           <a href="contacte.html" class="btn btn-secondary">Consulta'ns</a>
         </div>
       </div>
@@ -750,7 +683,7 @@ function buildPreus() {
    CONDICIONS
 ═══════════════════════════════════════════ */
 function buildCondicions() {
-  const p    = DATA.pages.condicions;
+  const p = DATA.pages.condicions;
   const main = document.getElementById('main');
   if (!main) return;
 
@@ -799,8 +732,8 @@ function buildCondicions() {
    CONTACTE
 ═══════════════════════════════════════════ */
 function buildContacte() {
-  const p    = DATA.pages.contacte;
-  const c    = DATA.site.contact;
+  const p = DATA.pages.contacte;
+  const c = DATA.site.contact;
   const main = document.getElementById('main');
   if (!main) return;
 
@@ -872,6 +805,9 @@ function buildContacte() {
           </div>
 
           <div class="contact-form reveal-right">
+            <div id="form-error" class="form-error" style="display:none;">
+              ${iconSVG('info')} <span id="form-error-msg">Hi ha hagut un error. Torna-ho a intentar.</span>
+            </div>
             <form id="contact-form" novalidate>
               ${fieldsHtml}
               <label class="form-checkbox">
@@ -879,7 +815,7 @@ function buildContacte() {
                 <span>${p.form.trial_label}</span>
               </label>
               <button type="submit" class="form-submit">
-                ${iconSVG('send')} ${p.form.cta}
+                ${iconSVG('send')} <span class="btn-label">${p.form.cta}</span>
               </button>
             </form>
             <div class="form-success" id="form-success">
@@ -891,7 +827,7 @@ function buildContacte() {
 
         <div class="map-container reveal">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.123456789!2d1.614!3d41.578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDM0JzQwLjgiTiAxwrAzNic1MC40IkU!5e0!3m2!1sca!2ses!4v1700000000000!5m2!1sca!2ses"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.5!2d1.5870!3d41.5774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a47a6d8a8a8a8d%3A0x1a1a1a1a1a1a1a1a!2sCarrer%20de%20les%20Garden%C3%A8nies%2C%2020%2C%2008700%20Igualada!5e0!3m2!1sca!2ses!4v1700000000000!5m2!1sca!2ses"
             width="100%" height="360" style="border:0;" allowfullscreen=""
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             title="Mapa OM Ioga - Carrer de les Gardènies 20, Igualada">
@@ -901,13 +837,58 @@ function buildContacte() {
     </section>
   `;
 
-  /* Form submit handler */
+  /* Form submit handler — EmailJS */
   document.getElementById('contact-form')?.addEventListener('submit', e => {
     e.preventDefault();
-    const form    = e.target;
+    const form = e.target;
+    const submitBtn = form.querySelector('.form-submit');
+    const btnLabel = submitBtn.querySelector('.btn-label');
     const success = document.getElementById('form-success');
-    form.style.display    = 'none';
-    success.style.display = 'block';
+    const errorBox = document.getElementById('form-error');
+    const errorMsg = document.getElementById('form-error-msg');
+
+    /* Client-side validation */
+    const nom = form.querySelector('#nom')?.value.trim();
+    const email = form.querySelector('#email')?.value.trim();
+    const missatge = form.querySelector('#missatge')?.value.trim();
+
+    if (!nom || !email || !missatge) {
+      errorMsg.textContent = 'Si us plau, omple els camps obligatoris (nom, correu i missatge).';
+      errorBox.style.display = 'flex';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorMsg.textContent = 'El correu electrònic no és vàlid.';
+      errorBox.style.display = 'flex';
+      return;
+    }
+
+    errorBox.style.display = 'none';
+
+    const trialChecked = form.querySelector('#trial')?.checked;
+    const templateParams = {
+      from_name:   nom,
+      from_email:  email,
+      phone:       form.querySelector('#telefon')?.value.trim() || 'No indicat',
+      message:     missatge,
+      trial_class: trialChecked ? 'Sí, vol la classe de prova gratuïta' : 'No',
+    };
+
+    submitBtn.disabled = true;
+    if (btnLabel) btnLabel.textContent = 'Enviant...';
+
+    emailjs.send('default_service', 'template_iom0av9', templateParams)
+      .then(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      })
+      .catch(err => {
+        console.error('EmailJS error:', err);
+        submitBtn.disabled = false;
+        if (btnLabel) btnLabel.textContent = 'Envia el missatge';
+        errorMsg.textContent = 'Error en enviar. Si us plau, contacta\'ns per telèfon o correu directament.';
+        errorBox.style.display = 'flex';
+      });
   });
 }
 
@@ -924,7 +905,6 @@ function initScrollAnimations() {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  /* Observe after a tick to ensure DOM is built */
   setTimeout(() => {
     document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
       observer.observe(el);
@@ -937,82 +917,48 @@ function initScrollAnimations() {
 ═══════════════════════════════════════════ */
 function initCarousel() {
   const carousels = document.querySelectorAll('.carousel-wrapper');
-  
+
   carousels.forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const slides = carousel.querySelectorAll('.carousel-slide');
     const prevBtn = carousel.querySelector('.carousel-prev');
     const nextBtn = carousel.querySelector('.carousel-next');
     const dots = carousel.querySelectorAll('.carousel-dot');
-    
+
     if (!track || slides.length === 0) return;
-    
+
     let currentIndex = 0;
     let autoplayInterval;
-    
+
     const updateCarousel = (index) => {
       currentIndex = (index + slides.length) % slides.length;
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-      });
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
     };
-    
-    const goToSlide = (index) => {
-      updateCarousel(index);
-      resetAutoplay();
-    };
-    
+
+    const goToSlide = (index) => { updateCarousel(index); resetAutoplay(); };
     const nextSlide = () => goToSlide(currentIndex + 1);
     const prevSlide = () => goToSlide(currentIndex - 1);
-    
-    const startAutoplay = () => {
-      autoplayInterval = setInterval(nextSlide, 8000);
-    };
-    
-    const resetAutoplay = () => {
-      clearInterval(autoplayInterval);
-      startAutoplay();
-    };
-    
-    /* Event listeners */
+    const startAutoplay = () => { autoplayInterval = setInterval(nextSlide, 8000); };
+    const resetAutoplay = () => { clearInterval(autoplayInterval); startAutoplay(); };
+
     prevBtn?.addEventListener('click', prevSlide);
     nextBtn?.addEventListener('click', nextSlide);
-    
-    dots.forEach((dot) => {
-      dot.addEventListener('click', (e) => {
-        const slideIndex = parseInt(e.target.dataset.slide);
-        goToSlide(slideIndex);
-      });
-    });
-    
-    /* Touch support */
+    dots.forEach(dot => dot.addEventListener('click', e => goToSlide(parseInt(e.target.dataset.slide))));
+
     let touchStartX = 0;
-    let touchEndX = 0;
-    
-    track.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      clearInterval(autoplayInterval);
-    }, false);
-    
-    track.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX > touchEndX + 50) {
-        nextSlide();
-      } else if (touchStartX < touchEndX - 50) {
-        prevSlide();
-      }
+    track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; clearInterval(autoplayInterval); }, false);
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
       startAutoplay();
     }, false);
-    
-    /* Keyboard support */
-    document.addEventListener('keydown', (e) => {
+
+    document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'ArrowRight') nextSlide();
     });
-    
-    /* Start autoplay */
+
     startAutoplay();
   });
 }
@@ -1024,14 +970,6 @@ function initPageTransitions() {
   const overlay = document.getElementById('page-transition');
   if (!overlay) return;
 
-  /* Fade in on load */
-  document.body.style.opacity = '0';
-  requestAnimationFrame(() => {
-    document.body.style.transition = 'opacity 0.5s ease';
-    document.body.style.opacity    = '1';
-  });
-
-  /* Fade out on navigation */
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
@@ -1056,7 +994,7 @@ function iconSVG(name) {
     'mail':        `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
     'send':        `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>`,
     'check-circle':`<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
-    'info':        `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:inline;width:14px;height:14px;vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
+    'info':        `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:inline;width:16px;height:16px;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
   };
   return icons[name] || '';
 }
@@ -1095,161 +1033,6 @@ function getFeatureIcon(index) {
   return icons[index % icons.length];
 }
 
-/* ─── Tree SVG (Home hero) ─── */
-function buildTreeSVG() {
-  return `
-  <svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <style>
-        @keyframes sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(0.5deg); } }
-        .leaf-group { transform-origin: center; animation: sway 6s ease-in-out infinite; }
-      </style>
-    </defs>
-    
-    <!-- Main trunk - curved and elegant -->
-    <path d="M 300 750 Q 305 700 310 640 Q 312 580 308 520 Q 305 460 300 400"
-          fill="none" stroke="#2A4130" stroke-width="20" stroke-linecap="round" opacity="0.95"/>
-    
-    <!-- Primary branches - main structure -->
-    <g stroke="#2A4130" fill="none" stroke-linecap="round">
-      <!-- Left main branch -->
-      <path d="M 300 400 Q 270 360 240 330" stroke-width="14" opacity="0.9"/>
-      <path d="M 300 400 Q 240 370 200 360" stroke-width="12" opacity="0.85"/>
-      
-      <!-- Right main branch -->
-      <path d="M 300 400 Q 330 360 360 330" stroke-width="14" opacity="0.9"/>
-      <path d="M 300 400 Q 360 370 400 360" stroke-width="12" opacity="0.85"/>
-      
-      <!-- Center upward branch -->
-      <path d="M 300 400 Q 298 340 295 280 Q 293 220 290 160" stroke-width="11" opacity="0.88"/>
-      
-      <!-- Sub-branches left -->
-      <path d="M 240 330 Q 210 300 180 280" stroke-width="9" opacity="0.82"/>
-      <path d="M 240 330 Q 220 290 200 250" stroke-width="8" opacity="0.78"/>
-      <path d="M 200 360 Q 170 340 140 330" stroke-width="8" opacity="0.78"/>
-      
-      <!-- Sub-branches right -->
-      <path d="M 360 330 Q 390 300 420 280" stroke-width="9" opacity="0.82"/>
-      <path d="M 360 330 Q 380 290 400 250" stroke-width="8" opacity="0.78"/>
-      <path d="M 400 360 Q 430 340 460 330" stroke-width="8" opacity="0.78"/>
-      
-      <!-- Top branches -->
-      <path d="M 290 160 Q 270 130 255 100" stroke-width="7" opacity="0.75"/>
-      <path d="M 290 160 Q 310 130 325 100" stroke-width="7" opacity="0.75"/>
-    </g>
-
-    <!-- Foliage clusters - organic and natural -->
-    <!-- Top center -->
-    <g class="leaf-group">
-      ${leaf(220, 85, 32, '#4A6C52')}
-      ${leaf(240, 70, 28, '#5C8C5C')}
-      ${leaf(260, 85, 30, '#6A9470')}
-      ${leaf(280, 95, 26, '#7AAA7A')}
-      ${leaf(300, 80, 32, '#4A7A4A')}
-      ${leaf(320, 95, 28, '#6A9C6A')}
-      ${leaf(340, 70, 30, '#5C8864')}
-      ${leaf(360, 85, 26, '#8AAF8E')}
-    </g>
-
-    <!-- Upper left cluster -->
-    <g class="leaf-group" style="animation-delay: 0.3s;">
-      ${leaf(165, 260, 28, '#5C8C5C')}
-      ${leaf(145, 245, 26, '#4A6C52')}
-      ${leaf(155, 280, 30, '#6A9470')}
-      ${leaf(175, 295, 24, '#7AAA7A')}
-      ${leaf(190, 265, 28, '#4A7A4A')}
-      ${leaf(200, 240, 26, '#6A9C6A')}
-    </g>
-
-    <!-- Upper right cluster -->
-    <g class="leaf-group" style="animation-delay: 0.6s;">
-      ${leaf(435, 260, 28, '#5C8C5C')}
-      ${leaf(455, 245, 26, '#4A6C52')}
-      ${leaf(445, 280, 30, '#6A9470')}
-      ${leaf(425, 295, 24, '#7AAA7A')}
-      ${leaf(410, 265, 28, '#4A7A4A')}
-      ${leaf(400, 240, 26, '#6A9C6A')}
-    </g>
-
-    <!-- Middle left cluster -->
-    <g class="leaf-group" style="animation-delay: 0.15s;">
-      ${leaf(140, 360, 26, '#6A9470')}
-      ${leaf(125, 345, 24, '#5C8864')}
-      ${leaf(135, 380, 28, '#4A6C52')}
-      ${leaf(155, 375, 22, '#8AAF8E')}
-      ${leaf(170, 350, 26, '#6A9C6A')}
-    </g>
-
-    <!-- Middle right cluster -->
-    <g class="leaf-group" style="animation-delay: 0.45s;">
-      ${leaf(460, 360, 26, '#6A9470')}
-      ${leaf(475, 345, 24, '#5C8864')}
-      ${leaf(465, 380, 28, '#4A6C52')}
-      ${leaf(445, 375, 22, '#8AAF8E')}
-      ${leaf(430, 350, 26, '#6A9C6A')}
-    </g>
-
-    <!-- Lower left extended -->
-    <g class="leaf-group" style="animation-delay: 0.75s;">
-      ${leaf(95, 340, 30, '#4A6C52')}
-      ${leaf(75, 325, 28, '#5C8C5C')}
-      ${leaf(85, 360, 32, '#6A9470')}
-      ${leaf(110, 370, 26, '#7AAA7A')}
-    </g>
-
-    <!-- Lower right extended -->
-    <g class="leaf-group" style="animation-delay: 0.9s;">
-      ${leaf(505, 340, 30, '#4A6C52')}
-      ${leaf(525, 325, 28, '#5C8C5C')}
-      ${leaf(515, 360, 32, '#6A9470')}
-      ${leaf(490, 370, 26, '#7AAA7A')}
-    </g>
-
-    <!-- decorative scattered leaves for depth -->
-    <g opacity="0.6">
-      ${leaf(220, 200, 18, '#6A9C6A')}
-      ${leaf(380, 200, 18, '#6A9C6A')}
-      ${leaf(300, 320, 16, '#8AAF8E')}
-      ${leaf(250, 380, 14, '#7AAA7A')}
-      ${leaf(350, 380, 14, '#7AAA7A')}
-    </g>
-  </svg>`;
-}
-
-function leaf(cx, cy, r, color) {
-  const rx = r;
-  const ry = r * 0.55;
-  const rot = (Math.sin(cx * 0.3) * 30 - 15);
-  return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${color}" opacity="0.88" transform="rotate(${rot}, ${cx}, ${cy})"/>`;
-}
-
-/* ─── Mini tree for other pages ─── */
-function buildMiniTree() {
-  return `
-  <svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" style="width:280px;opacity:0.7" aria-hidden="true">
-    <path d="M150 340 C149 300 147 260 144 230 C141 200 139 180 138 165" fill="none" stroke="#2A4130" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
-    <path d="M138 165 C128 148 112 130 88 112" fill="none" stroke="#2A4130" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
-    <path d="M138 165 C145 142 158 128 175 112" fill="none" stroke="#2A4130" stroke-width="7" stroke-linecap="round" opacity="0.8"/>
-    <path d="M138 165 C136 140 133 118 130 98" fill="none" stroke="#2A4130" stroke-width="6" stroke-linecap="round" opacity="0.75"/>
-    <path d="M88 112 C72 100 55 97 40 100" fill="none" stroke="#2A4130" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-    <path d="M88 112 C80 94 78 76 80 60" fill="none" stroke="#2A4130" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-    <path d="M175 112 C190 98 208 95 224 98" fill="none" stroke="#2A4130" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-    <path d="M175 112 C182 94 182 76 178 60" fill="none" stroke="#2A4130" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
-    <path d="M130 98 C120 80 115 62 116 46" fill="none" stroke="#2A4130" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
-    <g class="leaf-animate">
-      ${leaf(36, 96, 18, '#5C8C5C')} ${leaf(48, 88, 16, '#4A7A4A')} ${leaf(57, 98, 18, '#6A9C6A')}
-      ${leaf(74, 52, 18, '#4A6C52')} ${leaf(84, 43, 16, '#6A9470')} ${leaf(90, 56, 18, '#7AAA7A')}
-    </g>
-    <g class="leaf-animate-2">
-      ${leaf(220, 94, 18, '#5C8C5C')} ${leaf(232, 86, 16, '#4A7A4A')} ${leaf(240, 97, 18, '#6A9C6A')}
-      ${leaf(172, 52, 18, '#4A6C52')} ${leaf(182, 42, 16, '#6A9470')} ${leaf(190, 56, 18, '#7AAA7A')}
-    </g>
-    <g class="leaf-animate-3">
-      ${leaf(108, 40, 16, '#5C8C5C')} ${leaf(118, 32, 16, '#4A7A4A')} ${leaf(128, 42, 18, '#6A9C6A')}
-    </g>
-  </svg>`;
-}
-
 /* ─── Leaf cluster decorative ─── */
 function buildLeafCluster() {
   return `
@@ -1267,4 +1050,11 @@ function buildLeafCluster() {
     <circle cx="160" cy="160" r="18" fill="#F5F3EE" stroke="#C8DCC8" stroke-width="1.5"/>
     <text x="160" y="166" text-anchor="middle" font-family="serif" font-size="16" fill="#2A4130" opacity="0.6">ॐ</text>
   </svg>`;
+}
+
+function leaf(cx, cy, r, color) {
+  const rx = r;
+  const ry = r * 0.55;
+  const rot = (Math.sin(cx * 0.3) * 30 - 15);
+  return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${color}" opacity="0.88" transform="rotate(${rot}, ${cx}, ${cy})"/>`;
 }

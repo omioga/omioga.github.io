@@ -124,12 +124,7 @@
           "L'aprenentatge mai acaba, així que continuo formant-me constantment amb professors com Tomàs Zorzo. I encuriosida per entendre directament els textos de la filosfia del ioga,  al 2024 vaig iniciar estudis de sànscrit a la UB que mantinc actius."
         ]
       },
-      "milestones": [
-        { "year": "19 anys", "text": "" },
-        { "year": "2013",    "text": "" },
-        { "year": "2022",    "text": "" },
-        { "year": "2024",    "text": "" }
-      ],
+      "milestones": [],
       "values": {
         "title": "La meva filosofia d'ensenyament",
         "items": [
@@ -173,28 +168,11 @@
         "text": "Krishnamacharya es pot considerar el pare del ioga modern. Una de les seves grans aportacions va ser la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
         "highlight": "A les classes dono molta importància a la respiració conscient, suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
-      "styles": [
-        {
-          "name": "",
-          "description": " ."
-        },
-        {
-          "name": "a",
-          "description": "en"
-        },
-        {
-          "name": "",
-          "description": " d"
-        }
-      ],
+      "styles": [],
       "breath": {
         "title": "Pranayama: l'art de la respiració",
         "text": "El pranayama és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, s'augmenta l'energia vital i es prepara la ment per a la meditació.",
-        "techniques": [
-          { "name": "",    "desc": "" },
-          { "name": "",           "desc": "" },
-          { "name": "",      "desc": "." }
-        ]
+        "techniques": []
       }
     },
 
@@ -306,8 +284,7 @@
             { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
           ]
         }
-      ],
-      "note": ""
+      ]
     },
 
     "preus": {

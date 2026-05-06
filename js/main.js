@@ -872,6 +872,8 @@ function buildContacte() {
     const templateParams = {
       from_name: nom,
       email: email,
+      message: missatge,
+      trial_class: trialChecked ? 'Sí, vol la classe de prova gratuïta' : 'No',
     };
 
     submitBtn.disabled = true;

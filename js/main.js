@@ -849,8 +849,11 @@ function buildContacte() {
 
     /* Client-side validation */
     const nom = form.querySelector('#nom')?.value.trim();
-    const email = form.querySelector('#email')?.value.trim() || form.querySelector('[type="email"]')?.value.trim();
+    const emailField = form.querySelector('#email') || form.querySelector('[type="email"]');
+    const email = emailField?.value.trim();
     const missatge = form.querySelector('#missatge')?.value.trim();
+
+    console.log('Form values:', { nom, email, emailField, missatge });
 
     if (!nom || !email || !missatge) {
       errorMsg.textContent = 'Si us plau, omple els camps obligatoris (nom, correu i missatge).';

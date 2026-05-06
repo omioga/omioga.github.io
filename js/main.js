@@ -849,7 +849,7 @@ function buildContacte() {
 
     /* Client-side validation */
     const nom = form.querySelector('#nom')?.value.trim();
-    const email = form.querySelector('#email')?.value.trim();
+    const email = form.querySelector('#email')?.value.trim() || form.querySelector('[type="email"]')?.value.trim();
     const missatge = form.querySelector('#missatge')?.value.trim();
 
     if (!nom || !email || !missatge) {
@@ -868,10 +868,7 @@ function buildContacte() {
     const trialChecked = form.querySelector('#trial')?.checked;
     const templateParams = {
       from_name: nom,
-      from_email: email,
-      phone: form.querySelector('#telefon')?.value.trim() || 'No indicat',
-      message: missatge,
-      trial_class: trialChecked ? 'Sí, vol la classe de prova gratuïta' : 'No',
+      to_email: email,
     };
 
     submitBtn.disabled = true;

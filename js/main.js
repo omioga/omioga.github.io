@@ -879,7 +879,19 @@ function buildContacte() {
     submitBtn.disabled = true;
     if (btnLabel) btnLabel.textContent = 'Enviant...';
 
+    // Enviar auto-reply al usuari
     emailjs.send('service_6mo98ao', 'template_iom0av9', templateParams)
+      .then(() => {
+        // Enviar missatge de contacte al propietari
+        const contactParams = {
+          from_name: nom,
+          from_email: email,
+          phone: form.querySelector('#telefon')?.value.trim() || 'No indicat',
+          message: missatge,
+          trial_class: templateParams.trial_class,
+        };
+        return emailjs.send('service_6mo98ao', 'template_zszdxdl', contactParams);
+      })
       .then(() => {
         form.style.display = 'none';
         success.style.display = 'block';

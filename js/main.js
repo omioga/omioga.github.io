@@ -882,13 +882,27 @@ function buildContacte() {
     // Enviar auto-reply al usuari
     emailjs.send('service_6mo98ao', 'template_iom0av9', templateParams)
       .then(() => {
-        // Enviar missatge de contacte al propietari
+        // Enviar missatge de contacte al propietari amb tota la informació formatada
+        const telefon = form.querySelector('#telefon')?.value.trim() || 'No indicat';
+        const messageWithInfo = `
+📋 INFORMACIÓ DE CONTACTE:
+─────────────────────────
+👤 Nom: ${nom}
+📧 Correu: ${email}
+☎️  Telèfon: ${telefon}
+🧘 Classe de prova: ${templateParams.trial_class}
+
+📝 MISSATGE:
+─────────────────────────
+${missatge}
+        `.trim();
+        
         const contactParams = {
           name: nom,
           email: email,
-          phone: form.querySelector('#telefon')?.value.trim() || 'No indicat',
-          message: missatge,
-          title: `${nom} - Contacte`,
+          phone: telefon,
+          message: messageWithInfo,
+          title: `${nom} - Contacte OM Ioga`,
           trial_class: templateParams.trial_class,
         };
         return emailjs.send('service_6mo98ao', 'template_zszdxdl', contactParams);

@@ -868,7 +868,7 @@ function buildContacte() {
     const trialChecked = form.querySelector('#trial')?.checked;
     const templateParams = {
       from_name: nom,
-      to_email: email,
+      email: email,
     };
 
     submitBtn.disabled = true;

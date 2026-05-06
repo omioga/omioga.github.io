@@ -879,31 +879,43 @@ function buildContacte() {
     submitBtn.disabled = true;
     if (btnLabel) btnLabel.textContent = 'Enviant...';
 
-    // Enviar auto-reply al usuari
+    // Recopilar tota la informació del formulari
+    const telefon = form.querySelector('#telefon')?.value.trim() || 'No indicat';
+    const trialText = templateParams.trial_class;
+
+    // 1️⃣ Enviar auto-reply al usuari
     emailjs.send('service_6mo98ao', 'template_iom0av9', templateParams)
       .then(() => {
-        // Enviar missatge de contacte al propietari amb tota la informació formatada
-        const telefon = form.querySelector('#telefon')?.value.trim() || 'No indicat';
-        const messageWithInfo = `
-📋 INFORMACIÓ DE CONTACTE:
-─────────────────────────
-👤 Nom: ${nom}
-📧 Correu: ${email}
-☎️  Telèfon: ${telefon}
-🧘 Classe de prova: ${templateParams.trial_class}
+        // 2️⃣ Enviar tota la informació completa al propietari
+        const completeInfo = `
+╔═══════════════════════════════════════════╗
+║          INFORMACIÓ DE CONTACTE            ║
+╚═══════════════════════════════════════════╝
+
+👤 NOM:
+${nom}
+
+📧 CORREU ELECTRÒNIC:
+${email}
+
+☎️  TELÈFON:
+${telefon}
+
+🧘 INTERÉS EN CLASSE DE PROVA:
+${trialText}
+
+─────────────────────────────────────────────
 
 📝 MISSATGE:
-─────────────────────────
+
 ${missatge}
-        `.trim();
-        
+
+═════════════════════════════════════════════`;
+
         const contactParams = {
           name: nom,
           email: email,
-          phone: telefon,
-          message: messageWithInfo,
-          title: `${nom} - Contacte OM Ioga`,
-          trial_class: templateParams.trial_class,
+          message: completeInfo,
         };
         return emailjs.send('service_6mo98ao', 'template_zszdxdl', contactParams);
       })

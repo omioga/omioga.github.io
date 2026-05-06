@@ -884,10 +884,11 @@ function buildContacte() {
       .then(() => {
         // Enviar missatge de contacte al propietari
         const contactParams = {
-          from_name: nom,
-          from_email: email,
+          name: nom,
+          email: email,
           phone: form.querySelector('#telefon')?.value.trim() || 'No indicat',
           message: missatge,
+          title: `${nom} - Contacte`,
           trial_class: templateParams.trial_class,
         };
         return emailjs.send('service_6mo98ao', 'template_zszdxdl', contactParams);

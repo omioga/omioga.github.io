@@ -60,7 +60,7 @@
         "pretitle": "Benvingut a",
         "title": "OM Ioga",
         "subtitle": "Cos · Ment · Respiració",
-        "description": "Un espai de calma i connexió al cor d'Igualada. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
+        "description": "Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
         "cta_primary": { "label": "Descobreix les classes", "href": "classes.html" },
         "cta_secondary": { "label": "Primera classe gratuïta", "href": "contacte.html" }
       },
@@ -87,8 +87,8 @@
         }
       ],
       "quote": {
-        "text": "El ioga no és una pràctica que fas. És una manera de viure.",
-        "attribution": "Filosofia del ioga"
+        "text": "yogascittavrttinirodhah, "El ioga [és] el control dels processos o activitats de la consciència"",
+        "attribution": "Yogasutra de Patañjali, I.2"
       },
       "cta_section": {
         "title": "Comença amb una classe de prova gratuïta",
@@ -118,10 +118,10 @@
       "bio": {
         "paragraphs": [
           "Amb 18 anys vaig decidir estudiar química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
-          "Des dels 3 anys que feia dansa clàssica, contemporània, jazz... i amb 19 anys vaig descobrir el ioga. Des del principi que em va agradar. Era una altra manera de treballar amb el cos, però hi havia alguna cosa més. Una sensació de benestar diferent al què sentia quan ballava. En el moment de no saber què fer amb la meva vida professional, aquest amor pel ioga em va portar a formar-me com a professora. Inicialment vaig compaginar la feina de química amb classes de ioga, però ràpidament vaig decidir dedicar-m'hi completament.",
-          "Des del 2013, el ioga es va convertir en la meva professió principal. Vaig estar donant classes en diferents espais fins que, al juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
-          "Em sento molt afortunada de poder compartir els beneficis del ioga a nivell físic, mental, emocional i energètic, així com la seva filosofia de vida, que ajuda a viure amb més calma i equilibri.",
-          "L'aprenentatge mai acaba, així que continuo formant-me constantment amb professors com Tomàs Zorzo. I encuriosida per entendre directament els textos de la filosfia del ioga,  al 2024 vaig iniciar estudis de sànscrit a la UB que mantinc actius."
+          "Des dels 3 anys que feia dansa clàssica, contemporània, jazz... i amb 19 anys vaig descobrir el ioga. Des del principi que em va agradar. Era una altra manera de treballar amb el cos, però hi havia alguna cosa més. Una sensació de benestar diferent al què sentia quan ballava. En el moment de no saber què fer amb la meva vida professional, aquest amor pel ioga em va portar a formar-me com a professora. Inicialment vaig compaginar la feina de química amb classes de ioga, però al cap d'un any vaig decidir dedicar-m'hi completament.",
+          "Des del 2013, el ioga es va convertir en la meva professió. Vaig estar donant classes en diferents espais fins que, al juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
+          "Em sento molt afortunada de poder compartir els beneficis del ioga a nivell físic, mental, emocional i també energètic, així com la seva filosofia de vida, que ajuda a viure amb més calma i tranquil·litat.",
+          "L'aprenentatge mai acaba, així que continuo formant-me amb professors com Tomás Zorzo. I encuriosida per entendre directament els textos de la filosfia del ioga,  al 2024 vaig iniciar estudis de sànscrit a la UB que mantinc actius."
         ]
       },
       "milestones": [],
@@ -165,8 +165,8 @@
       },
       "origin": {
         "title": "Krishnamacharya: el mestre dels mestres",
-        "text": "Krishnamacharya es pot considerar el pare del ioga modern. Una de les seves grans aportacions va ser la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
-        "highlight": "A les classes dono molta importància a la respiració conscient, suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
+        "text": "Krishnamacharya es pot considerar el pare del ioga modern. Dues de les seves grans aportacions va ser la individualització en la pràctica de ioga, ja que cadascú té unes característiques i unes necessitats específiques. I l'altra la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
+        "highlight": "A les classes dono molta importància a la respiració conscient. Que sigui suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
       "styles": [],
       "breath": {

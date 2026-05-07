@@ -827,9 +827,13 @@ function buildContacte() {
 
         <div class="map-container reveal">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.5!2d1.5870!3d41.5774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a47a6d8a8a8a8d%3A0x1a1a1a1a1a1a1a1a!2sCarrer%20de%20les%20Garden%C3%A8nies%2C%2020%2C%2008700%20Igualada!5e0!3m2!1sca!2ses!4v1700000000000!5m2!1sca!2ses"
-            width="100%" height="360" style="border:0;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.1558731078867!2d1.6257164281351808!3d41.58066093257967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a46906e610f471%3A0xb78510dcf5bc2fcb!2sOM%20Ioga!5e0!3m2!1ses!2ses!4v1778142420718!5m2!1ses!2ses"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
             title="Mapa OM Ioga - Carrer de les Gardènies 20, Igualada">
           </iframe>
         </div>

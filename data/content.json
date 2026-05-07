@@ -205,25 +205,25 @@
           "Les classes estan pensades per adaptar-se a cada persona, independentment del seu nivell, experiència o estat físic.",
           "Cada postura té diferents variants per tal que cadascú pugui trobar la seva opció segons el moment: si és principiant, si té alguna lesió o segons el seu nivell d'energia.",
           "El ioga no és competitiu. És una pràctica individual de connexió amb un mateix, tot i realitzar-se en grup. És fonamental respectar el propi cos i adaptar les postures a les necessitats personals per evitar lesions.",
-          "L'objectiu principal és respirar de manera conscient i sortir de la sessió en un millor estat que en entrar-hi."
+          "L'objectiu principal és respirar de forma conscient i sortir de la sessió en un millor estat que com s'hi ha entrat."
         ]
       },
       "features": [
-        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció autènticament personalitzada." },
+        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció personalitzada." },
         { "title": "Tots els nivells",      "text": "Principiants, intermedis i avançats. Les variants permeten que tothom treballi al seu nivell." },
-        { "title": "Pranayama",             "text": "Control de la respiració integrat a cada sessió per calmar el sistema nerviós." },
-        { "title": "Meditació",             "text": "Moment de silenci i presència al final de cada classe per integrar la pràctica." },
-        { "title": "Sense competició",      "text": "Cada cos és diferent. Aquí treballem cap a dins, no cap als altres." },
-        { "title": "Classe de prova",       "text": "Primera classe totalment gratuïta. Sense compromís, sense pressions." }
+        { "title": "Respiració conscient",  "text": "Regulem la respiració durant tota la sessió per calmar i equilibrar el sistema nerviós, així com per calmar la ment." },
+        { "title": "",                      "text": "" },
+        { "title": "Observació",            "text": "Aprenem a observar i a sentir les sensacions del cos i agafem més consciència corporal." },
+        { "title": "",                      "text": "." }
       ],
       "structure": {
         "title": "Estructura d'una sessió",
         "steps": [
-          { "num": "01", "title": "Arribada i centrat",    "text": "Moments inicials de quietud per desconnectar del dia i connectar amb la respiració." },
-          { "num": "02", "title": "Escalfament",           "text": "Moviments suaus per preparar les articulacions i despertar el cos progressivament." },
-          { "num": "03", "title": "Postures (asana)",      "text": "Seqüència de postures amb variants, adaptades al grup i al moment." },
-          { "num": "04", "title": "Pranayama",             "text": "Tècniques de respiració conscient per regular el sistema nerviós." },
-          { "num": "05", "title": "Savasana",              "text": "Relaxació profunda per integrar tots els beneficis de la sessió." }
+          { "num": "01", "title": "",            "text": "" },
+          { "num": "02", "title": "t",           "text": "" },
+          { "num": "03", "title": "",             "text": "." },
+          { "num": "04", "title": "",             "text": "." },
+          { "num": "05", "title": "",              "text": "." }
         ]
       }
     },
@@ -239,7 +239,7 @@
       },
       "meta": {
         "title": "Horaris | OM Ioga",
-        "description": "Consulta els horaris de les classes de ioga a Igualada."
+        "description": "Consulta els horaris de les classes de ioga."
       },
       "hero": {
         "pretitle": "Organitza't",

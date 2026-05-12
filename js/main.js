@@ -140,6 +140,11 @@ function buildFooter() {
           <a href="condicions.html">Condicions</a>
           <a href="contacte.html">Classe gratuïta</a>
         </div>
+        <div class="footer-nav">
+          <h5>${DATA.site.footer.legal_label}</h5>
+          <a href="politica-privacitat.html">Política de Privacitat</a>
+          <a href="condicions.html">Condicions Generals</a>
+        </div>
       </div>
       <div class="footer-bottom">
         <span>${ft.copy}</span>
@@ -160,6 +165,7 @@ function buildPage() {
     case 'preus': buildPreus(); break;
     case 'condicions': buildCondicions(); break;
     case 'contacte': buildContacte(); break;
+    case 'politica-privacitat': buildPoliticaPrivacitat(); break;
   }
   updateDocMeta();
 }
@@ -299,18 +305,21 @@ function buildQuiSoc() {
 
     <section>
       <div class="container">
-        <div class="bio-split">
-          ${(() => {
-      const gallery = p.images.gallery || [];
-      const paragraphs = p.bio.paragraphs || [];
-      const maxLen = Math.max(paragraphs.length, gallery.length);
-      let html = '';
-      for (let i = 0; i < maxLen; i++) {
-        if (paragraphs[i]) html += `<p class="bio-item bio-item--text reveal stagger-${Math.min(i + 1, 5)}">${paragraphs[i]}</p>`;
-        if (gallery[i]) html += `<img src="${gallery[i]}" alt="Foto ${i + 1}" class="bio-item bio-item--img">`;
-      }
-      return html;
-    })()}
+        <div class="intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+          <div>
+            <span class="pretitle reveal">La professora</span>
+            <h2 class="reveal stagger-1" style="margin-bottom: 1.5rem;">${p.hero.title}</h2>
+            ${p.bio.paragraphs.map((par, i) => `
+              <p class="reveal stagger-${Math.min(i + 1, 5)}" style="margin-bottom: 0.8rem; font-size: 1rem;">${par}</p>
+            `).join('')}
+          </div>
+          <div class="reveal-right" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-content: start;">
+            ${p.images.gallery.slice(0, 2).map((img, i) => `
+              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: 4/3;">
+                <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            `).join('')}
+          </div>
         </div>
       </div>
     </section>
@@ -432,16 +441,6 @@ function buildClasses() {
     </div>
   `).join('');
 
-  const stepsHtml = p.structure.steps.map((s, i) => `
-    <div class="step-item reveal stagger-${i + 1}">
-      <div class="step-num">${s.num}</div>
-      <div class="step-content">
-        <h4>${s.title}</h4>
-        <p>${s.text}</p>
-      </div>
-    </div>
-  `).join('');
-
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
       <img src="${p.images.hero}" alt="" class="hero-bg-image">
@@ -454,18 +453,18 @@ function buildClasses() {
 
     <section>
       <div class="container">
-        <div class="intro-grid classes-layout" style="flex-direction: row-reverse;">
-          <div>
+        <div class="intro-grid classes-layout">
+          <div style="flex: 1;">
             <span class="pretitle reveal">La pràctica</span>
-            <h2 class="reveal stagger-1" style="margin-bottom:2rem;">${p.description.title}</h2>
+            <h2 class="reveal stagger-1" style="margin-bottom:1.5rem;">${p.description.title}</h2>
             ${p.description.paragraphs.map((par, i) => `
-              <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.02rem;">${par}</p>
+              <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem;">${par}</p>
             `).join('')}
           </div>
-          <div class="reveal-right" style="display:flex;justify-content:flex-start;align-items:flex-start; flex-direction: column; gap: 2rem;">
-            ${p.images.gallery.slice(0, 2).map((img, i) => `
-              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%;">
-                <img src="${img}" alt="Foto classe ${i + 1}" style="width: 100%; height: auto; object-fit: cover;">
+          <div class="reveal-right" style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-content: start;">
+            ${p.images.gallery.slice(0, 3).map((img, i) => `
+              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: 1;">
+                <img src="${img}" alt="Foto classe ${i + 1}" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             `).join('')}
           </div>
@@ -483,28 +482,6 @@ function buildClasses() {
         <div class="features-grid">
           ${featuresHtml}
         </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-header">
-          <span class="pretitle reveal">Com funciona</span>
-          <h2 class="reveal stagger-1">${p.structure.title}</h2>
-          <span class="divider reveal stagger-2"></span>
-        </div>
-        <div class="steps-list">
-          ${stepsHtml}
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <span class="pretitle reveal">Sense compromís</span>
-        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2">Vine a conèixer el centre i la teva professora. Sense pressió, sense obligació.</p>
-        <a href="contacte.html" class="btn btn-gold reveal stagger-3">Reserva ara</a>
       </div>
     </section>
   `;
@@ -826,16 +803,7 @@ function buildContacte() {
         </div>
 
         <div class="map-container reveal">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.1558731078867!2d1.6257164281351808!3d41.58066093257967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a46906e610f471%3A0xb78510dcf5bc2fcb!2sOM%20Ioga!5e0!3m2!1ses!2ses!4v1778142420718!5m2!1ses!2ses"
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa OM Ioga - Carrer de les Gardènies 20, Igualada">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4220.684078064807!2d1.6233069312679351!3d41.58062021065152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a46906e610f471%3A0xb78510dcf5bc2fcb!2sOM%20Ioga!5e0!3m2!1sca!2ses!4v1778142754192!5m2!1sca!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -935,6 +903,143 @@ ${missatge}
         errorBox.style.display = 'flex';
       });
   });
+}
+
+/* ═══════════════════════════════════════════
+   POLITICA PRIVACITAT
+═══════════════════════════════════════════ */
+function buildPoliticaPrivacitat() {
+  const p = DATA.pages['politica-privacitat'];
+  const main = document.getElementById('main');
+  if (!main) return;
+
+  main.innerHTML = `
+    <section class="page-hero" aria-label="${p.hero.title}">
+      <div class="hero-bg-image"></div>
+      <div class="container">
+        <span class="pretitle reveal">${p.hero.pretitle}</span>
+        <h1 class="reveal stagger-1">${p.hero.title}</h1>
+        <span class="divider reveal stagger-2"></span>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <h2>Informació sobre la protecció de dades</h2>
+      
+      <h3>1. Responsable del tractament</h3>
+      <div class="legal-contact">
+        <p><strong>OM Ioga</strong></p>
+        <p>Carrer de les Gardènies, 20, baixos</p>
+        <p>08700 Igualada, Barcelona</p>
+        <p><strong>omiogaigualada@gmail.com</strong></p>
+        <p><strong>623 01 39 35</strong></p>
+      </div>
+
+      <h3>2. Què és aquesta política de privacitat?</h3>
+      <p>Aquesta política explica com <strong>OM Ioga</strong> recull, usa i protegeix les teves dades personals quan utilitzes el nostre web, formulari de contacte o quan t'inscrius a les nostres classes.</p>
+
+      <h3>3. Quines dades recollim?</h3>
+      <p>A través del formulari de contacte i inscripció recollim:</p>
+      <ul>
+        <li class="icon-item" style="list-style: none;"><strong>Dades d'identificació:</strong> nom complet, correu electrònic, telèfon</li>
+        <li class="icon-item" style="list-style: none;"><strong>Informació de la classe:</strong> si t'interessa la classe de prova, preferències d'horari</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dades de salut:</strong> si comuniques lesions, condicions mèdiques o embaràs (de manera voluntària)</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dades de pagament:</strong> informació necessària per processar les teves quotes mensuals</li>
+      </ul>
+
+      <h3>4. Base legal del tractament</h3>
+      <p>El tractament de les teves dades es basa en:</p>
+      <ul>
+        <li class="icon-item" style="list-style: none;"><strong>Consentiment:</strong> quan omplies el formulari de contacte</li>
+        <li class="icon-item" style="list-style: none;"><strong>Execució d'un contracte:</strong> quan t'inscrius a les classes</li>
+        <li class="icon-item" style="list-style: none;"><strong>Obligacions legals:</strong> compliment de normativa fiscal i de seguretat social</li>
+        <li class="icon-item" style="list-style: none;"><strong>Interessos legítims:</strong> comunicacions de novetats i promocions (amb la teva autorització)</li>
+      </ul>
+
+      <h3>5. Com utilitzem les teves dades?</h3>
+      <p>Les teves dades personals s'utilitzen per a:</p>
+      <ul>
+        <li>Respondre les teves consultes i gestionar les teves reserves</li>
+        <li>Administrar la teva inscripció i seguiment de classes</li>
+        <li>Processar els pagaments de les quotes</li>
+        <li>Comunicar-te sobre canvis d'horaris, novetats i promocions (només si ho has autoritzat)</li>
+        <li>Complir amb obligacions legals i fiscals</li>
+        <li>Protegir els drets i la seguretat del centre i dels participants</li>
+      </ul>
+
+      <h3>6. Qui tindrà accés a les teves dades?</h3>
+      <p>Les teves dades personals podran ser compartides amb:</p>
+      <ul>
+        <li class="icon-item" style="list-style: none;"><strong>Plataforma de pagament:</strong> per processar transaccions de forma segura</li>
+        <li class="icon-item" style="list-style: none;"><strong>Serveis de correu electrònic:</strong> per comunicacions</li>
+        <li class="icon-item" style="list-style: none;"><strong>Administració pública:</strong> quan la llei ho requereixi</li>
+      </ul>
+      <p style="background: #fff8f0; padding: 1rem; border-radius: 4px; border-left: 4px solid #c4a87e;">
+        ✓ En cap cas venderem ni cedirem les teves dades a tercers sense la teva autorització explícita.
+      </p>
+
+      <h3>7. Quanto de temps guardem les teves dades?</h3>
+      <p>Les dades es guardaran durant el temps que sigui necessari per:</p>
+      <ul>
+        <li class="icon-item" style="list-style: none;"><strong>Executar els contractes de classe:</strong> mentre estiguis inscrit al centre</li>
+        <li class="icon-item" style="list-style: none;"><strong>Complir obligacions legals:</strong> fins a 6 anys (requisit fiscal i de seguretat social)</li>
+        <li class="icon-item" style="list-style: none;"><strong>Comunicacions:</strong> fins que demansis deixar de rebre-les</li>
+      </ul>
+
+      <h3>8. Els teus drets</h3>
+      <p>Tens els següents drets sobre les teves dades personals:</p>
+      <ul>
+        <li class="icon-item" style="list-style: none;"><strong>Dret d'accés:</strong> saber quines dades tenim de tu</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dret de rectificació:</strong> corregir dades incorrectes</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dret de supressió:</strong> demanar que esborrem les teves dades (si no hi ha obligació legal de mantenir-les)</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dret de limitació:</strong> demanar que restriccionem l'ús de les teves dades</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dret de portabilitat:</strong> rebre les teves dades en format estructurat</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dret d'oposició:</strong> refusar el tractament per a fins no essencials</li>
+        <li class="icon-item" style="list-style: none;"><strong>Dret a retirada del consentiment:</strong> en qualsevol moment sense penalització</li>
+      </ul>
+      <p style="background: #fff8f0; padding: 1rem; border-radius: 4px; border-left: 4px solid #c4a87e; margin-top: 1.5rem;">
+        <strong>Per exercir aquests drets,</strong> contacta'ns a <strong>omiogaigualada@gmail.com</strong> o al telèfon <strong>623 01 39 35</strong>
+      </p>
+
+      <h3>9. Seguretat de les dades</h3>
+      <p>Implementem mesures tècniques i organitzatives per protegir les teves dades:</p>
+      <ul>
+        <li>Encriptació de dades sensibles</li>
+        <li>Accés restringit només al personal necessari</li>
+        <li>Còpies de seguretat regulars</li>
+        <li>Protecció contra ciberatacs</li>
+      </ul>
+
+      <h3>10. Cookies i rastreig</h3>
+      <p>El nostre web utilitza <strong>cookies tècniques necessàries</strong> pel funcionament bàsic. <strong>No fem rastreig de comportament ni publicitat personalitzada.</strong></p>
+
+      <h3>11. Dades de menors</h3>
+      <p>Si ets menor de 16 anys, necessitem el consentiment del teu tutor legal. Si descobrim que hem recollit dades d'un menor sense aquest consentiment, les esborrem immediatament.</p>
+
+      <h3>12. Reclamacions</h3>
+      <p>Si creus que hem violat els teus drets de privacitat, pots presentar una reclamació a:</p>
+      <ul>
+        <li><strong>Autoritat Catalana de Protecció de Dades (AAPD)</strong> - www.apdcat.cat</li>
+        <li><strong>Autoritat Nacional (AEPD)</strong> - www.aepd.es</li>
+      </ul>
+
+      <h3>13. Canvis en aquesta política</h3>
+      <p>Ens reservem el dret de modificar aquesta política de privacitat. Els canvis seran efectives quan es publiquin en aquesta pàgina. T'avisarem si hi ha canvis materials que afectin els teus drets.</p>
+
+      <h3>14. Contact per a dubtes</h3>
+      <div class="legal-contact">
+        <p>Per a qualsevol dubte sobre aquesta política o per exercir els teus drets:</p>
+        <p><strong>OM Ioga</strong></p>
+        <p>omiogaigualada@gmail.com</p>
+        <p>623 01 39 35</p>
+        <p>Carrer de les Gardènies, 20, baixos - 08700 Igualada, Barcelona</p>
+      </div>
+
+      <div class="legal-update">
+        <strong>Última actualització:</strong> 7 de maig de 2026
+      </div>
+    </section>
+  `;
 }
 
 /* ═══════════════════════════════════════════

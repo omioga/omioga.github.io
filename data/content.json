@@ -45,7 +45,8 @@
       "tagline": "Troba l'equilibri. Descobreix la calma.",
       "copy": "© 2025 OM Ioga · Igualada",
       "nav_label": "Navegació",
-      "centre_label": "El centre"
+      "centre_label": "El centre",
+      "legal_label": "Legal"
     }
   },
 
@@ -60,14 +61,14 @@
         "pretitle": "Benvingut a",
         "title": "OM Ioga",
         "subtitle": "Cos · Ment · Respiració",
-        "description": "Un espai de calma i connexió al cor d'Igualada. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
+        "description": "Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
         "cta_primary": { "label": "Descobreix les classes", "href": "classes.html" },
         "cta_secondary": { "label": "Primera classe gratuïta", "href": "contacte.html" }
       },
       "intro": {
         "title": "El ioga és per a tothom",
         "text": "Independentment del teu nivell, edat o condició física. Cada postura s'adapta a tu, no tu a la postura. Fent aquella opció que et demani el cos. Escolatant-lo.",
-        "highlight": "Grups de màxim 12 persones per a una atenció autènticament personalitzada."
+        "highlight": "Grups de màxim 12 persones per a una atenció personalitzada."
       },
       "pillars": [
         {
@@ -87,8 +88,8 @@
         }
       ],
       "quote": {
-        "text": "El ioga no és una pràctica que fas. És una manera de viure.",
-        "attribution": "Filosofia del ioga"
+        "text": "Yogaś citta-vṛtti-nirodhaḥ\nEl ioga és el control de les fluctuacions de la consciència.",
+        "attribution": "— Yoga Sūtra I.2"
       },
       "cta_section": {
         "title": "Comença amb una classe de prova gratuïta",
@@ -103,8 +104,7 @@
         "middle": "assets/images/bol.jpg",
         "gallery": [
           "assets/images/quisoc2.jpg",
-          "assets/images/entrada.jpg",
-          "assets/images/quisoc-3.jpg"
+          "assets/images/entrada.jpg"
         ]
       },
       "meta": {
@@ -117,14 +117,13 @@
       },
       "bio": {
         "paragraphs": [
-          "Amb 18 anys vaig decidir estudiar química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
-          "Des dels 3 anys que feia dansa clàssica, contemporània, jazz... i amb 19 anys vaig descobrir el ioga. Des del principi que em va agradar. Era una altra manera de treballar amb el cos, però hi havia alguna cosa més. Una sensació de benestar diferent al què sentia quan ballava. En el moment de no saber què fer amb la meva vida professional, aquest amor pel ioga em va portar a formar-me com a professora. Inicialment vaig compaginar la feina de química amb classes de ioga, però ràpidament vaig decidir dedicar-m'hi completament.",
-          "Des del 2013, el ioga es va convertir en la meva professió principal. Vaig estar donant classes en diferents espais fins que, al juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
-          "Em sento molt afortunada de poder compartir els beneficis del ioga a nivell físic, mental, emocional i energètic, així com la seva filosofia de vida, que ajuda a viure amb més calma i equilibri.",
-          "L'aprenentatge mai acaba, així que continuo formant-me constantment amb professors com Tomàs Zorzo. I encuriosida per entendre directament els textos de la filosfia del ioga,  al 2024 vaig iniciar estudis de sànscrit a la UB que mantinc actius."
+          "Amb 18 anys vaig estudiar química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
+          "Tota la vida he estat molt sensibilitzada amb el moviment del cos. Amb 3 anys ja ballava. Vaig fer dansa clàssica, dansa contemporània, jazz, entre d'altres. Als 19 anys vaig fer la meva primera classe de ioga i em va encantar. Era una altra manera de treballar amb el cos. Hi havia una sensació de benestar diferent al què sentia quan ballava. Aquest amor pel ioga em va portar a formar-me com a professora. Vaig estar un any compaginant la feina de química amb les classes de ioga, i finalment vaig decidir dedicar-m'hi.",
+          "Des del 2013, el ioga es va convertir en la meva professió. Vaig estar donant classes en diferents espais fins que, al juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
+          "Em sento molt afortunada de poder compartir els beneficis del ioga amb les persones que venen a practicar. A mi m'ha ajudat, i m'ajuda molt en la meva vida. Em fa molt feliç saber que puc ajudar a les altres persones.",
+          "L'aprenentatge és continu. Des de fa anys que em segueixo formant amb professors com Tomás Zorzo. Al 2024, encuriosida per entendre directament els textos de la filosfia del ioga, vaig començar a estudiar sànscrit a la UB. Una nova manera d'ententre el ioga amb més profunditat."
         ]
       },
-      "milestones": [],
       "values": {
         "title": "La meva filosofia d'ensenyament",
         "items": [
@@ -164,15 +163,13 @@
         ]
       },
       "origin": {
-        "title": "Krishnamacharya: el mestre dels mestres",
-        "text": "Krishnamacharya es pot considerar el pare del ioga modern. Una de les seves grans aportacions va ser la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
-        "highlight": "A les classes dono molta importància a la respiració conscient, suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
+        "title": "Krisnamacharya: el mestre dels mestres",
+        "text": "Krisnamacharya es pot considerar el pare del ioga modern. Dues de les seves grans aportacions va ser la individualització en la pràctica de ioga, ja que cadascú té unes característiques i unes necessitats específiques. I l'altra la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
+        "highlight": "A les classes dono molta importància a la respiració conscient. Ha de ser suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
-      "styles": [],
       "breath": {
         "title": "Pranayama: l'art de la respiració",
-        "text": "El pranayama és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, s'augmenta l'energia vital i es prepara la ment per a la meditació.",
-        "techniques": []
+        "text": "El pranayama és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, preparant la ment per a la meditació."
       }
     },
 
@@ -202,30 +199,16 @@
       "description": {
         "title": "Pensades per a tu",
         "paragraphs": [
-          "Les classes estan pensades per adaptar-se a cada persona, independentment del seu nivell, experiència o estat físic.",
-          "Cada postura té diferents variants per tal que cadascú pugui trobar la seva opció segons el moment: si és principiant, si té alguna lesió o segons el seu nivell d'energia.",
-          "El ioga no és competitiu. És una pràctica individual de connexió amb un mateix, tot i realitzar-se en grup. És fonamental respectar el propi cos i adaptar les postures a les necessitats personals per evitar lesions.",
-          "L'objectiu principal és respirar de manera conscient i sortir de la sessió en un millor estat que en entrar-hi."
+          "Les classes s'adapten a cada persona, independentment del seu nivell, experiència o estat físic. Cada postura té variants perquè cadascú trobi la seva opció.",
+          "El ioga no és competitiu. Es tracta de respectar el teu cos i trobar la teva connexió interior. L'objectiu és respirar de forma conscient i sortir de la sessió en millor estat."
         ]
       },
       "features": [
-        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció autènticament personalitzada." },
+        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció personalitzada." },
         { "title": "Tots els nivells",      "text": "Principiants, intermedis i avançats. Les variants permeten que tothom treballi al seu nivell." },
-        { "title": "Pranayama",             "text": "Control de la respiració integrat a cada sessió per calmar el sistema nerviós." },
-        { "title": "Meditació",             "text": "Moment de silenci i presència al final de cada classe per integrar la pràctica." },
-        { "title": "Sense competició",      "text": "Cada cos és diferent. Aquí treballem cap a dins, no cap als altres." },
-        { "title": "Classe de prova",       "text": "Primera classe totalment gratuïta. Sense compromís, sense pressions." }
-      ],
-      "structure": {
-        "title": "Estructura d'una sessió",
-        "steps": [
-          { "num": "01", "title": "Arribada i centrat",    "text": "Moments inicials de quietud per desconnectar del dia i connectar amb la respiració." },
-          { "num": "02", "title": "Escalfament",           "text": "Moviments suaus per preparar les articulacions i despertar el cos progressivament." },
-          { "num": "03", "title": "Postures (asana)",      "text": "Seqüència de postures amb variants, adaptades al grup i al moment." },
-          { "num": "04", "title": "Pranayama",             "text": "Tècniques de respiració conscient per regular el sistema nerviós." },
-          { "num": "05", "title": "Savasana",              "text": "Relaxació profunda per integrar tots els beneficis de la sessió." }
-        ]
-      }
+        { "title": "Respiració conscient",  "text": "Regulem la respiració durant tota la sessió per calmar i equilibrar el sistema nerviós, així com per calmar la ment." },
+        { "title": "Observació",            "text": "Aprenem a observar i a sentir les sensacions del cos i agafem més consciència corporal." }
+      ]
     },
 
     "horaris": {
@@ -239,7 +222,7 @@
       },
       "meta": {
         "title": "Horaris | OM Ioga",
-        "description": "Consulta els horaris de les classes de ioga a Igualada."
+        "description": "Consulta els horaris de les classes de ioga."
       },
       "hero": {
         "pretitle": "Organitza't",
@@ -319,9 +302,9 @@
         ]
       },
       "single": {
-        "title": "Classe solta",
+        "title": "Una classe sola",
         "price": "15€",
-        "description": "Per a qui vol assistir de manera puntual sense compromís mensual."
+        "description": "Per a qui vol assistir de manera puntual."
       },
       "bonus": {
         "title": "Bonus trimestrals",
@@ -428,6 +411,18 @@
         "success": "Missatge enviat correctament. Et contactarem aviat.",
         "trial_label": "M'interessa la classe de prova gratuïta"
       }
+    },
+
+    "politica-privacitat": {
+      "meta": {
+        "title": "Política de Privacitat | OM Ioga",
+        "description": "Política de privacitat i tractament de dades personals d'OM Ioga."
+      },
+      "hero": {
+        "pretitle": "Informació",
+        "title": "Política de Privacitat"
+      }
     }
   }
 }
+

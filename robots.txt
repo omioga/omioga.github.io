@@ -1,0 +1,14 @@
+# OM Ioga - robots.txt
+# Política de rastreig per a motors de cerca
+
+User-agent: *
+Allow: /
+Disallow: /assets/fotosSenseUs/
+Disallow: /data/
+Disallow: /*.json
+
+# Velocitat de rastreig
+Crawl-delay: 1
+
+# Referència a sitemap
+Sitemap: https://omioga.github.io/sitemap.xml

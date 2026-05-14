@@ -169,7 +169,7 @@
         "highlight": "A les classes dono molta importància a la respiració conscient. Ha de ser suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
       "breath": {
-        "title": "Pranayama: l'art de la respiració",
+        "title": "Prāṇāyāma: l'art de la respiració",
         "text": "El prāṇāyāma és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, preparant la ment per a la meditació."
       }
     },
@@ -234,38 +234,38 @@
         {
           "day": "Dilluns",
           "slots": [
-            { "time": "10:00 – 11:30", "type": "Hatha Ioga"},
-            { "time": "18:00 – 19:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:45 – 21:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "10:00 – 11:30", "type": ""},
+            { "time": "18:00 – 19:30", "type": "", "level": "Tots els nivells" },
+            { "time": "19:45 – 21:15", "type": "", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Dimarts",
           "slots": [
-            { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:00 – 20:30", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "15:15 – 16:45", "type": "", "level": "Tots els nivells" },
+            { "time": "19:00 – 20:30", "type": "", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Dimecres",
           "slots": [
-            { "time": "08:15 – 09:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "17:30 – 19:00", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:15 – 20:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "08:15 – 09:45", "type": "", "level": "Tots els nivells" },
+            { "time": "17:30 – 19:00", "type": "", "level": "Tots els nivells" },
+            { "time": "19:15 – 20:45", "type": "", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Dijous",
           "slots": [
-            { "time": "18:00 – 19:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:45 – 21:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "18:00 – 19:30", "type": "", "level": "Tots els nivells" },
+            { "time": "19:45 – 21:15", "type": "", "level": "Tots els nivells" }
           ]
         },
         {
           "day": "Divendres",
           "slots": [
-            { "time": "08:15 – 09:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            { "time": "08:15 – 09:45", "type": "", "level": "Tots els nivells" },
+            { "time": "15:15 – 16:45", "type": "", "level": "Tots els nivells" }
           ]
         }
       ]
@@ -288,7 +288,7 @@
         "pretitle": "Transparent i flexible",
         "title": "Preus"
       },
-      "intro": "Sense matrícula. Quotes flexibles adaptades a la teva disponibilitat. Una classe de prova gratuïta per descobrir si el ioga és per a tu.",
+      "intro": "Sense matrícula. Diferents quotes adaptades a la teva disponibilitat. Una classe de prova gratuïta per descobrir si el ioga és per a tu.",
       "maintenance": {
         "title": "Quota de manteniment",
         "price": "15€",
@@ -318,7 +318,7 @@
       },
       "trial": {
         "title": "Primera classe gratuïta",
-        "text": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.",
+        "text": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe li quedarà inclosa en la mensualitat; si no, no té cap cost.",
         "cta": { "label": "Reserva la classe de prova", "href": "contacte.html" }
       }
     },
@@ -342,42 +342,43 @@
           "items": [
             "No hi ha matrícula d'inscripció.",
             "La plaça es reserva amb la primera mensualitat o bonus.",
-            "Les places són limitades (màxim 12 persones per classe).",
+            "Les places són limitades (màxim 12 persones per grup).",
             "La inscripció implica l'acceptació de les presents condicions."
           ]
         },
         {
           "title": "Pagaments",
           "items": [
-            "El pagament de les mensualitats es realitza per avançat, a principis de mes.",
+            "El pagament de les mensualitats es realitza a principis de mes.",
             "En cas de no poder assistir temporalment, es pot activar la quota de manteniment (15€) per a conservar la plaça.",
-            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat.",
+            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat, sempre hi quant hi hagi lloc al grup demanat.",
             "La classe solta (15€) es paga en el moment d'assistir."
           ]
         },
         {
           "title": "Assistència i baixes",
           "items": [
-            "En cas de no poder assistir, s'agrairà avisar amb antelació per gestionar la plaça.",
-            "Per donar de baixa al centre, cal comunicar-ho amb almenys una setmana d'antelació.",
-            "Les mensualitats no es retornen un cop iniciades, excepte en casos justificats."
+            "En cas de no poder assistir, s'agraeix, si és possible, avisar amb antelació per gestionar la plaça.",
+            "Per donar-se de baixa del centre, cal comunicar-ho amb almenys una setmana d'antelació.",
+            "Les mensualitats no es retornen."
           ]
         },
         {
           "title": "Salut i responsabilitat",
           "items": [
-            "Es recomana informar la professora de qualsevol lesió, condició mèdica o embaràs.",
+            "Es recomana informar a la professora de qualsevol lesió, condició mèdica o embaràs.",
             "El ioga és una pràctica segura quan es realitza amb atenció. Cada alumne és responsable de respectar els seus límits.",
-            "No s'aconsella practicar amb febre o en estats de salut compromesos."
+            "No s'hauria de practicar amb febre o en estats de salut compromesos."
           ]
         },
         {
           "title": "Normes de l'espai",
           "items": [
             "Cal arribar uns minuts abans de l'inici de la classe.",
+            "Si s'arriba tard us hauríeu d'esperar al banc de l'entrada fins que haguem cantat l'OM.",
             "Els mòbils s'han de silenciar i treure les vibracions durant la sessió.",
             "L'espai és un lloc de calma i respecte mutu.",
-            "El material del centre (estrilles, blocs, cinturons, mantes...) s'ha de deixar net i ordenat."
+            "El material del centre (blocs, cinturons, mantes...) s'ha de deixar net i ordenat."
           ]
         }
       ]

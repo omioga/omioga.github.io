@@ -61,7 +61,7 @@
         "pretitle": "Benvingut a",
         "title": "OM Ioga",
         "subtitle": "Cos · Ment · Respiració",
-        "description": "<i>Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.</i>",
+        "description": "Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
         "cta_primary": { "label": "Descobreix les classes", "href": "classes.html" },
         "cta_secondary": { "label": "Primera classe gratuïta", "href": "contacte.html" }
       },
@@ -79,7 +79,7 @@
         {
           "icon": "body",
           "title": "Respecte al cos",
-          "text": "Aprenem a observar i a escoltar el cos. Cada persona és diferent i cada dia també és diferent. Treballem amb diferents variants per adaptar-nos a cada situació."
+          "text": "Aprenem a observar i a escoltar el cos. Cada persona i cada dia és diferent. Treballem amb diferents variants per adaptar-nos a cada situació."
         },
         {
           "icon": "mind",
@@ -88,8 +88,8 @@
         }
       ],
       "quote": {
-        "text": "Yogaś citta-vṛtti-nirodhaḥ\n <p>El ioga és el control de les fluctuacions de la consciència.</p>",
-        "attribution": "— Yoga Sūtra I.2"
+        "text": "Yogaḥ citta-vṛtti-nirodhaḥ\n <p>El ioga és el control de les activitats de la consciència.</p>",
+        "attribution": "— Yoga Sūtra de Patañjali I.2"
       },
       "cta_section": {
         "title": "Comença amb una classe de prova gratuïta",

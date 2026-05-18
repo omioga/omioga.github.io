@@ -138,7 +138,7 @@ function buildFooter() {
           <a href="classes.html">Les classes</a>
           <a href="preus.html">Preus</a>
           <a href="condicions.html">Condicions</a>
-          <a href="contacte.html">Classe gratuïta</a>
+          <a href="preus.html#prova">Classe gratuïta</a>
         </div>
         <div class="footer-nav">
           <h5>${DATA.site.footer.legal_label}</h5>
@@ -166,6 +166,7 @@ function buildPage() {
     case 'condicions': buildCondicions(); break;
     case 'contacte': buildContacte(); break;
     case 'politica-privacitat': buildPoliticaPrivacitat(); break;
+    // activitats has its own loader in activitats.html
   }
   updateDocMeta();
 }
@@ -260,7 +261,7 @@ function buildHome() {
       <div class="container">
         <span class="quote-mark" aria-hidden="true">"</span>
         <blockquote class="reveal">
-          "${h.quote.text}"
+          ${h.quote.text}
           <cite class="quote-attribution">${h.quote.attribution}</cite>
         </blockquote>
       </div>
@@ -308,9 +309,9 @@ function buildQuiSoc() {
         <div class="intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
           <div>
             <span class="pretitle reveal">La professora</span>
-            <h2 class="reveal stagger-1" style="margin-bottom: 1.5rem;">${p.hero.title}</h2>
+            <h2 class="reveal stagger-1" style="margin-bottom: 1.5rem;">Meritxell Pipó Soler</h2>
             ${p.bio.paragraphs.map((par, i) => `
-              <p class="reveal stagger-${Math.min(i + 1, 5)}" style="margin-bottom: 0.8rem; font-size: 1rem;">${par}</p>
+              <p class="reveal stagger-${Math.min(i + 1, 5)}" style="margin-bottom: 0.8rem; font-size: 1rem; text-align: justify;">${par}</p>
             `).join('')}
           </div>
           <div class="reveal-right" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-content: start;">
@@ -339,10 +340,10 @@ function buildQuiSoc() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Benvingut</span>
-        <h2 class="reveal stagger-1">Vine a conèixer l'espai</h2>
-        <p class="reveal stagger-2">La primera classe és gratuïta i sense compromís. Descobreix si el ioga és per a tu.</p>
-        <a href="contacte.html" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
+        <span class="pretitle reveal">Comença avui</span>
+        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
+        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
   `;
@@ -391,7 +392,7 @@ function buildTipusIoga() {
           <p class="origin-highlight">${p.origin.highlight}</p>
         </div>
 
-        <div class="origin-block reveal" style="margin-top:3rem;">
+        <div class="reveal" style="margin-top:3rem;">
           <h3>${p.breath.title}</h3>
           <p>${p.breath.text}</p>
         </div>
@@ -417,9 +418,9 @@ function buildTipusIoga() {
     <section class="cta-section">
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
-        <h2 class="reveal stagger-1">Prova una classe gratuïta</h2>
-        <p class="reveal stagger-2">Ven a descobrir el ioga sense compromís. La primera classe és totalment gratuïta.</p>
-        <a href="contacte.html" class="btn btn-gold reveal stagger-3">Reserva ara</a>
+        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
+        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
   `;
@@ -484,6 +485,15 @@ function buildClasses() {
         </div>
       </div>
     </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <span class="pretitle reveal">Comença avui</span>
+        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
+        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
+      </div>
+    </section>
   `;
 }
 
@@ -506,7 +516,6 @@ function buildHoraris() {
             <div class="slot-time-badge">${slot.time}</div>
             <div class="slot-info">
               <div class="slot-type">${slot.type}</div>
-              <span class="slot-level">${slot.level}</span>
             </div>
           </div>
         `).join('')}
@@ -539,10 +548,10 @@ function buildHoraris() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Comença la teva pràctica</span>
-        <h2 class="reveal stagger-1">Reserva la teva plaça</h2>
-        <p class="reveal stagger-2">Els grups són reduïts per assegurar una experiència personalitzada. Contacta'ns per confirmar disponibilitat.</p>
-        <a href="contacte.html" class="btn btn-gold reveal stagger-3">Reserva classe gratuïta</a>
+        <span class="pretitle reveal">Comença avui</span>
+        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
+        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
   `;
@@ -636,7 +645,7 @@ function buildPreus() {
       </div>
     </section>
 
-    <section style="background: var(--white);">
+    <section id="prova" style="background: var(--white);">
       <div class="container">
         <div class="trial-offer-banner reveal">
           <div class="banner-content">
@@ -696,10 +705,10 @@ function buildCondicions() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Alguna pregunta?</span>
-        <h2 class="reveal stagger-1">Estem aquí per ajudar-te</h2>
-        <p class="reveal stagger-2">Si tens qualsevol dubte sobre les condicions o el funcionament del centre, contacta'ns.</p>
-        <a href="contacte.html" class="btn btn-gold reveal stagger-3">Contacta'ns</a>
+        <span class="pretitle reveal">Comença avui</span>
+        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
+        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
   `;
@@ -860,9 +869,9 @@ function buildContacte() {
       .then(() => {
         // 2️⃣ Enviar tota la informació completa al propietari
         const completeInfo = `
-╔═══════════════════════════════════════════╗
-║          INFORMACIÓ DE CONTACTE            ║
-╚═══════════════════════════════════════════╝
+
+          INFORMACIÓ DE CONTACTE           
+=========================================
 
 👤 NOM:
 ${nom}
@@ -1147,6 +1156,130 @@ function iconSVG(name) {
     'info': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:inline;width:16px;height:16px;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
   };
   return icons[name] || '';
+}
+
+/* ═══════════════════════════════════════════
+   ACTIVITATS
+═══════════════════════════════════════════ */
+function buildActivitats(actData) {
+  const main = document.getElementById('main');
+  if (!main) return;
+
+  if (!actData) {
+    main.innerHTML = `
+      <section class="page-hero" aria-label="Activitats">
+        <div class="container">
+          <span class="pretitle reveal">Més enllà de les classes</span>
+          <h1 class="reveal stagger-1">Activitats</h1>
+          <span class="divider reveal stagger-2"></span>
+        </div>
+      </section>
+      <section style="background: var(--white);">
+        <div class="container">
+          <div class="activitat-empty">
+            <span class="empty-icon">
+            <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="24" cy="16" rx="4" ry="7" fill="#2D5A4B"/>
+              <ellipse cx="14" cy="20" rx="3.5" ry="6.5" transform="rotate(-35 14 20)" fill="#4A8A72" opacity="0.75"/>
+              <ellipse cx="34" cy="20" rx="3.5" ry="6.5" transform="rotate(35 34 20)" fill="#4A8A72" opacity="0.75"/>
+              <ellipse cx="8" cy="26" rx="3" ry="6" transform="rotate(-55 8 26)" fill="#7AB8A0" opacity="0.5"/>
+              <ellipse cx="40" cy="26" rx="3" ry="6" transform="rotate(55 40 26)" fill="#7AB8A0" opacity="0.5"/>
+              <path d="M24 28 Q22 36 20 42" stroke="#2D5A4B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <path d="M22 36 Q16 32 18 28 Q22 32 22 36Z" fill="#4A8A72" opacity="0.6"/>
+            </svg>
+          </span>
+            <h2>Aquest mes no hi han activitats</h2>
+            <p>Properament s'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!</p>
+          </div>
+        </div>
+      </section>`;
+    return;
+  }
+
+  const a = actData.activitat_actual;
+  const hasActivity = a && a.image && a.image.trim() !== '';
+
+  const currentSection = hasActivity ? `
+    <div class="activitat-card reveal">
+      <img src="${a.image}" alt="${a.titol || 'Activitat'}">
+      <div class="activitat-info">
+        <h2>${a.titol || ''}</h2>
+        <div class="activitat-meta">
+          ${a.data  ? `<span> Dia:  <b>${a.data}</b></span>` : ''}
+          ${a.hora  ? `<span> Hora: <b>${a.hora}</b></span>` : ''}
+          ${a.lloc  ? `<span> Lloc: <b>${a.lloc}</b></span>` : ''}
+        </div>
+        ${a.descripcio ? `<p class="descripcio">${a.descripcio}</p>` : ''}
+        ${a.preu ? `<div class="activitat-preu">${a.preu}</div>` : ''}
+        ${a.cta ? `<a href="${a.cta.href}" class="btn btn-primary">${a.cta.label}</a>` : ''}
+      </div>
+    </div>
+  ` : `
+    <div class="activitat-empty">
+      <span class="empty-icon">
+        <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="24" cy="16" rx="4" ry="7" fill="#2D5A4B"/>
+          <ellipse cx="14" cy="20" rx="3.5" ry="6.5" transform="rotate(-35 14 20)" fill="#4A8A72" opacity="0.75"/>
+          <ellipse cx="34" cy="20" rx="3.5" ry="6.5" transform="rotate(35 34 20)" fill="#4A8A72" opacity="0.75"/>
+          <ellipse cx="8" cy="26" rx="3" ry="6" transform="rotate(-55 8 26)" fill="#7AB8A0" opacity="0.5"/>
+          <ellipse cx="40" cy="26" rx="3" ry="6" transform="rotate(55 40 26)" fill="#7AB8A0" opacity="0.5"/>
+          <path d="M24 28 Q22 36 20 42" stroke="#2D5A4B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <path d="M22 36 Q16 32 18 28 Q22 32 22 36Z" fill="#4A8A72" opacity="0.6"/>
+        </svg>
+      </span>
+      <h2>Aquest mes no hi han activitats</h2>
+      <p>Properament s'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!</p>
+    </div>
+  `;
+
+  const g = actData.galeria_anterior;
+  const galleryHtml = g && g.fotos && g.fotos.length > 0
+    ? `<section style="background: var(--cream-dark);">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 3rem;">
+            <span class="pretitle reveal">Memòria</span>
+            <h2 class="reveal stagger-1">${g.titol || 'Activitats anteriors'}</h2>
+            <span class="divider reveal stagger-2"></span>
+          </div>
+          <div class="activitats-gallery">
+            ${g.fotos.slice(0, 6).map((f, i) => `
+              <img src="${f.src}" alt="${f.alt || 'Activitat anterior'}" class="reveal stagger-${(i % 3) + 1}" loading="lazy">
+            `).join('')}
+          </div>
+        </div>
+      </section>`
+    : '';
+
+  main.innerHTML = `
+    <section class="page-hero" aria-label="${actData.hero?.title || 'Activitats'}">
+      <div class="container">
+        <span class="pretitle reveal">${actData.hero?.pretitle || 'Més enllà de les classes'}</span>
+        <h1 class="reveal stagger-1">${actData.hero?.title || 'Activitats'}</h1>
+        <span class="divider reveal stagger-2"></span>
+      </div>
+    </section>
+
+    <section style="background: var(--white);">
+      <div class="container">
+        ${currentSection}
+      </div>
+    </section>
+
+    ${galleryHtml}
+  `;
+
+  // Update page meta
+  if (actData.meta) {
+    if (actData.meta.title) document.title = actData.meta.title;
+    if (actData.meta.description) {
+      let m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement('meta'); m.name = 'description'; document.head.appendChild(m); }
+      m.content = actData.meta.description;
+    }
+  }
+
+  // Re-run scroll animations for new content
+  setTimeout(() => initScrollAnimations(), 100);
 }
 
 function getPillarIcon(type) {

@@ -84,7 +84,7 @@ h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); letter-spacing: -0.02em; }
 h2 { font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -0.02em; }
 h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
 h4 { font-size: 1.25rem; font-family: var(--font-body); font-weight: 500; }
-p  { font-size: 1rem; color: var(--text-light); line-height: 1.8; }
+p  { font-size: 1rem; color: var(--text-light); line-height: 1.8; text-align: justify; }
 
 .pretitle {
   padding-top: 10px;

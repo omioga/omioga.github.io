@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Activitats especials, tallers i esdeveniments a OM Ioga Igualada." />
+  <meta name="theme-color" content="#2A4130" />
+  <title>Activitats | OM Ioga</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Activitats | OM Ioga" />
+  <meta property="og:description" content="Activitats especials, tallers i esdeveniments a OM Ioga Igualada." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:locale"      content="ca_ES" />
+
+  <link rel="canonical" href="activitats.html" />
+  <link rel="icon" type="image/png" href="assets/images/logo-fondo-blanc.png">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── Activitats page styles ── */
+    .activitat-empty {
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--text-light);
+    }
+    .activitat-empty .empty-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .activitat-empty h2 {
+      font-size: 1.6rem;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .activitat-empty p {
+      max-width: 480px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .activitat-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    @media (max-width: 768px) {
+      .activitat-card { grid-template-columns: 1fr; }
+    }
+    .activitat-card img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .activitat-info {
+      padding: 2.5rem 2.5rem 2.5rem 0;
+    }
+    @media (max-width: 768px) {
+      .activitat-info { padding: 2rem; }
+    }
+    .activitat-info h2 {
+      font-size: 2rem;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .activitat-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .activitat-meta span {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .activitat-info .descripcio {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+    .activitat-preu {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 1.75rem;
+    }
+
+    /* Gallery */
+    .activitats-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .activitats-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    .activitats-gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .activitats-gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div id="page-transition" aria-hidden="true"></div>
+  <nav id="nav" role="navigation" aria-label="Navegació principal">
+    <div class="container nav-inner">
+      <a id="nav-logo" class="nav-logo" href="index.html" aria-label="OM Ioga - Inici"><img src="assets/images/omioga-logo.png" alt="OM Ioga"></a>
+      <ul id="nav-menu" class="nav-menu" role="menubar"></ul>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Obrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <main id="main" role="main"></main>
+  <footer id="footer" role="contentinfo"></footer>
+  
+  <script src="js/main.js"></script>
+  <script>
+    // Load and render activitats page from content.json
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadData();
+      buildNav();
+      buildFooter();
+      buildActivitats(DATA.pages.activitats);
+      initNav();
+      initScrollAnimations();
+      initPageTransitions();
+      document.body.style.opacity = '1';
+    });
+  </script>
+</body>
+</html>

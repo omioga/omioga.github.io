@@ -21,7 +21,6 @@
     "_IMPORTANT": "⚠️ NO BORRIS les estructures [...], {...} - només canvia el text dins de les COMETES!",
     "_AYUDA": "Si veus un text estrany i no saps on es, busca-ho amb Ctrl+F i trobaràs el lloc!"
   },
-
   "site": {
     "name": "OM Ioga",
     "tagline": "Cos. Ment. Respiració.",
@@ -33,13 +32,38 @@
       "email": "omiogaigualada@gmail.com"
     },
     "nav": [
-      { "label": "Inici",        "href": "index.html" },
-      { "label": "Qui soc",      "href": "qui-soc.html" },
-      { "label": "El ioga",      "href": "tipus-ioga.html" },
-      { "label": "Les classes",  "href": "classes.html" },
-      { "label": "Horaris",      "href": "horaris.html" },
-      { "label": "Preus",        "href": "preus.html" },
-      { "label": "Contacte",     "href": "contacte.html" }
+      {
+        "label": "Inici",
+        "href": "index.html"
+      },
+      {
+        "label": "Qui soc",
+        "href": "qui-soc.html"
+      },
+      {
+        "label": "El ioga",
+        "href": "tipus-ioga.html"
+      },
+      {
+        "label": "Les classes",
+        "href": "classes.html"
+      },
+      {
+        "label": "Horaris",
+        "href": "horaris.html"
+      },
+      {
+        "label": "Activitats",
+        "href": "activitats.html"
+      },
+      {
+        "label": "Preus",
+        "href": "preus.html"
+      },
+      {
+        "label": "Contacte",
+        "href": "contacte.html"
+      }
     ],
     "footer": {
       "tagline": "Troba l'equilibri. Descobreix la calma.",
@@ -49,9 +73,7 @@
       "legal_label": "Legal"
     }
   },
-
   "pages": {
-
     "home": {
       "images": {
         "hero": "assets/images/omioga-logo.png",
@@ -62,8 +84,14 @@
         "title": "OM Ioga",
         "subtitle": "Cos · Ment · Respiració",
         "description": "Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
-        "cta_primary": { "label": "Descobreix les classes", "href": "classes.html" },
-        "cta_secondary": { "label": "Primera classe gratuïta", "href": "contacte.html" }
+        "cta_primary": {
+          "label": "Descobreix les classes",
+          "href": "classes.html"
+        },
+        "cta_secondary": {
+          "label": "Primera classe gratuïta",
+          "href": "preus.html#prova"
+        }
       },
       "intro": {
         "title": "El ioga és per a tothom",
@@ -88,16 +116,18 @@
         }
       ],
       "quote": {
-        "text": "Yogaś citta-vṛtti-nirodhaḥ\nEl ioga és el control de les fluctuacions de la consciència.",
-        "attribution": "— Yoga Sūtra I.2"
+        "text": "'Yogaś citta-vṛtti-nirodhaḥ' <br> El ioga és el control de les fluctuacions de la consciència.",
+        "attribution": "— Yoga Sūtra de Patañjali I.2"
       },
       "cta_section": {
         "title": "Comença amb una classe de prova gratuïta",
         "text": "Sense compromís. Si decideixes continuar, la classe queda inclosa en la mensualitat.",
-        "cta": { "label": "Reserva la teva plaça", "href": "contacte.html" }
+        "cta": {
+          "label": "Reserva la teva plaça",
+          "href": "preus.html#prova"
+        }
       }
     },
-
     "qui-soc": {
       "images": {
         "hero": "assets/images/hero-quisoc.jpg",
@@ -127,13 +157,21 @@
       "values": {
         "title": "La meva filosofia d'ensenyament",
         "items": [
-          { "title": "Adaptació constant",   "text": "Cada alumne és únic. Les classes són flexibles segons el nivell, l'estat físic i l'energia del dia dels practicants." },
-          { "title": "Formació contínua",    "text": "El ioga és un camí constant. Segueixo aprenent per poder transmetre i ensenyar amb uns bons fonaments." },
-          { "title": "Espai segur",          "text": "Un ambient càlid on sentir-se còmode per explorar lliurement sense judici ni competició." }
+          {
+            "title": "Adaptació constant",
+            "text": "Cada alumne és únic. Les classes són flexibles segons el nivell, l'estat físic i l'energia del dia dels practicants."
+          },
+          {
+            "title": "Formació contínua",
+            "text": "El ioga és un camí constant. Segueixo aprenent per poder transmetre i ensenyar amb uns bons fonaments."
+          },
+          {
+            "title": "Espai segur",
+            "text": "Un ambient càlid on sentir-se còmode per explorar lliurement sense judici ni competició."
+          }
         ]
       }
     },
-
     "tipus-ioga": {
       "images": {
         "hero": "assets/images/hero-tipusioga.jpg",
@@ -163,29 +201,22 @@
         ]
       },
       "origin": {
-        "title": "Krisnamacharya: el mestre dels mestres",
-        "text": "Krisnamacharya es pot considerar el pare del ioga modern. Dues de les seves grans aportacions va ser la individualització en la pràctica de ioga, ja que cadascú té unes característiques i unes necessitats específiques. I l'altra la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
+        "title": "śri T. Kṛṣṇamacarya: el mestre dels mestres",
+        "text": "Kṛṣṇamacarya es pot considerar el pare del ioga modern. Dues de les seves grans aportacions va ser la individualització en la pràctica de ioga, ja que cadascú té unes característiques i unes necessitats específiques. I l'altra la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
         "highlight": "A les classes dono molta importància a la respiració conscient. Ha de ser suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
       "breath": {
-        "title": "Pranayama: l'art de la respiració",
+        "title": "Prāṇāyāma: l'art de la respiració",
         "text": "El pranayama és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, preparant la ment per a la meditació."
       }
     },
-
     "classes": {
       "images": {
         "hero": "assets/images/hero-classes.jpg",
         "middle": "assets/images/middle-classes.jpg",
         "gallery": [
           "assets/images/classes-1.jpg",
-          "assets/images/classes-2.jpg",
-          "assets/images/classes-3.jpg",
-          "assets/images/classes-4.jpg",
-          "assets/images/classes-5.jpg",
-          "assets/images/classes-6.jpg",
-          "assets/images/classes-7.jpg",
-          "assets/images/classes-8.jpg"
+          "assets/images/classes-2.jpg"
         ]
       },
       "meta": {
@@ -193,7 +224,7 @@
         "description": "Classes de hatha ioga a Igualada. Grups reduïts, adaptades a tots els nivells."
       },
       "hero": {
-        "pretitle": "La pràctica",
+        "pretitle": "La pràctic a",
         "title": "Les classes"
       },
       "description": {
@@ -204,13 +235,24 @@
         ]
       },
       "features": [
-        { "title": "Grups reduïts",        "text": "Màxim 12 persones per oferir una atenció personalitzada." },
-        { "title": "Tots els nivells",      "text": "Principiants, intermedis i avançats. Les variants permeten que tothom treballi al seu nivell." },
-        { "title": "Respiració conscient",  "text": "Regulem la respiració durant tota la sessió per calmar i equilibrar el sistema nerviós, així com per calmar la ment." },
-        { "title": "Observació",            "text": "Aprenem a observar i a sentir les sensacions del cos i agafem més consciència corporal." }
+        {
+          "title": "Grups reduïts",
+          "text": "Màxim 12 persones per oferir una atenció personalitzada."
+        },
+        {
+          "title": "Tots els nivells",
+          "text": "Principiants, intermedis i avançats. Les variants permeten que tothom treballi al seu nivell."
+        },
+        {
+          "title": "Respiració conscient",
+          "text": "Regulem la respiració durant tota la sessió per calmar i equilibrar el sistema nerviós, així com per calmar la ment."
+        },
+        {
+          "title": "Observació",
+          "text": "Aprenem a observar i a sentir les sensacions del cos i agafem més consciència corporal."
+        }
       ]
     },
-
     "horaris": {
       "images": {
         "hero": "assets/images/hero-horaris.jpg",
@@ -233,43 +275,90 @@
         {
           "day": "Dilluns",
           "slots": [
-            { "time": "10:00 – 11:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "18:00 – 19:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:45 – 21:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            {
+              "time": "10:00 – 11:30",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "18:00 – 19:30",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "19:45 – 21:15",
+              "type": "",
+              "level": "Tots els nivells"
+            }
           ]
         },
         {
           "day": "Dimarts",
           "slots": [
-            { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:00 – 20:30", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            {
+              "time": "15:15 – 16:45",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "19:00 – 20:30",
+              "type": " ",
+              "level": "Tots els nivells"
+            }
           ]
         },
         {
           "day": "Dimecres",
           "slots": [
-            { "time": "08:15 – 09:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "17:30 – 19:00", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:15 – 20:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            {
+              "time": "08:15 – 09:45",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "17:30 – 19:00",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "19:15 – 20:45",
+              "type": "",
+              "level": "Tots els nivells"
+            }
           ]
         },
         {
           "day": "Dijous",
           "slots": [
-            { "time": "18:00 – 19:30", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "19:45 – 21:15", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            {
+              "time": "18:00 – 19:30",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "19:45 – 21:15",
+              "type": "",
+              "level": "Tots els nivells"
+            }
           ]
         },
         {
           "day": "Divendres",
           "slots": [
-            { "time": "08:15 – 09:45", "type": "Hatha Ioga", "level": "Tots els nivells" },
-            { "time": "15:15 – 16:45", "type": "Hatha Ioga", "level": "Tots els nivells" }
+            {
+              "time": "08:15 – 09:45",
+              "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "15:15 – 16:45",
+              "type": "",
+              "level": "Tots els nivells"
+            }
           ]
         }
       ]
     },
-
     "preus": {
       "images": {
         "hero": "assets/images/hero-preus.jpg",
@@ -296,9 +385,24 @@
       "monthly": {
         "title": "Quotes mensuals",
         "plans": [
-          { "days": "1 dia / setmana",  "price": "42€", "al": "mes", "highlight": false },
-          { "days": "2 dies / setmana", "price": "63€", "al": "mes", "highlight": true  },
-          { "days": "3 dies / setmana", "price": "77€", "al": "mes", "highlight": false }
+          {
+            "days": "1 dia / setmana",
+            "price": "42€",
+            "al": "mes",
+            "highlight": false
+          },
+          {
+            "days": "2 dies / setmana",
+            "price": "63€",
+            "al": "mes",
+            "highlight": false
+          },
+          {
+            "days": "3 dies / setmana",
+            "price": "77€",
+            "al": "mes",
+            "highlight": false
+          }
         ]
       },
       "single": {
@@ -310,18 +414,29 @@
         "title": "Bonus trimestrals",
         "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos.",
         "packs": [
-          { "classes": "5 classes",  "price": "70€" },
-          { "classes": "10 classes", "price": "130€" },
-          { "classes": "15 classes", "price": "180€" }
+          {
+            "classes": "5 classes",
+            "price": "70€"
+          },
+          {
+            "classes": "10 classes",
+            "price": "130€"
+          },
+          {
+            "classes": "15 classes",
+            "price": "180€"
+          }
         ]
       },
       "trial": {
         "title": "Primera classe gratuïta",
         "text": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.",
-        "cta": { "label": "Reserva la classe de prova", "href": "contacte.html" }
+        "cta": {
+          "label": "Reserva la classe de prova",
+          "href": "contacte.html"
+        }
       }
     },
-
     "condicions": {
       "images": {
         "hero": "assets/images/hero-condicions.jpg",
@@ -381,7 +496,6 @@
         }
       ]
     },
-
     "contacte": {
       "images": {
         "hero": "assets/images/hero-contacte.jpg",
@@ -402,17 +516,37 @@
       "intro": "Té alguna pregunta? Vols reservar la teva primera classe gratuïta? Posa't en contacte amb nosaltres.",
       "form": {
         "fields": [
-          { "name": "nom",     "label": "Nom complet",       "type": "text",  "required": true  },
-          { "name": "email",   "label": "Correu electrònic", "type": "email", "required": true  },
-          { "name": "telefon", "label": "Telèfon",           "type": "tel",   "required": false },
-          { "name": "missatge","label": "Missatge",          "type": "textarea", "required": true, "placeholder": "Explica'ns el teu objectiu, el teu nivell de ioga, o qualsevol dubte que tinguis..." }
+          {
+            "name": "nom",
+            "label": "Nom complet",
+            "type": "text",
+            "required": true
+          },
+          {
+            "name": "email",
+            "label": "Correu electrònic",
+            "type": "email",
+            "required": true
+          },
+          {
+            "name": "telefon",
+            "label": "Telèfon",
+            "type": "tel",
+            "required": false
+          },
+          {
+            "name": "missatge",
+            "label": "Missatge",
+            "type": "textarea",
+            "required": true,
+            "placeholder": "Explica'ns el teu objectiu, el teu nivell de ioga, o qualsevol dubte que tinguis..."
+          }
         ],
         "cta": "Envia el missatge",
         "success": "Missatge enviat correctament. Et contactarem aviat.",
         "trial_label": "M'interessa la classe de prova gratuïta"
       }
     },
-
     "politica-privacitat": {
       "meta": {
         "title": "Política de Privacitat | OM Ioga",
@@ -422,7 +556,58 @@
         "pretitle": "Informació",
         "title": "Política de Privacitat"
       }
+    },
+    "activitats": {
+      "meta": {
+        "title": "Activitats | OM Ioga",
+        "description": "Activitats especials, tallers i esdeveniments a OM Ioga Igualada."
+      },
+      "hero": {
+        "pretitle": "Més enllà de les classes",
+        "title": "Activitats"
+      },
+      "activitat_actual": {
+        "image": null,
+        "titol": "Activitat",
+        "data": "30 de juny del 2026",
+        "hora": "Tot el dia",
+        "lloc": "OM Ioga, Igualada",
+        "descripcio": "Activitat aakdbadbasdjasd",
+        "preu": "",
+        "cta": {
+          "label": "Reserva la teva plaça",
+          "href": "contacte.html"
+        }
+      },
+      "galeria_anterior": {
+        "titol": "Activitats anteriors",
+        "fotos": [
+          {
+            "src": "assets/images/classes-1.jpg",
+            "alt": "Taller de ioga"
+          },
+          {
+            "src": "assets/images/classes-2.jpg",
+            "alt": "Activitat especial"
+          },
+          {
+            "src": "assets/images/classes-3.jpg",
+            "alt": "Sessió grupal"
+          },
+          {
+            "src": "assets/images/classes-4.jpg",
+            "alt": "Taller de respiració"
+          },
+          {
+            "src": "assets/images/centre1.jpg",
+            "alt": "El centre"
+          },
+          {
+            "src": "assets/images/centre2.jpg",
+            "alt": "Espai de ioga"
+          }
+        ]
+      }
     }
   }
 }
-

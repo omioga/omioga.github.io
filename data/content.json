@@ -161,7 +161,7 @@
           },
           {
             "title": "Formació contínua",
-            "text": "El ioga és un camí constant. Segueixo aprenent per poder transmetre i ensenyar amb uns bons fonaments."
+            "text": "El ioga és un camí constant. Segueixo practicant i estudiant per poder transmetre i ensenyar amb uns bons fonaments."
           },
           {
             "title": "Espai segur",
@@ -190,7 +190,7 @@
         "title": "L'arrel de tot",
         "paragraphs": [
           "El ioga prové de l'arrel sànscrita yuj, que significa vincular, sumar, connectar, ajuntar. Ioga bàsicament significa aplicació, execució, pràctica, mètode. És una pràctica que ens ajuda a controlar la ment, connectant cos, ment i respiració, per trobar l'equilibri, la consciència corporal i la presència en el moment actual.",
-          "El hatha ioga és la part física del ioga basada en una sèrie de postures (asana). Existeixen diferents estils com el Sivananda, l'Astanga o l'Iyengar. Les asana són essencialment les mateixes però canvia la manera de treballar-les."
+          "El hatha ioga és la part física del ioga basada en una sèrie de postures (āsana). Existeixen diferents estils com el Sivananda, l'Astanga o l'Iyengar. Les asana són essencialment les mateixes però canvia la manera de treballar-les."
         ],
         "gallery": [
           "assets/images/tree.jpg"
@@ -198,12 +198,12 @@
       },
       "origin": {
         "title": "śri T. Kṛṣṇamacarya: el mestre dels mestres",
-        "text": "Kṛṣṇamacarya es pot considerar el pare del ioga modern. Dues de les seves grans aportacions va ser la individualització en la pràctica de ioga, ja que cadascú té unes característiques i unes necessitats específiques. I l'altra la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
+        "text": "Kṛṣṇamacarya es pot considerar el pare del ioga modern. Dues de les seves grans aportacions van ser la individualització en la pràctica de ioga, ja que cadascú té unes característiques i unes necessitats específiques. I l'altra la connexió entre moviment i respiració, que permet assolir un estat de concentració, consciència corporal i calma mental.",
         "highlight": "A les classes dono molta importància a la respiració conscient. Ha de ser suau i tranquil·la, perquè la manera com respirem té un efecte sobre el sistema nerviós i sobre la nostra ment."
       },
       "breath": {
         "title": "Prāṇāyāma: l'art de la respiració",
-        "text": "El pranayama és control i expansió de la respiració. Hi ha diferents tipus de pranayama on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació.  Podem accedir al sistema nerviós calmant-lo i equilibrant-lo, preparant la ment per a la meditació."
+        "text": "El prāṇāyāma és control i expansió de la respiració. Hi ha varis tipus de prāṇāyāma on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació. Aquestes combinacions ajuden a activar, calmar i equilibrar el sistema nerviós. D'aquesta manera podem tranquil·litzar la ment, preparant-la per a la meditació, i obtenir més quietud i més claredat mental."
       }
     },
     "classes": {

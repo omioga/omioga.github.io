@@ -130,8 +130,6 @@
     },
     "qui-soc": {
       "images": {
-        "hero": "assets/images/hero-quisoc.jpg",
-        "middle": "assets/images/bol.jpg",
         "gallery": [
           "assets/images/quisoc2.jpg",
           "assets/images/entrada.jpg"
@@ -174,8 +172,6 @@
     },
     "tipus-ioga": {
       "images": {
-        "hero": "assets/images/hero-tipusioga.jpg",
-        "middle": "assets/images/middle-tipusioga.jpg",
         "gallery": [
           "assets/images/centre1.jpg",
           "assets/images/centre2.jpg",
@@ -212,10 +208,9 @@
     },
     "classes": {
       "images": {
-        "hero": "assets/images/hero-classes.jpg",
-        "middle": "assets/images/middle-classes.jpg",
+        "middle": "assets/images/classes-4.jpg",
         "gallery": [
-          "assets/images/classes-1.jpg",
+          "assets/images/classes-3.jpg",
           "assets/images/classes-2.jpg"
         ]
       },
@@ -255,11 +250,9 @@
     },
     "horaris": {
       "images": {
-        "hero": "assets/images/hero-horaris.jpg",
-        "middle": "assets/images/middle-horaris.jpg",
         "gallery": [
-          "assets/images/horaris-1.jpg",
-          "assets/images/horaris-2.jpg"
+          "assets/images/classes-6.jpg",
+          "assets/images/classes-7.jpg"
         ]
       },
       "meta": {
@@ -361,11 +354,9 @@
     },
     "preus": {
       "images": {
-        "hero": "assets/images/hero-preus.jpg",
-        "middle": "assets/images/middle-preus.jpg",
         "gallery": [
-          "assets/images/preus-1.jpg",
-          "assets/images/preus-2.jpg"
+          "assets/images/classes-8.jpg",
+          "assets/images/centre1.jpg"
         ]
       },
       "meta": {
@@ -439,8 +430,6 @@
     },
     "condicions": {
       "images": {
-        "hero": "assets/images/hero-condicions.jpg",
-        "middle": "assets/images/middle-condicions.jpg"
       },
       "meta": {
         "title": "Condicions | OM Ioga",
@@ -498,11 +487,9 @@
     },
     "contacte": {
       "images": {
-        "hero": "assets/images/hero-contacte.jpg",
-        "middle": "assets/images/middle-contacte.jpg",
         "gallery": [
-          "assets/images/contacte-1.jpg",
-          "assets/images/contacte-2.jpg"
+          "assets/images/centre1.jpg",
+          "assets/images/centre2.jpg"
         ]
       },
       "meta": {
@@ -567,7 +554,7 @@
         "title": "Activitats"
       },
       "activitat_actual": {
-        "image": null,
+        "image": "assets/images/activitat.jpg",
         "titol": "Activitat",
         "data": "30 de juny del 2026",
         "hora": "Tot el dia",

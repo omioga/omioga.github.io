@@ -462,9 +462,9 @@ function buildClasses() {
               <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem;">${par}</p>
             `).join('')}
           </div>
-          <div class="reveal-right" style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-content: start;">
+          <div class="reveal-right" style="flex: 1; display: grid; grid-template-columns: repeat(${Math.min(p.images.gallery.length, 3)}, 1fr); gap: 1.5rem; align-content: start;">
             ${p.images.gallery.slice(0, 3).map((img, i) => `
-              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: 1;">
+              <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: ${p.images.gallery.length === 2 ? '3/4' : '1'};">
                 <img src="${img}" alt="Foto classe ${i + 1}" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             `).join('')}
@@ -918,142 +918,127 @@ ${missatge}
    POLITICA PRIVACITAT
 ═══════════════════════════════════════════ */
 function buildPoliticaPrivacitat() {
-  const p = DATA.pages['politica-privacitat'];
   const main = document.getElementById('main');
   if (!main) return;
 
-  main.innerHTML = `
-    <section class="page-hero" aria-label="${p.hero.title}">
-      <div class="hero-bg-image"></div>
+  const hero = `
+    <section class="page-hero">
       <div class="container">
-        <span class="pretitle reveal">${p.hero.pretitle}</span>
-        <h1 class="reveal stagger-1">${p.hero.title}</h1>
-        <span class="divider reveal stagger-2"></span>
-      </div>
-    </section>
-
-    <section class="legal-section">
-      <h2>Informació sobre la protecció de dades</h2>
-      
-      <h3>1. Responsable del tractament</h3>
-      <div class="legal-contact">
-        <p><strong>OM Ioga</strong></p>
-        <p>Carrer de les Gardènies, 20, baixos</p>
-        <p>08700 Igualada, Barcelona</p>
-        <p><strong>omiogaigualada@gmail.com</strong></p>
-        <p><strong>623 01 39 35</strong></p>
-      </div>
-
-      <h3>2. Què és aquesta política de privacitat?</h3>
-      <p>Aquesta política explica com <strong>OM Ioga</strong> recull, usa i protegeix les teves dades personals quan utilitzes el nostre web, formulari de contacte o quan t'inscrius a les nostres classes.</p>
-
-      <h3>3. Quines dades recollim?</h3>
-      <p>A través del formulari de contacte i inscripció recollim:</p>
-      <ul>
-        <li class="icon-item" style="list-style: none;"><strong>Dades d'identificació:</strong> nom complet, correu electrònic, telèfon</li>
-        <li class="icon-item" style="list-style: none;"><strong>Informació de la classe:</strong> si t'interessa la classe de prova, preferències d'horari</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dades de salut:</strong> si comuniques lesions, condicions mèdiques o embaràs (de manera voluntària)</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dades de pagament:</strong> informació necessària per processar les teves quotes mensuals</li>
-      </ul>
-
-      <h3>4. Base legal del tractament</h3>
-      <p>El tractament de les teves dades es basa en:</p>
-      <ul>
-        <li class="icon-item" style="list-style: none;"><strong>Consentiment:</strong> quan omplies el formulari de contacte</li>
-        <li class="icon-item" style="list-style: none;"><strong>Execució d'un contracte:</strong> quan t'inscrius a les classes</li>
-        <li class="icon-item" style="list-style: none;"><strong>Obligacions legals:</strong> compliment de normativa fiscal i de seguretat social</li>
-        <li class="icon-item" style="list-style: none;"><strong>Interessos legítims:</strong> comunicacions de novetats i promocions (amb la teva autorització)</li>
-      </ul>
-
-      <h3>5. Com utilitzem les teves dades?</h3>
-      <p>Les teves dades personals s'utilitzen per a:</p>
-      <ul>
-        <li>Respondre les teves consultes i gestionar les teves reserves</li>
-        <li>Administrar la teva inscripció i seguiment de classes</li>
-        <li>Processar els pagaments de les quotes</li>
-        <li>Comunicar-te sobre canvis d'horaris, novetats i promocions (només si ho has autoritzat)</li>
-        <li>Complir amb obligacions legals i fiscals</li>
-        <li>Protegir els drets i la seguretat del centre i dels participants</li>
-      </ul>
-
-      <h3>6. Qui tindrà accés a les teves dades?</h3>
-      <p>Les teves dades personals podran ser compartides amb:</p>
-      <ul>
-        <li class="icon-item" style="list-style: none;"><strong>Plataforma de pagament:</strong> per processar transaccions de forma segura</li>
-        <li class="icon-item" style="list-style: none;"><strong>Serveis de correu electrònic:</strong> per comunicacions</li>
-        <li class="icon-item" style="list-style: none;"><strong>Administració pública:</strong> quan la llei ho requereixi</li>
-      </ul>
-      <p style="background: #fff8f0; padding: 1rem; border-radius: 4px; border-left: 4px solid #c4a87e;">
-        ✓ En cap cas venderem ni cedirem les teves dades a tercers sense la teva autorització explícita.
-      </p>
-
-      <h3>7. Quanto de temps guardem les teves dades?</h3>
-      <p>Les dades es guardaran durant el temps que sigui necessari per:</p>
-      <ul>
-        <li class="icon-item" style="list-style: none;"><strong>Executar els contractes de classe:</strong> mentre estiguis inscrit al centre</li>
-        <li class="icon-item" style="list-style: none;"><strong>Complir obligacions legals:</strong> fins a 6 anys (requisit fiscal i de seguretat social)</li>
-        <li class="icon-item" style="list-style: none;"><strong>Comunicacions:</strong> fins que demansis deixar de rebre-les</li>
-      </ul>
-
-      <h3>8. Els teus drets</h3>
-      <p>Tens els següents drets sobre les teves dades personals:</p>
-      <ul>
-        <li class="icon-item" style="list-style: none;"><strong>Dret d'accés:</strong> saber quines dades tenim de tu</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dret de rectificació:</strong> corregir dades incorrectes</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dret de supressió:</strong> demanar que esborrem les teves dades (si no hi ha obligació legal de mantenir-les)</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dret de limitació:</strong> demanar que restriccionem l'ús de les teves dades</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dret de portabilitat:</strong> rebre les teves dades en format estructurat</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dret d'oposició:</strong> refusar el tractament per a fins no essencials</li>
-        <li class="icon-item" style="list-style: none;"><strong>Dret a retirada del consentiment:</strong> en qualsevol moment sense penalització</li>
-      </ul>
-      <p style="background: #fff8f0; padding: 1rem; border-radius: 4px; border-left: 4px solid #c4a87e; margin-top: 1.5rem;">
-        <strong>Per exercir aquests drets,</strong> contacta'ns a <strong>omiogaigualada@gmail.com</strong> o al telèfon <strong>623 01 39 35</strong>
-      </p>
-
-      <h3>9. Seguretat de les dades</h3>
-      <p>Implementem mesures tècniques i organitzatives per protegir les teves dades:</p>
-      <ul>
-        <li>Encriptació de dades sensibles</li>
-        <li>Accés restringit només al personal necessari</li>
-        <li>Còpies de seguretat regulars</li>
-        <li>Protecció contra ciberatacs</li>
-      </ul>
-
-      <h3>10. Cookies i rastreig</h3>
-      <p>El nostre web utilitza <strong>cookies tècniques necessàries</strong> pel funcionament bàsic. <strong>No fem rastreig de comportament ni publicitat personalitzada.</strong></p>
-
-      <h3>11. Dades de menors</h3>
-      <p>Si ets menor de 16 anys, necessitem el consentiment del teu tutor legal. Si descobrim que hem recollit dades d'un menor sense aquest consentiment, les esborrem immediatament.</p>
-
-      <h3>12. Reclamacions</h3>
-      <p>Si creus que hem violat els teus drets de privacitat, pots presentar una reclamació a:</p>
-      <ul>
-        <li><strong>Autoritat Catalana de Protecció de Dades (AAPD)</strong> - www.apdcat.cat</li>
-        <li><strong>Autoritat Nacional (AEPD)</strong> - www.aepd.es</li>
-      </ul>
-
-      <h3>13. Canvis en aquesta política</h3>
-      <p>Ens reservem el dret de modificar aquesta política de privacitat. Els canvis seran efectives quan es publiquin en aquesta pàgina. T'avisarem si hi ha canvis materials que afectin els teus drets.</p>
-
-      <h3>14. Contact per a dubtes</h3>
-      <div class="legal-contact">
-        <p>Per a qualsevol dubte sobre aquesta política o per exercir els teus drets:</p>
-        <p><strong>OM Ioga</strong></p>
-        <p>omiogaigualada@gmail.com</p>
-        <p>623 01 39 35</p>
-        <p>Carrer de les Gardènies, 20, baixos - 08700 Igualada, Barcelona</p>
-      </div>
-
-      <div class="legal-update">
-        <strong>Última actualització:</strong> 7 de maig de 2026
+        <h1>Política de privacitat</h1>
       </div>
     </section>
   `;
-}
 
+  main.innerHTML = hero + `
+    <section class="legal-section">
+      ${generatePrivacyPolicy()}
+    </section>
+  `;
+}
 /* ═══════════════════════════════════════════
    SCROLL ANIMATIONS
 ═══════════════════════════════════════════ */
+function detectWebsiteFeatures() {
+  return {
+    hasContactForm: !!document.querySelector('form'),
+    hasEmail: document.querySelectorAll('input[type="email"]').length > 0,
+    hasPhone: document.body.innerText.includes("tel") || document.body.innerText.includes("623"),
+    hasAnalytics: !!window.gtag || !!window.ga,
+    hasCookies: document.cookie.length > 0,
+    hasPayments: document.body.innerText.toLowerCase().includes("pagament") ||
+                 document.body.innerText.toLowerCase().includes("stripe") ||
+                 document.body.innerText.toLowerCase().includes("paypal"),
+    hasNewsletter: document.querySelector('input[type="email"][name*="newsletter"]') !== null
+  };
+}
+
+function generatePrivacyPolicy() {
+  const f = detectWebsiteFeatures();
+
+  const blocks = [];
+
+  // HEADER
+  blocks.push(`
+    <h2>Política de privacitat</h2>
+    <p><strong>OM Ioga</strong></p>
+  `);
+
+  // BASE LEGAL
+  blocks.push(`
+    <h3>1. Finalitat del tractament</h3>
+    <p>Utilitzem les dades personals exclusivament per gestionar la comunicació amb els usuaris i els serveis sol·licitats.</p>
+  `);
+
+  // FORMULARI
+  if (f.hasContactForm) {
+    blocks.push(`
+      <h3>2. Formularis de contacte</h3>
+      <p>Recollim les dades enviades a través dels formularis per poder respondre consultes i gestionar sol·licituds.</p>
+    `);
+  }
+
+  // EMAIL
+  if (f.hasEmail) {
+    blocks.push(`
+      <h3>3. Correu electrònic</h3>
+      <p>Les dades introduïdes en camps de correu s'utilitzen només per respondre missatges o gestionar reserves.</p>
+    `);
+  }
+
+  // TELÈFON
+  if (f.hasPhone) {
+    blocks.push(`
+      <h3>4. Telèfon de contacte</h3>
+      <p>El telèfon només s'utilitza per comunicacions relacionades amb el servei.</p>
+    `);
+  }
+
+  // NEWSLETTER
+  if (f.hasNewsletter) {
+    blocks.push(`
+      <h3>5. Comunicacions comercials</h3>
+      <p>Només enviem informació si l'usuari ha donat consentiment explícit.</p>
+    `);
+  }
+
+  // ANALYTICS
+  if (f.hasAnalytics) {
+    blocks.push(`
+      <h3>6. Analítica</h3>
+      <p>Aquest web utilitza eines d'anàlisi per entendre l'ús del lloc i millorar-lo.</p>
+    `);
+  }
+
+  // COOKIES
+  if (f.hasCookies) {
+    blocks.push(`
+      <h3>7. Cookies</h3>
+      <p>El web utilitza cookies tècniques i, si escau, analítiques.</p>
+    `);
+  } else {
+    blocks.push(`
+      <h3>7. Cookies</h3>
+      <p>Només utilitzem cookies tècniques necessàries pel funcionament del lloc.</p>
+    `);
+  }
+
+  // SEGURETAT (sempre safe, però no exagerat)
+  blocks.push(`
+    <h3>8. Conservació de dades</h3>
+    <p>Les dades es conserven només el temps necessari per complir la finalitat per la qual es van recollir.</p>
+
+    <h3>9. Drets dels usuaris</h3>
+    <p>Pots exercir els teus drets escrivint a: omiogaigualada@gmail.com</p>
+
+    <h3>10. Contacte</h3>
+    <p>OM Ioga - Igualada</p>
+
+    <p><strong>Última actualització:</strong> ${new Date().toLocaleDateString('ca-ES')}</p>
+  `);
+
+  return blocks.join("\n");
+}
+
 function initScrollAnimations() {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

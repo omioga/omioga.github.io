@@ -107,7 +107,7 @@
         {
           "icon": "body",
           "title": "Respecte al cos",
-          "text": "Aprenem a observar i a escoltar el cos. Cada persona és diferent i cada dia també és diferent. Treballem amb diferents variants per adaptar-nos a cada situació."
+          "text": "Aprenem a observar i a escoltar el cos. Cada persona i cada dia és diferent. Treballem amb diferents variants per adaptar-nos a cada situació."
         },
         {
           "icon": "mind",
@@ -146,7 +146,7 @@
       "bio": {
         "paragraphs": [
           "Amb 18 anys vaig estudiar química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
-          "Tota la vida he estat molt sensibilitzada amb el moviment del cos. Amb 3 anys ja ballava. Vaig fer dansa clàssica, dansa contemporània, jazz, entre d'altres. Als 19 anys vaig fer la meva primera classe de ioga i em va encantar. Era una altra manera de treballar amb el cos. Hi havia una sensació de benestar diferent al què sentia quan ballava. Després de més de 10 anys practicant, aquest amor pel ioga em va portar a formar-me com a professora. Vaig estar un any compaginant la feina de química amb les classes de ioga, i finalment vaig decidir dedicar-m'hi.",
+          "Tota la vida he estat molt sensibilitzada amb el moviment del cos. Amb 3 anys ja ballava. Vaig fer dansa clàssica, dansa contemporània, jazz, entre d'altres. Als 19 anys vaig fer la meva primera classe de ioga i em va encantar. Era una altra manera de treballar amb el cos. Hi havia una sensació de benestar diferent al què sentia quan ballava. Després de més de 10 anys practicant, aquest amor pel ioga em va portar a formar-me com a professora a Yoga Studio Barcelona. Vaig estar un any compaginant la feina de química amb les classes de ioga, i finalment vaig decidir dedicar-m'hi.",
           "Des del 2013, el ioga es va convertir en la meva professió. Vaig estar donant classes en diferents espais fins que, al juny del 2022, vaig obrir el meu propi centre: OM Ioga.",
           "Em sento molt afortunada de poder compartir els beneficis del ioga amb les persones que venen a practicar. A mi m'ha ajudat, i m'ajuda molt en la meva vida. Estic molt agraïda de poder transmetre els coneixements del ioga.",
           "L'aprenentatge és continu. Des de fa anys que em segueixo formant amb professors com Tomás Zorzo. Al 2024, encuriosida per entendre directament els textos de la filosfia del ioga, vaig començar a estudiar sànscrit a la UB. Una manera de viure el ioga amb més profunditat."
@@ -445,25 +445,25 @@
           "items": [
             "No hi ha matrícula d'inscripció.",
             "La plaça es reserva amb la primera mensualitat o bonus.",
-            "Les places són limitades (màxim 12 persones per classe).",
+            "Les places són limitades (màxim 12 persones per grup).",
             "La inscripció implica l'acceptació de les presents condicions."
           ]
         },
         {
           "title": "Pagaments",
           "items": [
-            "El pagament de les mensualitats es realitza per avançat, a principis de mes.",
+            "El pagament de les mensualitats es realitza a principis de mes.",
             "En cas de no poder assistir temporalment, es pot activar la quota de manteniment (15€) per a conservar la plaça.",
-            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat.",
-            "La classe solta (15€) es paga en el moment d'assistir."
+            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat sempre hi quan hi hagi lloc a la sessió demanada.",
+            "La classe sola (15€) es paga en el moment d'assistir."
           ]
         },
         {
           "title": "Assistència i baixes",
           "items": [
             "En cas de no poder assistir, s'agrairà avisar amb antelació per gestionar la plaça.",
-            "Per donar de baixa al centre, cal comunicar-ho amb almenys una setmana d'antelació.",
-            "Les mensualitats no es retornen un cop iniciades, excepte en casos justificats."
+            "Per donar-se de baixa del centre, cal comunicar-ho amb almenys una setmana d'antelació.",
+            "Les mensualitats no es retornen un cop iniciades."
           ]
         },
         {
@@ -556,10 +556,10 @@
       "activitat_actual": {
         "image": "assets/images/activitat.jpg",
         "titol": "Activitat",
-        "data": "30 de juny del 2026",
+        "data": "6 de juny del 2026",
         "hora": "Tot el dia",
-        "lloc": "OM Ioga, Igualada",
-        "descripcio": "Activitat aakdbadbasdjasd",
+        "lloc": "Argençola",
+        "descripcio": "",
         "preu": "",
         "cta": {
           "label": "Reserva la teva plaça",

@@ -213,7 +213,7 @@ function buildHome() {
       </div>
       <div class="scroll-hint" aria-hidden="true">
         <div class="scroll-hint__line"></div>
-        <span>Descobreix</span>
+        <span>${h.scroll_hint}</span>
       </div>
     </section>
 
@@ -240,8 +240,8 @@ function buildHome() {
     <section class="pillars-section">
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">La pràctica</span>
-          <h2 class="reveal stagger-1">Tres pilars fonamentals</h2>
+          <span class="pretitle reveal">${h.pillars_section.pretitle}</span>
+          <h2 class="reveal stagger-1">${h.pillars_section.title}</h2>
           <span class="divider reveal stagger-2"></span>
         </div>
         <div class="pillars-grid">
@@ -308,8 +308,8 @@ function buildQuiSoc() {
       <div class="container">
         <div class="intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
           <div>
-            <span class="pretitle reveal">La professora</span>
-            <h2 class="reveal stagger-1" style="margin-bottom: 1.5rem;">Meritxell Pipó Soler</h2>
+            <span class="pretitle reveal">${p.professor_label}</span>
+            <h3 class="reveal stagger-1" style="margin-bottom: 1.5rem;">${p.professor_name}</h3>
             ${p.bio.paragraphs.map((par, i) => `
               <p class="reveal stagger-${Math.min(i + 1, 5)}" style="margin-bottom: 0.8rem; font-size: 1rem; text-align: justify;">${par}</p>
             `).join('')}
@@ -402,8 +402,8 @@ function buildTipusIoga() {
     <section style="background: var(--cream-dark); padding: var(--section-gap) 0;">
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">Galeria</span>
-          <h2 class="reveal stagger-1">Moments del centre</h2>
+          <span class="pretitle reveal">${p.images.gallery_pretitle}</span>
+          <h2 class="reveal stagger-1">${p.images.gallery_heading}</h2>
         </div>
         <div class="gallery-3col-grid">
           ${p.images.gallery.map((img, i) => `
@@ -476,8 +476,8 @@ function buildClasses() {
     <section style="background: var(--cream-dark); padding-top: var(--section-gap);">
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">Característiques</span>
-          <h2 class="reveal stagger-1">Allò que fa especial cada sessió</h2>
+          <span class="pretitle reveal">${p.features_section.pretitle}</span>
+          <h2 class="reveal stagger-1">${p.features_section.title}</h2>
           <span class="divider reveal stagger-2"></span>
         </div>
         <div class="features-grid">
@@ -567,11 +567,11 @@ function buildPreus() {
 
   const plansHtml = p.monthly.plans.map((plan, i) => `
     <div class="price-plan-card ${plan.highlight ? 'featured-plan' : ''} reveal stagger-${i + 1}">
-      ${plan.highlight ? '<span class="plan-badge">Més popular</span>' : ''}
+      ${plan.highlight ? `<span class="plan-badge">${p.monthly.plan_badge}</span>` : ''}
       <div class="plan-frequency">${plan.days}</div>
       <div class="plan-price">${plan.price}</div>
       <div class="plan-period">per ${plan.al || 'mes'}</div>
-      <a href="contacte.html" class="btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'} plan-cta">Comença ara</a>
+      <a href="contacte.html" class="btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'} plan-cta">${p.monthly.plan_cta}</a>
     </div>
   `).join('');
 
@@ -579,7 +579,7 @@ function buildPreus() {
     <div class="bonus-pack-card reveal stagger-${i + 1}">
       <div class="bonus-value">${b.classes}</div>
       <div class="bonus-amount">${b.price}</div>
-      <small class="bonus-subtitle">Vàlid 3 mesos</small>
+      <small class="bonus-subtitle">${p.bonus.expiry_text.split('els 3')[0]}3 mesos</small>
     </div>
   `).join('');
 
@@ -603,7 +603,7 @@ function buildPreus() {
         <div style="margin-bottom: 6rem;">
           <div class="section-header" style="margin-bottom: 3.5rem;">
             <span class="pretitle reveal">${p.monthly.title}</span>
-            <h2 class="reveal stagger-1">Classes regulars</h2>
+            <h2 class="reveal stagger-1">${p.monthly.section_heading}</h2>
           </div>
 
           <div class="pricing-plans-grid">
@@ -629,7 +629,7 @@ function buildPreus() {
     <section style="background: var(--cream-dark);">
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">Flexibilitat màxima</span>
+          <span class="pretitle reveal">${p.bonus.section_pretitle}</span>
           <h2 class="reveal stagger-1">${p.bonus.title}</h2>
           <p class="reveal stagger-2">${p.bonus.description}</p>
           <span class="divider reveal stagger-3"></span>
@@ -640,7 +640,7 @@ function buildPreus() {
         </div>
 
         <p style="text-align: center; margin-top: 2.5rem; color: var(--text-light); font-size: 0.9rem;">
-          Els bonus caduquen als 3 mesos de la seva compra.
+          ${p.bonus.expiry_text}
         </p>
       </div>
     </section>
@@ -656,9 +656,9 @@ function buildPreus() {
         </div>
 
         <div style="text-align: center; margin-top: 4rem; padding: 3rem 2rem; background: var(--cream-dark); border-radius: var(--radius-lg);">
-          <h3 style="color: var(--green-deep); margin-bottom: 1rem;">Per a grups i empreses</h3>
-          <p style="max-width: 500px; margin: 0 auto 1.5rem;">Interessat en plans personalitzats per a grups o empreses? Contacta'ns!</p>
-          <a href="contacte.html" class="btn btn-secondary">Consulta'ns</a>
+          <h3 style="color: var(--green-deep); margin-bottom: 1rem;">${p.group_section.heading}</h3>
+          <p style="max-width: 500px; margin: 0 auto 1.5rem;">${p.group_section.description}</p>
+          <a href="contacte.html" class="btn btn-secondary">${p.group_section.cta}</a>
         </div>
       </div>
     </section>
@@ -756,8 +756,8 @@ function buildContacte() {
       <div class="container">
         <div class="contact-layout">
           <div class="contact-info reveal-left">
-            <span class="pretitle">Parlem</span>
-            <h2>Posa't en contacte</h2>
+            <span class="pretitle">${p.form.contact_section_label}</span>
+            <h2>${p.form.contact_heading}</h2>
             <span class="divider divider--left"></span>
             <p>${p.intro}</p>
             <img src="${p.images.middle}" alt="" class="middle-image" style="margin: 2rem 0;">
@@ -765,14 +765,14 @@ function buildContacte() {
               <div class="contact-detail">
                 <div class="contact-detail-icon">${iconSVG('map-pin')}</div>
                 <div>
-                  <div class="contact-detail-label">Adreça</div>
+                  <div class="contact-detail-label">${p.form.contact_labels.address}</div>
                   <div class="contact-detail-value">${c.address}<br>${c.city}</div>
                 </div>
               </div>
               <div class="contact-detail">
                 <div class="contact-detail-icon">${iconSVG('phone')}</div>
                 <div>
-                  <div class="contact-detail-label">Telèfon</div>
+                  <div class="contact-detail-label">${p.form.contact_labels.phone}</div>
                   <div class="contact-detail-value">
                     <a href="tel:${c.phone.replace(/\s/g, '')}">${c.phone}</a>
                   </div>
@@ -781,7 +781,7 @@ function buildContacte() {
               <div class="contact-detail">
                 <div class="contact-detail-icon">${iconSVG('mail')}</div>
                 <div>
-                  <div class="contact-detail-label">Correu</div>
+                  <div class="contact-detail-label">${p.form.contact_labels.email}</div>
                   <div class="contact-detail-value">
                     <a href="mailto:${c.email}">${c.email}</a>
                   </div>
@@ -792,7 +792,7 @@ function buildContacte() {
 
           <div class="contact-form reveal-right">
             <div id="form-error" class="form-error" style="display:none;">
-              ${iconSVG('info')} <span id="form-error-msg">Hi ha hagut un error. Torna-ho a intentar.</span>
+              ${iconSVG('info')} <span id="form-error-msg">${p.form.error_default}</span>
             </div>
             <form id="contact-form" novalidate>
               ${fieldsHtml}
@@ -837,12 +837,12 @@ function buildContacte() {
     console.log('Form values:', { nom, email, emailField, missatge });
 
     if (!nom || !email || !missatge) {
-      errorMsg.textContent = 'Si us plau, omple els camps obligatoris (nom, correu i missatge).';
+      errorMsg.textContent = p.form.error_required;
       errorBox.style.display = 'flex';
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errorMsg.textContent = 'El correu electrònic no és vàlid.';
+      errorMsg.textContent = p.form.error_email;
       errorBox.style.display = 'flex';
       return;
     }
@@ -850,19 +850,19 @@ function buildContacte() {
     errorBox.style.display = 'none';
 
     const trialChecked = form.querySelector('#trial')?.checked;
+    const trialText = trialChecked ? 'Sí, vol la classe de prova gratuïta' : 'No';
     const templateParams = {
       from_name: nom,
       email: email,
       message: missatge,
-      trial_class: trialChecked ? 'Sí, vol la classe de prova gratuïta' : 'No',
+      trial_class: trialText,
     };
 
     submitBtn.disabled = true;
-    if (btnLabel) btnLabel.textContent = 'Enviant...';
+    if (btnLabel) btnLabel.textContent = p.form.cta_sending;
 
     // Recopilar tota la informació del formulari
     const telefon = form.querySelector('#telefon')?.value.trim() || 'No indicat';
-    const trialText = templateParams.trial_class;
 
     // 1️⃣ Enviar auto-reply al usuari
     emailjs.send('service_6mo98ao', 'template_iom0av9', templateParams)
@@ -907,8 +907,8 @@ ${missatge}
       .catch(err => {
         console.error('EmailJS error:', err);
         submitBtn.disabled = false;
-        if (btnLabel) btnLabel.textContent = 'Envia el missatge';
-        errorMsg.textContent = 'Error en enviar. Si us plau, contacta\'ns per telèfon o correu directament.';
+        if (btnLabel) btnLabel.textContent = p.form.cta;
+        errorMsg.textContent = p.form.error_send;
         errorBox.style.display = 'flex';
       });
   });

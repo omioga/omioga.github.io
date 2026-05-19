@@ -38,7 +38,7 @@
       },
       {
         "label": "Qui sóc",
-        "href": "qui-sóc.html"
+        "href": "qui-soc.html"
       },
       {
         "label": "El ioga",
@@ -79,6 +79,7 @@
         "hero": "assets/images/omioga-logo.png",
         "middle": "assets/images/bol.jpg"
       },
+      "scroll_hint": "Descobreix",
       "hero": {
         "pretitle": "Benvingut a",
         "title": "OM Ioga",
@@ -97,6 +98,10 @@
         "title": "El ioga és per a tothom",
         "text": "Independentment del teu nivell, edat o condició física. Cada postura s'adapta a tu, no tu a la postura. Fent aquella opció que et demani el cos. Escolatant-lo.",
         "highlight": "Grups de màxim 12 persones per a una atenció personalitzada."
+      },
+      "pillars_section": {
+        "pretitle": "La pràctica",
+        "title": "Tres pilars fonamentals"
       },
       "pillars": [
         {
@@ -143,6 +148,8 @@
         "pretitle": "La professora",
         "title": "Qui sóc"
       },
+      "professor_name": "Meritxell Pipó Soler",
+      "professor_label": "La professora",
       "bio": {
         "paragraphs": [
           "Amb 18 anys vaig estudiar química, però després de 7 anys treballant en aquest sector vaig decidir canviar el meu camí professional.",
@@ -176,7 +183,9 @@
           "assets/images/centre1.jpg",
           "assets/images/centre2.jpg",
           "assets/images/centre3.jpg"
-        ]
+        ],
+        "gallery_pretitle": "Galeria",
+        "gallery_heading": "Moments del centre"
       },
       "meta": {
         "title": "Què és el Ioga | OM Ioga",
@@ -228,6 +237,10 @@
           "Les classes s'adapten a cada persona, independentment del seu nivell, experiència o estat físic. Cada postura té variants perquè cadascú trobi la seva opció.",
           "El ioga no és competitiu. Es tracta de respectar el teu cos i trobar la teva connexió interior. L'objectiu és respirar de forma conscient i sortir de la sessió en millor estat."
         ]
+      },
+      "features_section": {
+        "pretitle": "Característiques",
+        "title": "Allò que fa especial cada sessió"
       },
       "features": [
         {
@@ -375,6 +388,7 @@
       },
       "monthly": {
         "title": "Quotes mensuals",
+        "section_heading": "Classes regulars",
         "plans": [
           {
             "days": "1 dia / setmana",
@@ -394,7 +408,9 @@
             "al": "mes",
             "highlight": false
           }
-        ]
+        ],
+        "plan_badge": "Més popular",
+        "plan_cta": "Comença ara"
       },
       "single": {
         "title": "Una classe sola",
@@ -403,7 +419,9 @@
       },
       "bonus": {
         "title": "Bonus trimestrals",
+        "section_pretitle": "Flexibilitat màxima",
         "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos.",
+        "expiry_text": "Els bonus caduquen als 3 mesos de la seva compra.",
         "packs": [
           {
             "classes": "5 classes",
@@ -418,6 +436,11 @@
             "price": "180€"
           }
         ]
+      },
+      "group_section": {
+        "heading": "Per a grups i empreses",
+        "description": "Interessat en plans personalitzats per a grups o empreses? Contacta'ns!",
+        "cta": "Consulta'ns"
       },
       "trial": {
         "title": "Primera classe gratuïta",
@@ -502,6 +525,8 @@
       },
       "intro": "Té alguna pregunta? Vols reservar la teva primera classe gratuïta? Posa't en contacte amb nosaltres.",
       "form": {
+        "contact_section_label": "Parlem",
+        "contact_heading": "Posa't en contacte",
         "fields": [
           {
             "name": "nom",
@@ -530,8 +555,18 @@
           }
         ],
         "cta": "Envia el missatge",
+        "cta_sending": "Enviant...",
         "success": "Missatge enviat correctament. Et contactarem aviat.",
-        "trial_label": "M'interessa la classe de prova gratuïta"
+        "trial_label": "M'interessa la classe de prova gratuïta",
+        "error_default": "Hi ha hagut un error. Torna-ho a intentar.",
+        "error_required": "Si us plau, omple els camps obligatoris (nom, correu i missatge).",
+        "error_email": "El correu electrònic no és vàlid.",
+        "error_send": "Error en enviar. Si us plau, contacta'ns per telèfon o correu directament.",
+        "contact_labels": {
+          "address": "Adreça",
+          "phone": "Telèfon",
+          "email": "Correu"
+        }
       }
     },
     "politica-privacitat": {

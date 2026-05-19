@@ -489,12 +489,14 @@ section { padding: var(--section-gap) 0; }
 /* ── Pillars (Home) ── */
 .pillars-section {
   padding: var(--section-gap) 0;
+  text-align: center;
 }
 
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  text-align: center;
 }
 
 .pillar-card {
@@ -505,6 +507,7 @@ section { padding: var(--section-gap) 0; }
   transition: transform var(--transition), box-shadow var(--transition);
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .pillar-card::before {
@@ -521,6 +524,7 @@ section { padding: var(--section-gap) 0; }
 .pillar-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
+  text-align: center;
 }
 
 .pillar-card:hover::before {
@@ -530,7 +534,8 @@ section { padding: var(--section-gap) 0; }
 .pillar-icon {
   width: 48px;
   height: 48px;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
+  align-items: center;
 }
 
 .pillar-card h3 {

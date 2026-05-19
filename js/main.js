@@ -32,6 +32,12 @@ function detectPage() {
   return file.replace('.html', '');
 }
 
+/* ─── Text alignment helper ─── */
+function getTextAlign(text) {
+  const sentences = (text.match(/[.!?]/g) || []).length;
+  return sentences <= 1 ? 'center' : 'justify';
+}
+
 /* ─── Load JSON ─── */
 async function loadData() {
   try {
@@ -201,7 +207,7 @@ function buildHome() {
           <span class="pretitle reveal">${h.hero.pretitle}</span>
           <h1 class="reveal stagger-1">${h.hero.title}</h1>
           <span class="home-hero__subtitle reveal stagger-2">${h.hero.subtitle}</span>
-          <p class="home-hero__desc reveal stagger-3">${h.hero.description}</p>
+          <p class="home-hero__desc reveal stagger-3" style="text-align: ${getTextAlign(h.hero.description)};">${h.hero.description}</p>
           <div class="hero-ctas reveal stagger-4">
             <a href="${h.hero.cta_primary.href}" class="btn btn-primary">${h.hero.cta_primary.label}</a>
             <a href="${h.hero.cta_secondary.href}" class="btn btn-secondary">${h.hero.cta_secondary.label}</a>
@@ -226,8 +232,8 @@ function buildHome() {
             <h2 class="reveal stagger-1">${h.intro.title}</h2>
             <span class="divider divider--left reveal stagger-2"></span>
             <img src="${h.images.middle}" alt="" class="middle-image">
-            <p class="reveal stagger-2">${h.intro.text}</p>
-            <p class="intro-highlight reveal stagger-3">${h.intro.highlight}</p>
+            <p class="reveal stagger-2" style="text-align: ${getTextAlign(h.intro.text)};">${h.intro.text}</p>
+            <p class="intro-highlight reveal stagger-3" style="text-align: ${getTextAlign(h.intro.highlight)};">${h.intro.highlight}</p>
           </div>
           <div class="intro-visual reveal-right">
             ${buildLeafCluster()}
@@ -272,7 +278,7 @@ function buildHome() {
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
         <h2 class="reveal stagger-1">${h.cta_section.title}</h2>
-        <p class="reveal stagger-2">${h.cta_section.text}</p>
+        <p class="reveal stagger-2" style="text-align: ${getTextAlign(h.cta_section.text)};">${h.cta_section.text}</p>
         <a href="${h.cta_section.cta.href}" class="btn btn-gold reveal stagger-3">${h.cta_section.cta.label}</a>
       </div>
     </section>
@@ -290,7 +296,7 @@ function buildQuiSoc() {
   const valuesHtml = p.values.items.map((v, i) => `
     <div class="value-item reveal stagger-${i + 1}">
       <h4>${v.title}</h4>
-      <p>${v.text}</p>
+      <p style="text-align: ${getTextAlign(v.text)};">${v.text}</p>
     </div>
   `).join('');
 
@@ -342,7 +348,7 @@ function buildQuiSoc() {
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
         <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
         <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
@@ -373,7 +379,7 @@ function buildTipusIoga() {
           <div style="max-width: 100%;">
             <span class="pretitle reveal">${p.intro.title}</span>
             ${p.intro.paragraphs.map((par, i) => `
-              <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.05rem;">${par}</p>
+              <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.05rem; text-align: ${getTextAlign(par)};">${par}</p>
               ${i === 0 ? `<img src="${p.images.middle}" alt="" class="middle-image">` : ''}
             `).join('')}
           </div>
@@ -388,13 +394,13 @@ function buildTipusIoga() {
 
         <div class="origin-block reveal" style="margin-top:4rem;">
           <h3>${p.origin.title}</h3>
-          <p>${p.origin.text}</p>
-          <p class="origin-highlight">${p.origin.highlight}</p>
+          <p style="text-align: ${getTextAlign(p.origin.text)};">${p.origin.text}</p>
+          <p class="origin-highlight" style="text-align: ${getTextAlign(p.origin.highlight)};">${p.origin.highlight}</p>
         </div>
 
         <div class="reveal" style="margin-top:3rem;">
           <h3>${p.breath.title}</h3>
-          <p>${p.breath.text}</p>
+          <p style="text-align: ${getTextAlign(p.breath.text)};">${p.breath.text}</p>
         </div>
       </div>
     </section>
@@ -419,7 +425,7 @@ function buildTipusIoga() {
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
         <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
         <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
@@ -438,7 +444,7 @@ function buildClasses() {
     <div class="feature-item reveal stagger-${(i % 3) + 1}">
       <div class="feature-icon">${getFeatureIcon(i)}</div>
       <h4>${f.title}</h4>
-      <p>${f.text}</p>
+      <p style="text-align: ${getTextAlign(f.text)};">${f.text}</p>
     </div>
   `).join('');
 
@@ -459,7 +465,7 @@ function buildClasses() {
             <span class="pretitle reveal">La pràctica</span>
             <h2 class="reveal stagger-1" style="margin-bottom:1.5rem;">${p.description.title}</h2>
             ${p.description.paragraphs.map((par, i) => `
-              <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem;">${par}</p>
+              <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem; text-align: ${getTextAlign(par)};">${par}</p>
             `).join('')}
           </div>
           <div class="reveal-right" style="flex: 1; display: grid; grid-template-columns: repeat(${Math.min(p.images.gallery.length, 3)}, 1fr); gap: 1.5rem; align-content: start;">
@@ -490,7 +496,7 @@ function buildClasses() {
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
         <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
         <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
@@ -536,7 +542,7 @@ function buildHoraris() {
     <section>
       <div class="container">
         <div class="section-header">
-          <p class="reveal" style="font-size:1.05rem; color: var(--text);">${p.intro}</p>
+          <p class="reveal" style="font-size:1.05rem; color: var(--text); text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
           <img src="${p.images.middle}" alt="" class="middle-image">
         </div>
 
@@ -550,7 +556,7 @@ function buildHoraris() {
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
         <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
         <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
@@ -596,7 +602,7 @@ function buildPreus() {
     <section style="background: var(--white);">
       <div class="container">
         <div class="pricing-intro reveal">
-          <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem;">${p.intro}</p>
+          <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem; text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
           <img src="${p.images.middle}" alt="" class="middle-image">
         </div>
 
@@ -639,7 +645,7 @@ function buildPreus() {
           ${bonusHtml}
         </div>
 
-        <p style="text-align: center; margin-top: 2.5rem; color: var(--text-light); font-size: 0.9rem;">
+        <p style="text-align: ${getTextAlign(p.bonus.expiry_text)}; margin-top: 2.5rem; color: var(--text-light); font-size: 0.9rem;">
           ${p.bonus.expiry_text}
         </p>
       </div>
@@ -650,14 +656,14 @@ function buildPreus() {
         <div class="trial-offer-banner reveal">
           <div class="banner-content">
             <h3>${p.trial.title}</h3>
-            <p>${p.trial.text}</p>
+            <p style="text-align: ${getTextAlign(p.trial.text)};">${p.trial.text}</p>
           </div>
           <a href="${p.trial.cta.href}" class="btn btn-primary">${p.trial.cta.label}</a>
         </div>
 
         <div style="text-align: center; margin-top: 4rem; padding: 3rem 2rem; background: var(--cream-dark); border-radius: var(--radius-lg);">
           <h3 style="color: var(--green-deep); margin-bottom: 1rem;">${p.group_section.heading}</h3>
-          <p style="max-width: 500px; margin: 0 auto 1.5rem;">${p.group_section.description}</p>
+          <p style="max-width: 500px; margin: 0 auto 1.5rem; text-align: ${getTextAlign(p.group_section.description)};">${p.group_section.description}</p>
           <a href="contacte.html" class="btn btn-secondary">${p.group_section.cta}</a>
         </div>
       </div>
@@ -707,7 +713,7 @@ function buildCondicions() {
       <div class="container">
         <span class="pretitle reveal">Comença avui</span>
         <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
+        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
         <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
       </div>
     </section>
@@ -759,7 +765,7 @@ function buildContacte() {
             <span class="pretitle">${p.form.contact_section_label}</span>
             <h2>${p.form.contact_heading}</h2>
             <span class="divider divider--left"></span>
-            <p>${p.intro}</p>
+            <p style="text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
             <img src="${p.images.middle}" alt="" class="middle-image" style="margin: 2rem 0;">
             <div class="contact-details">
               <div class="contact-detail">

@@ -135,7 +135,7 @@
     },
     "qui-soc": {
       "images": {
-        "gallery": [
+          "gallery": [
           "assets/images/quisoc2.jpg",
           "assets/images/entrada.jpg"
         ]
@@ -262,8 +262,7 @@
       ]
     },
     "horaris": {
-      "images": {
-        "gallery": [
+      "images": {        "gallery": [
           "assets/images/classes-6.jpg",
           "assets/images/classes-7.jpg"
         ]
@@ -577,7 +576,108 @@
       "hero": {
         "pretitle": "Informació",
         "title": "Política de Privacitat"
-      }
+      },
+      "intro": "La teva privacitat és important per a nosaltres. Aquesta política explica com recopilem, utilitzem i protegim les teves dades personals. Complim amb la Llei Orgànica de Protecció de Dades (LOPD) i el Reglament General de Protecció de Dades (RGPD).",
+      "sections": [
+        {
+          "title": "1. Responsable del tractament",
+          "items": [
+            "OM Ioga és responsable del tractament de les dades personals que recopilem.",
+            "Adreça: Carrer de les Gardènies, 20, baixos. 08700 Igualada, Barcelona.",
+            "Telèfon: 623 01 39 35",
+            "Correu: omiogaigualada@gmail.com"
+          ]
+        },
+        {
+          "title": "2. Finalitat del tractament",
+          "items": [
+            "Gestió de les inscripcions i classes.",
+            "Tramitació de contactes i consultes.",
+            "Enviament de comunicacions relacionades amb els serveis oferts.",
+            "Millora dels serveis i experiència de l'usuari.",
+            "Compliment de les obligacions legals."
+          ]
+        },
+        {
+          "title": "3. Base legal del tractament",
+          "items": [
+            "El consentiment de l'interessat.",
+            "Execució de contracte (inscripció a classes).",
+            "Obligacions legals.",
+            "Interessos legítims de OM Ioga."
+          ]
+        },
+        {
+          "title": "4. Dades personals que recopilem",
+          "items": [
+            "Nom complet",
+            "Correu electrònic",
+            "Telèfon",
+            "Informació sobre salut o lesions (si la comparteixes voluntàriament)",
+            "Missatges i consultes que enviïs a través del formulari"
+          ]
+        },
+        {
+          "title": "5. Destinataris de les dades",
+          "items": [
+            "Les dades es comparteixen només amb els tercers necessaris per a la prestació del servei.",
+            "No es comparteixen dades amb tercers sense autorització, excepte per obligació legal.",
+            "Es pot usar un servei de correu electrònic per comunicar-se amb els clients."
+          ]
+        },
+        {
+          "title": "6. Conservació de les dades",
+          "items": [
+            "Les dades de contacte es conservaran mentre mantinguis la relació contractual.",
+            "Després de finalitzar la relació, es conservaran segons la normativa legal aplicable.",
+            "Pots sol·licitar l'esborrat de les dades en qualsevol moment."
+          ]
+        },
+        {
+          "title": "7. Drets dels interessats",
+          "items": [
+            "Dret d'accés: Pots accedir a les dades que tenim sobre tu.",
+            "Dret de rectificació: Pots corregir dades que siguin incorrectes.",
+            "Dret d'esborrat: Pots sol·licitar l'esborrat de les teves dades.",
+            "Dret de limitació: Pots limitar el tractament de les teves dades.",
+            "Dret de portabilitat: Pots rebre les teves dades en format estructurat.",
+            "Dret d'oposició: Pots oposar-te al tractament de les teves dades.",
+            "Per exercir aquests drets, contacta'ns a omiogaigualada@gmail.com"
+          ]
+        },
+        {
+          "title": "8. Seguretat de les dades",
+          "items": [
+            "Implementem mesures técniques i organitzatives per protegir les dades personals.",
+            "Accés restringit només al personal autoritzat.",
+            "Ús de connexions segures (HTTPS).",
+            "Còpies de seguretat periòdiques."
+          ]
+        },
+        {
+          "title": "9. Cookies",
+          "items": [
+            "El web pot usar cookies tècniques per millorar l'experiència de l'usuari.",
+            "No usem cookies de seguiment o publicitat sense consentiment.",
+            "Pots desactivar les cookies des de la configuració del teu navegador."
+          ]
+        },
+        {
+          "title": "10. Canvis en aquesta política",
+          "items": [
+            "Ens reservem el dret de modificar aquesta política de privacitat en qualsevol moment.",
+            "Els canvis seran comunicats a través del web o per correu electrònic.",
+            "L'ús continu del web després dels canvis implica l'acceptació de la nova política."
+          ]
+        },
+        {
+          "title": "11. Contacte i reclamacions",
+          "items": [
+            "Si tens preguntes sobre aquesta política, contacta'ns a: omiogaigualada@gmail.com",
+            "Si creus que els teus drets han estat violats, pots presentar una reclamació davant l'Autoritat de Protecció de Dades (APDCAT)."
+          ]
+        }
+      ]
     },
     "activitats": {
       "meta": {

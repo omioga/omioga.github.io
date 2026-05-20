@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   buildPage();
   initNav();
   initScrollAnimations();
-  initCarousel();
   initPageTransitions();
 
   /* Reveal body after all content is built */
@@ -444,7 +443,7 @@ function buildClasses() {
     <div class="feature-item reveal stagger-${(i % 3) + 1}">
       <div class="feature-icon">${getFeatureIcon(i)}</div>
       <h4>${f.title}</h4>
-      <p style="text-align: ${getTextAlign(f.text)};">${f.text}</p>
+      <p style="text-align: justify;">${f.text}</p>
     </div>
   `).join('');
 
@@ -924,126 +923,84 @@ ${missatge}
    POLITICA PRIVACITAT
 ═══════════════════════════════════════════ */
 function buildPoliticaPrivacitat() {
+  const p = DATA.pages['politica-privacitat'];
   const main = document.getElementById('main');
-  if (!main) return;
+  if (!main || !p) return;
 
-  const hero = `
-    <section class="page-hero">
+  const sectionsHtml = p.sections.map((sec, i) => {
+    // Agrupar seciones per type per visual
+    const isResponsability = i === 0;
+    const isDades = i >= 1 && i <= 3;
+    const isDrets = i === 6;
+    const isSeguretat = i === 7;
+    
+    let groupClass = 'general';
+    if (isResponsability) groupClass = 'responsibility';
+    if (isDades) groupClass = 'data';
+    if (isDrets) groupClass = 'rights';
+    if (isSeguretat) groupClass = 'security';
+
+    return `
+    <div class="policy-section policy-section--${groupClass} reveal stagger-${(i % 3) + 1}">
+      <h3>${sec.title}</h3>
+      <ul class="policy-list">
+        ${sec.items.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+  `}).join('');
+
+  main.innerHTML = `
+    <section class="page-hero" aria-label="${p.hero.title}">
       <div class="container">
-        <h1>Política de privacitat</h1>
+        <span class="pretitle reveal">${p.hero.pretitle}</span>
+        <h1 class="reveal stagger-1">${p.hero.title}</h1>
+        <span class="divider reveal stagger-2"></span>
       </div>
     </section>
-  `;
 
-  main.innerHTML = hero + `
-    <section class="legal-section">
-      ${generatePrivacyPolicy()}
+    <section class="policy-intro-section">
+      <div class="container">
+        <div class="policy-intro-box reveal">
+          <p class="policy-intro-text">${p.intro}</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div style="max-width:900px; margin:0 auto;">
+          <div class="policy-sections">
+            ${sectionsHtml}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="policy-contact-section">
+      <div class="container">
+        <div class="policy-contact-box reveal">
+          <h3>Tenim preguntes?</h3>
+          <p>Si tens qualsevol pregunta sobre aquesta política de privacitat o sobre com tractem les teves dades:</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <strong>Email:</strong> omiogaigualada@gmail.com
+            </div>
+            <div class="contact-item">
+              <strong>Telèfon:</strong> 623 01 39 35
+            </div>
+            <div class="contact-item">
+              <strong>Adreça:</strong> Carrer de les Gardènies, 20, baixos. 08700 Igualada, Barcelona.
+            </div>
+          </div>
+          <p class="policy-footer-note">Última actualització: ${new Date().toLocaleDateString('ca-ES')}</p>
+        </div>
+      </div>
     </section>
   `;
 }
 /* ═══════════════════════════════════════════
    SCROLL ANIMATIONS
 ═══════════════════════════════════════════ */
-function detectWebsiteFeatures() {
-  return {
-    hasContactForm: !!document.querySelector('form'),
-    hasEmail: document.querySelectorAll('input[type="email"]').length > 0,
-    hasPhone: document.body.innerText.includes("tel") || document.body.innerText.includes("623"),
-    hasAnalytics: !!window.gtag || !!window.ga,
-    hasCookies: document.cookie.length > 0,
-    hasPayments: document.body.innerText.toLowerCase().includes("pagament") ||
-                 document.body.innerText.toLowerCase().includes("stripe") ||
-                 document.body.innerText.toLowerCase().includes("paypal"),
-    hasNewsletter: document.querySelector('input[type="email"][name*="newsletter"]') !== null
-  };
-}
-
-function generatePrivacyPolicy() {
-  const f = detectWebsiteFeatures();
-
-  const blocks = [];
-
-  // HEADER
-  blocks.push(`
-    <h2>Política de privacitat</h2>
-    <p><strong>OM Ioga</strong></p>
-  `);
-
-  // BASE LEGAL
-  blocks.push(`
-    <h3>1. Finalitat del tractament</h3>
-    <p>Utilitzem les dades personals exclusivament per gestionar la comunicació amb els usuaris i els serveis sol·licitats.</p>
-  `);
-
-  // FORMULARI
-  if (f.hasContactForm) {
-    blocks.push(`
-      <h3>2. Formularis de contacte</h3>
-      <p>Recollim les dades enviades a través dels formularis per poder respondre consultes i gestionar sol·licituds.</p>
-    `);
-  }
-
-  // EMAIL
-  if (f.hasEmail) {
-    blocks.push(`
-      <h3>3. Correu electrònic</h3>
-      <p>Les dades introduïdes en camps de correu s'utilitzen només per respondre missatges o gestionar reserves.</p>
-    `);
-  }
-
-  // TELÈFON
-  if (f.hasPhone) {
-    blocks.push(`
-      <h3>4. Telèfon de contacte</h3>
-      <p>El telèfon només s'utilitza per comunicacions relacionades amb el servei.</p>
-    `);
-  }
-
-  // NEWSLETTER
-  if (f.hasNewsletter) {
-    blocks.push(`
-      <h3>5. Comunicacions comercials</h3>
-      <p>Només enviem informació si l'usuari ha donat consentiment explícit.</p>
-    `);
-  }
-
-  // ANALYTICS
-  if (f.hasAnalytics) {
-    blocks.push(`
-      <h3>6. Analítica</h3>
-      <p>Aquest web utilitza eines d'anàlisi per entendre l'ús del lloc i millorar-lo.</p>
-    `);
-  }
-
-  // COOKIES
-  if (f.hasCookies) {
-    blocks.push(`
-      <h3>7. Cookies</h3>
-      <p>El web utilitza cookies tècniques i, si escau, analítiques.</p>
-    `);
-  } else {
-    blocks.push(`
-      <h3>7. Cookies</h3>
-      <p>Només utilitzem cookies tècniques necessàries pel funcionament del lloc.</p>
-    `);
-  }
-
-  // SEGURETAT (sempre safe, però no exagerat)
-  blocks.push(`
-    <h3>8. Conservació de dades</h3>
-    <p>Les dades es conserven només el temps necessari per complir la finalitat per la qual es van recollir.</p>
-
-    <h3>9. Drets dels usuaris</h3>
-    <p>Pots exercir els teus drets escrivint a: omiogaigualada@gmail.com</p>
-
-    <h3>10. Contacte</h3>
-    <p>OM Ioga - Igualada</p>
-
-    <p><strong>Última actualització:</strong> ${new Date().toLocaleDateString('ca-ES')}</p>
-  `);
-
-  return blocks.join("\n");
-}
 
 function initScrollAnimations() {
   const observer = new IntersectionObserver(entries => {
@@ -1065,53 +1022,6 @@ function initScrollAnimations() {
 /* ═══════════════════════════════════════════
    CAROUSEL
 ═══════════════════════════════════════════ */
-function initCarousel() {
-  const carousels = document.querySelectorAll('.carousel-wrapper');
-
-  carousels.forEach(carousel => {
-    const track = carousel.querySelector('.carousel-track');
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const prevBtn = carousel.querySelector('.carousel-prev');
-    const nextBtn = carousel.querySelector('.carousel-next');
-    const dots = carousel.querySelectorAll('.carousel-dot');
-
-    if (!track || slides.length === 0) return;
-
-    let currentIndex = 0;
-    let autoplayInterval;
-
-    const updateCarousel = (index) => {
-      currentIndex = (index + slides.length) % slides.length;
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-    };
-
-    const goToSlide = (index) => { updateCarousel(index); resetAutoplay(); };
-    const nextSlide = () => goToSlide(currentIndex + 1);
-    const prevSlide = () => goToSlide(currentIndex - 1);
-    const startAutoplay = () => { autoplayInterval = setInterval(nextSlide, 8000); };
-    const resetAutoplay = () => { clearInterval(autoplayInterval); startAutoplay(); };
-
-    prevBtn?.addEventListener('click', prevSlide);
-    nextBtn?.addEventListener('click', nextSlide);
-    dots.forEach(dot => dot.addEventListener('click', e => goToSlide(parseInt(e.target.dataset.slide))));
-
-    let touchStartX = 0;
-    track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; clearInterval(autoplayInterval); }, false);
-    track.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].screenX;
-      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-      startAutoplay();
-    }, false);
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') prevSlide();
-      if (e.key === 'ArrowRight') nextSlide();
-    });
-
-    startAutoplay();
-  });
-}
 
 /* ═══════════════════════════════════════════
    PAGE TRANSITIONS

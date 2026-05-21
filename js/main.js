@@ -560,7 +560,6 @@ function buildHoraris() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -572,7 +571,6 @@ function buildHoraris() {
       <div class="container">
         <div class="section-header">
           <p class="reveal" style="font-size:1.05rem; color: var(--text); text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
-          <img src="${p.images.middle}" alt="" class="middle-image">
         </div>
 
         <div class="schedule-modern-grid">

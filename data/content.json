@@ -424,7 +424,7 @@
         "pretitle": "Transparent i flexible",
         "title": "Preus"
       },
-      "intro": "Sense matrícula. Quotes flexibles adaptades a la teva disponibilitat. Una classe de prova gratuïta per descobrir si el ioga és per a tu.",
+      "intro": "Sense matrícula. <br> Quotes flexibles adaptades a la teva disponibilitat. <br> Una classe de prova gratuïta per descobrir si el ioga és per a tu.</br>",
       "maintenance": {
         "title": "Quota de manteniment",
         "price": "15€",
@@ -464,8 +464,8 @@
       "bonus": {
         "title": "Bonus trimestrals",
         "section_pretitle": "Flexibilitat màxima",
-        "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos.",
-        "expiry_text": "Els bonus caduquen als 3 mesos de la seva compra.",
+          "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos. <br> Els bonus caduquen als 3 mesos de la seva compra </br>",
+        "expiry_text": "",
         "packs": [
           {
             "classes": "5 classes",

@@ -1312,7 +1312,7 @@ blockquote {
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   border: 1px solid var(--border);
-  text-align: center;
+  text-align: justify;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 

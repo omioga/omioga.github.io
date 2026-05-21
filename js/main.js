@@ -632,7 +632,7 @@ function buildPreus() {
       <div class="plan-frequency">${plan.days}</div>
       <div class="plan-price">${plan.price}</div>
       <div class="plan-period">per ${plan.al || 'mes'}</div>
-      <a href="contacte.html" class="btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'} plan-cta">${p.monthly.plan_cta}</a>
+      <a href="contacte.html" style="text-align: center;" class="btn ${plan.highlight ? 'btn-primary' : 'btn-secondary'} plan-cta">${p.monthly.plan_cta}</a>
     </div>
   `).join('');
 
@@ -656,7 +656,7 @@ function buildPreus() {
     <section style="background: var(--white);">
       <div class="container">
         <div class="pricing-intro reveal">
-          <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem; text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
+          <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem; text-align: center;">${p.intro}</p>
         </div>
 
         <div style="margin-bottom: 6rem;">
@@ -687,7 +687,7 @@ function buildPreus() {
 
     <section style="background: var(--cream-dark);">
       <div class="container">
-        <div class="section-header">22
+        <div class="section-header">
           <span class="pretitle reveal">${p.bonus.section_pretitle}</span>
           <h2 class="reveal stagger-1">${p.bonus.title}</h2>
           <p class="reveal stagger-2" style="text-align: ${getTextAlign(p.bonus.description)};">${p.bonus.description}</p>

@@ -138,14 +138,18 @@
   <script>
     // Load and render activitats page from content.json
     document.addEventListener('DOMContentLoaded', async () => {
-      await loadData();
-      buildNav();
-      buildFooter();
-      buildActivitats(DATA.pages.activitats);
-      initNav();
-      initScrollAnimations();
-      initPageTransitions();
-      document.body.style.opacity = '1';
+      try {
+        await loadData();
+        buildNav();  // buildNav now calls initNav() automatically
+        buildFooter();
+        buildActivitats(DATA.pages?.activitats);
+        initScrollAnimations();
+        initPageTransitions();
+        document.body.style.opacity = '1';
+      } catch (error) {
+        console.error('Error initializing page:', error);
+        document.body.style.opacity = '1';
+      }
     });
   </script>
 </body>

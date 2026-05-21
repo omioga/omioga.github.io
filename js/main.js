@@ -8,6 +8,7 @@
 /* ─── Globals ─── */
 let DATA = null;
 const PAGE = detectPage();
+let navInitialized = false;  // Track if nav has been initialized
 
 /* ─── Init ─── */
 document.addEventListener('DOMContentLoaded', async () => {
@@ -50,11 +51,17 @@ async function loadData() {
 
 /* ─── Navigation ─── */
 function buildNav() {
-  if (!DATA?.site?.nav) return;
+  if (!DATA?.site?.nav) {
+    console.warn('Navigation data not available');
+    return;
+  }
 
   const logo = document.getElementById('nav-logo');
   const menu = document.getElementById('nav-menu');
-  if (!logo || !menu) return;
+  if (!logo || !menu) {
+    console.error('Navigation DOM elements not found');
+    return;
+  }
 
   logo.innerHTML = `<img src="assets/images/omioga-logo.png" alt="OM Ioga" class="logo-img"> <span class="logo-text">${DATA.site.name}</span>`;
 
@@ -63,6 +70,9 @@ function buildNav() {
     const current = isCurrentPage(href) ? ' class="active"' : '';
     return `<li><a href="${href}"${current}>${item.label}</a></li>`;
   }).join('');
+  
+  // Initialize nav immediately after building it
+  initNav();
 }
 
 function isCurrentPage(href) {
@@ -72,34 +82,58 @@ function isCurrentPage(href) {
 
 /* ─── Nav behaviours ─── */
 function initNav() {
+  // Prevent double initialization
+  if (navInitialized) return;
+  navInitialized = true;
+
   const nav = document.getElementById('nav');
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('nav-menu');
 
+  if (!nav || !toggle || !menu) {
+    console.error('Navigation elements not found', { nav: !!nav, toggle: !!toggle, menu: !!menu });
+    navInitialized = false;  // Reset so it can try again
+    return;
+  }
+
   /* Scroll → sticky style */
   const onScroll = () => {
-    nav.classList.toggle('scrolled', window.scrollY > 30);
+    nav?.classList.toggle('scrolled', window.scrollY > 30);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* Hamburger */
-  toggle?.addEventListener('click', () => {
+  /* Hamburger - click handler */
+  const toggleClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     const isOpen = menu.classList.toggle('open');
     toggle.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
+  };
+  
+  toggle.addEventListener('click', toggleClick);
 
   /* Close menu on link click */
-  menu?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      toggle?.classList.remove('open');
-      toggle?.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  const closeMenuHandler = () => {
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenuHandler);
   });
+
+  /* Close menu when clicking outside */
+  const outsideClickHandler = (e) => {
+    if (!nav?.contains(e.target) && menu?.classList.contains('open')) {
+      closeMenuHandler();
+    }
+  };
+  document.addEventListener('click', outsideClickHandler);
 }
 
 /* ─── Footer ─── */
@@ -311,7 +345,7 @@ function buildQuiSoc() {
 
     <section>
       <div class="container">
-        <div class="intro-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        <div class="intro-grid">
           <div>
             <span class="pretitle reveal">${p.professor_label}</span>
             <h3 class="reveal stagger-1" style="margin-bottom: 1.5rem;">${p.professor_name}</h3>
@@ -1037,6 +1071,17 @@ function initPageTransitions() {
 
     link.addEventListener('click', e => {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      
+      // Close mobile menu before navigation
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('nav-menu');
+      if (toggle && menu) {
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      
       e.preventDefault();
       overlay.classList.add('active');
       setTimeout(() => { window.location.href = href; }, 350);

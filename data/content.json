@@ -261,10 +261,8 @@
       ]
     },
     "horaris": {
-      "images": {        "gallery": [
-          "assets/images/classes-6.jpg",
-          "assets/images/classes-7.jpg"
-        ]
+      "images": {        
+        "gallery": []
       },
       "meta": {
         "title": "Horaris | OM Ioga",
@@ -365,10 +363,7 @@
     },
     "preus": {
       "images": {
-        "gallery": [
-          "assets/images/classes-8.jpg",
-          "assets/images/centre1.jpg"
-        ]
+        "gallery": []
       },
       "meta": {
         "title": "Preus | OM Ioga",
@@ -508,10 +503,7 @@
     },
     "contacte": {
       "images": {
-        "gallery": [
-          "assets/images/centre1.jpg",
-          "assets/images/centre2.jpg"
-        ]
+        "gallery": []
       },
       "meta": {
         "title": "Contacte | OM Ioga",

@@ -502,7 +502,7 @@ section { padding: var(--section-gap) 0; }
   transition: transform var(--transition), box-shadow var(--transition);
   position: relative;
   overflow: hidden;
-  text-align: center;
+  text-align: justify;
 }
 
 .pillar-card::before {
@@ -519,7 +519,7 @@ section { padding: var(--section-gap) 0; }
 .pillar-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
-  text-align: center;
+  text-align: justify;
 }
 
 .pillar-card:hover::before {
@@ -537,6 +537,11 @@ section { padding: var(--section-gap) 0; }
   font-size: 1.4rem;
   margin-bottom: 0.75rem;
   color: var(--green-deep);
+  text-align: justify;
+}
+
+.pillar-card p {
+  text-align: justify;
 }
 
 /* ── Quote Section ── */
@@ -756,6 +761,7 @@ blockquote {
   background: var(--cream);
   border-radius: var(--radius);
   border-bottom: 2px solid var(--green-pale);
+  border-left: 2px solid var(--green-pale);
   transition: border-color var(--transition), transform var(--transition);
 }
 
@@ -767,6 +773,7 @@ blockquote {
 .value-item h4 {
   color: var(--green-deep);
   margin-bottom: 0.75rem;
+  text-align: justify;
 }
 
 /* ── Styles (Tipus de Ioga) ── */

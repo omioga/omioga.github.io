@@ -1,7 +1,8 @@
 {
   "_GUIDE_": {
     "_TITLE": "🧘 GUIA RAPIDA - EDITA ELS TEXTOS DEL WEB FACILMENT",
-    "_INSTRUCCIONS": "Tot el que veus a la pàgina se'l control des d'aquí!",
+    "_INSTRUCCIONS": "✅ TOTA la informació del web es controla DESDE AQUEST JSON. Res d'hardcoding al main.js!",
+    "_GUIA_COMPLETA": "Edita aquí i els canvis es reflectiran automàticament a tota la web.",
     "_MENU": {
       "_1_dades_del_centre": "Nom, telèfon, adreça → Busca 'site' → 'contact' (La informació del centre)",
       "_2_menu_navegacio": "Els botons del menú superior → Busca 'site' → 'nav' (Inici, Qui soc, El ioga, etc)",
@@ -20,6 +21,21 @@
     "_COM_IMATGES": "3) Les imatges estan al final de cada pàgina en 'images' → busca per 'assets/images/'",
     "_IMPORTANT": "⚠️ NO BORRIS les estructures [...], {...} - només canvia el text dins de les COMETES!",
     "_AYUDA": "Si veus un text estrany i no saps on es, busca-ho amb Ctrl+F i trobaràs el lloc!"
+ 
+    
+  },
+  "global_labels": {
+    "cta_section_pretitle": "Comença avui",
+    "cta_section_title": "Primera classe gratuïta",
+    "cta_section_desc": "S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.",
+    "cta_button": "Reserva la classe de prova",
+    "values_section_pretitle": "Valors",
+    "credentials_section_pretitle": "Trajectòria",
+    "activities_empty_title": "Aquest mes no hi han activitats",
+    "activities_empty_desc": "Properament s'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!",
+    "activities_gallery_pretitle": "Memòria",
+    "activities_gallery_title": "Activitats anteriors",
+    "privacy_contact_section_title": "Tenim preguntes?"
   },
   "site": {
     "name": "OM Ioga",
@@ -189,12 +205,12 @@
         "title": "Formació i certificacions",
         "items": [
           {
-            "year": "2012–2013",
+            "year": "2011–2012",
             "title": "Formació professora de ioga",
             "place": "Yoga Studio Barcelona"
           },
           {
-            "year": "2013",
+            "year": "2012",
             "title": "Inici de l'activitat docent",
             "place": "Igualada i rodalies"
           },
@@ -207,11 +223,6 @@
             "year": "2024–avui",
             "title": "Estudis de sànscrit",
             "place": "Universitat de Barcelona (UB)"
-          },
-          {
-            "year": "En curs",
-            "title": "Formació contínua amb Tomàs Zorzo",
-            "place": "Hatha ioga tradicional"
           }
         ]
       }
@@ -270,6 +281,7 @@
         "title": "Les classes"
       },
       "description": {
+        "pretitle": "La pràctica",
         "title": "Pensades per a tu",
         "paragraphs": [
           "Les classes s'adapten a cada persona, independentment del seu nivell, experiència o estat físic. Cada postura té variants perquè cadascú trobi la seva opció.",
@@ -508,7 +520,7 @@
           "items": [
             "El pagament de les mensualitats es realitza a principis de mes.",
             "En cas de no poder assistir temporalment, es pot activar la quota de manteniment (15€) per a conservar la plaça.",
-            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat sempre hi quan hi hagi lloc a la sessió demanada.",
+            "Els bonus trimestrals caduquen als 3 mesos de la seva compra i es poden usar amb flexibilitat sempre que hi hagi lloc a la sessió demanada.",
             "La classe sola (15€) es paga en el moment d'assistir."
           ]
         },
@@ -590,6 +602,14 @@
         "error_required": "Si us plau, omple els camps obligatoris (nom, correu i missatge).",
         "error_email": "El correu electrònic no és vàlid.",
         "error_send": "Error en enviar. Si us plau, contacta'ns per telèfon o correu directament.",
+        "email_labels": {
+          "info_header": "INFORMACIÓ DE CONTACTE",
+          "name_label": "NOM",
+          "email_label": "CORREU ELECTRÒNIC",
+          "phone_label": "TELÈFON",
+          "trial_label_email": "INTERÉS EN CLASSE DE PROVA",
+          "message_label": "MISSATGE"
+        },
         "contact_labels": {
           "address": "Adreça",
           "phone": "Telèfon",
@@ -618,17 +638,7 @@
           ]
         },
         {
-          "title": "2. Finalitat del tractament",
-          "items": [
-            "Gestió de les inscripcions i classes.",
-            "Tramitació de contactes i consultes.",
-            "Enviament de comunicacions relacionades amb els serveis oferts.",
-            "Millora dels serveis i experiència de l'usuari.",
-            "Compliment de les obligacions legals."
-          ]
-        },
-        {
-          "title": "3. Base legal del tractament",
+          "title": "2. Base legal del tractament",
           "items": [
             "El consentiment de l'interessat.",
             "Execució de contracte (inscripció a classes).",
@@ -637,16 +647,16 @@
           ]
         },
         {
-          "title": "4. Dades personals que recopilem",
+          "title": "3. Dades personals que recopilem",
           "items": [
             "Nom complet",
             "Correu electrònic",
             "Telèfon",
-            "Informació sobre salut o lesions (si la comparteixes voluntàriament)",
+            "Informació sobre salut o lesions (si la comparteixes voluntàriament)"
           ]
         },
         {
-          "title": "5. Destinataris de les dades",
+          "title": "4. Destinataris de les dades",
           "items": [
             "Les dades es comparteixen només amb els tercers necessaris per a la prestació del servei.",
             "No es comparteixen dades amb tercers sense autorització, excepte per obligació legal.",
@@ -654,27 +664,25 @@
           ]
         },
         {
-          "title": "6. Conservació de les dades",
+          "title": "5. Conservació de les dades",
           "items": [
-            "Les dades de contacte es conservaran mentre mantinguis la relació contractual.",
-            "Després de finalitzar la relació, es conservaran segons la normativa legal aplicable.",
-            "Pots sol·licitar l'esborrat de les dades en qualsevol moment."
+            "Les dades es conservaran només el temps necessari per gestionar la teva consulta o contacte.",
+            "Pots sol·licitar l'esborrat de les teves dades en qualsevol moment."
           ]
         },
         {
-          "title": "7. Drets dels interessats",
+          "title": "6. Drets dels interessats",
           "items": [
             "Dret d'accés: Pots accedir a les dades que tenim sobre tu.",
             "Dret de rectificació: Pots corregir dades que siguin incorrectes.",
             "Dret d'esborrat: Pots sol·licitar l'esborrat de les teves dades.",
             "Dret de limitació: Pots limitar el tractament de les teves dades.",
-            "Dret de portabilitat: Pots rebre les teves dades en format estructurat.",
             "Dret d'oposició: Pots oposar-te al tractament de les teves dades.",
             "Per exercir aquests drets, contacta'ns a omiogaigualada@gmail.com"
           ]
         },
         {
-          "title": "8. Seguretat de les dades",
+          "title": "7. Seguretat de les dades",
           "items": [
             "Implementem mesures técniques i organitzatives per protegir les dades personals.",
             "Accés restringit només al personal autoritzat.",
@@ -683,7 +691,7 @@
           ]
         },
         {
-          "title": "9. Cookies",
+          "title": "8. Cookies",
           "items": [
             "El web pot usar cookies tècniques per millorar l'experiència de l'usuari.",
             "No usem cookies de seguiment o publicitat sense consentiment.",
@@ -691,7 +699,7 @@
           ]
         },
         {
-          "title": "10. Canvis en aquesta política",
+          "title": "9. Canvis en aquesta política",
           "items": [
             "Ens reservem el dret de modificar aquesta política de privacitat en qualsevol moment.",
             "Els canvis seran comunicats a través del web o per correu electrònic.",
@@ -699,7 +707,7 @@
           ]
         },
         {
-          "title": "11. Contacte i reclamacions",
+          "title": "10. Contacte i reclamacions",
           "items": [
             "Si tens preguntes sobre aquesta política, contacta'ns a: omiogaigualada@gmail.com",
             "Si creus que els teus drets han estat violats, pots presentar una reclamació davant l'Autoritat de Protecció de Dades (APDCAT)."

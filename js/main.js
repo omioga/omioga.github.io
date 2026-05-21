@@ -312,11 +312,10 @@ function buildHome() {
     </section>
 
     
-    <!-- CTA -->
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Comença avui</span>
-        <h2 class="reveal stagger-1">${h.cta_section.title}</h2>
+        <span class="pretitle reveal">${DATA.global_labels?.cta_section_pretitle || 'Comença avui'}</span>
+        <h2 class="reveal stagger-1">${DATA.global_labels?.cta_section_title || 'Primera classe gratuïta'}</h2>
         <p class="reveal stagger-2" style="text-align: ${getTextAlign(h.cta_section.text)};">${h.cta_section.text}</p>
         <a href="${h.cta_section.cta.href}" class="btn btn-gold reveal stagger-3">${h.cta_section.cta.label}</a>
       </div>
@@ -335,7 +334,7 @@ function buildQuiSoc() {
   const valuesHtml = p.values.items.map((v, i) => `
     <div class="value-item reveal stagger-${i + 1}">
       <h4>${v.title}</h4>
-      <p style="text-align: ${getTextAlign(v.text)};">${v.text}</p>
+      <p style="text-align: justify;">${v.text}</p>
     </div>
   `).join('');
 
@@ -358,7 +357,7 @@ function buildQuiSoc() {
               <p class="reveal stagger-${Math.min(i + 1, 5)}" style="margin-bottom: 0.8rem; font-size: 1rem; text-align: justify;">${par}</p>
             `).join('')}
           </div>
-          <div class="reveal-right" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-content: start;">
+          <div class="reveal-right" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-content: justified;">
             ${p.images.gallery.slice(0, 2).map((img, i) => `
               <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: 4/3;">
                 <img src="${img}" alt="Foto ${i + 1}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
@@ -372,7 +371,7 @@ function buildQuiSoc() {
     <section style="padding-top:0; background: var(--cream-dark); padding-bottom: var(--section-gap);">
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">Valors</span>
+          <span class="pretitle reveal">${DATA.global_labels?.values_section_pretitle || 'Valors'}</span>
           <h2 class="reveal stagger-1">${p.values.title}</h2>
           <span class="divider reveal stagger-2"></span>
         </div>
@@ -386,7 +385,7 @@ function buildQuiSoc() {
     <section style="background: var(--white); padding: var(--section-gap) 0;">
       <div class="container">
         <div class="section-header">
-          <span class="pretitle reveal">Trajectòria</span>
+          <span class="pretitle reveal">${DATA.global_labels?.credentials_section_pretitle || 'Trajectòria'}</span>
           <h2 class="reveal stagger-1">${p.credentials.title}</h2>
           <span class="divider reveal stagger-2"></span>
         </div>
@@ -407,10 +406,10 @@ function buildQuiSoc() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Comença avui</span>
-        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
-        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
+        <span class="pretitle reveal">${DATA.global_labels?.cta_section_pretitle || 'Comença avui'}</span>
+        <h2 class="reveal stagger-1">${DATA.global_labels?.cta_section_title || 'Primera classe gratuïta'}</h2>
+        <p class="reveal stagger-2" style="text-align: center;">${DATA.global_labels?.cta_section_desc || 'S\'ofereix una classe de prova gratuïta. Si la persona s\'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.'}</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">${DATA.global_labels?.cta_button || 'Reserva la classe de prova'}</a>
       </div>
     </section>
   `;
@@ -482,10 +481,10 @@ function buildTipusIoga() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Comença avui</span>
-        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
-        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
+        <span class="pretitle reveal">${DATA.global_labels?.cta_section_pretitle || 'Comença avui'}</span>
+        <h2 class="reveal stagger-1">${DATA.global_labels?.cta_section_title || 'Primera classe gratuïta'}</h2>
+        <p class="reveal stagger-2" style="text-align: center;">${DATA.global_labels?.cta_section_desc || 'S\'ofereix una classe de prova gratuïta. Si la persona s\'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.'}</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">${DATA.global_labels?.cta_button || 'Reserva la classe de prova'}</a>
       </div>
     </section>
   `;
@@ -520,7 +519,7 @@ function buildClasses() {
       <div class="container">
         <div class="intro-grid classes-layout">
           <div style="flex: 1;">
-            <span class="pretitle reveal">La pràctica</span>
+            <span class="pretitle reveal">${p.description.pretitle || 'La pràctica'}</span>
             <h2 class="reveal stagger-1" style="margin-bottom:1.5rem;">${p.description.title}</h2>
             ${p.description.paragraphs.map((par, i) => `
               <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem; text-align: ${getTextAlign(par)};">${par}</p>
@@ -552,10 +551,10 @@ function buildClasses() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Comença avui</span>
-        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
-        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
+        <span class="pretitle reveal">${DATA.global_labels?.cta_section_pretitle || 'Comença avui'}</span>
+        <h2 class="reveal stagger-1">${DATA.global_labels?.cta_section_title || 'Primera classe gratuïta'}</h2>
+        <p class="reveal stagger-2" style="text-align: center;">${DATA.global_labels?.cta_section_desc || 'S\'ofereix una classe de prova gratuïta. Si la persona s\'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.'}</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">${DATA.global_labels?.cta_button || 'Reserva la classe de prova'}</a>
       </div>
     </section>
   `;
@@ -610,10 +609,10 @@ function buildHoraris() {
 
     <section class="cta-section">
       <div class="container">
-        <span class="pretitle reveal">Comença avui</span>
-        <h2 class="reveal stagger-1">Primera classe gratuïta</h2>
-        <p class="reveal stagger-2" style="text-align: center;">S'ofereix una classe de prova gratuïta. Si la persona s'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.</p>
-        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">Reserva la classe de prova</a>
+        <span class="pretitle reveal">${DATA.global_labels?.cta_section_pretitle || 'Comença avui'}</span>
+        <h2 class="reveal stagger-1">${DATA.global_labels?.cta_section_title || 'Primera classe gratuïta'}</h2>
+        <p class="reveal stagger-2" style="text-align: center;">${DATA.global_labels?.cta_section_desc || 'S\'ofereix una classe de prova gratuïta. Si la persona s\'inscriu, aquella classe queda inclosa en la mensualitat; si no, no té cap cost.'}</p>
+        <a href="preus.html#prova" class="btn btn-gold reveal stagger-3">${DATA.global_labels?.cta_button || 'Reserva la classe de prova'}</a>
       </div>
     </section>
   `;
@@ -641,7 +640,7 @@ function buildPreus() {
     <div class="bonus-pack-card reveal stagger-${i + 1}">
       <div class="bonus-value">${b.classes}</div>
       <div class="bonus-amount">${b.price}</div>
-      <small class="bonus-subtitle">${p.bonus.expiry_text.split('els 3')[0]}3 mesos</small>
+      <small class="bonus-subtitle">${p.bonus.expiry_text.split('els 3')[0]}</small>
     </div>
   `).join('');
 
@@ -688,10 +687,10 @@ function buildPreus() {
 
     <section style="background: var(--cream-dark);">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header">22
           <span class="pretitle reveal">${p.bonus.section_pretitle}</span>
           <h2 class="reveal stagger-1">${p.bonus.title}</h2>
-          <p class="reveal stagger-2">${p.bonus.description}</p>
+          <p class="reveal stagger-2" style="text-align: ${getTextAlign(p.bonus.description)};">${p.bonus.description}</p>
           <span class="divider reveal stagger-3"></span>
         </div>
 
@@ -924,26 +923,27 @@ function buildContacte() {
     emailjs.send('service_6mo98ao', 'template_iom0av9', templateParams)
       .then(() => {
         // 2️⃣ Enviar tota la informació completa al propietari
+        const emailLabels = p.form.email_labels || {};
         const completeInfo = `
 
-          INFORMACIÓ DE CONTACTE           
+          ${emailLabels.info_header || 'INFORMACIÓ DE CONTACTE'}           
 =========================================
 
-👤 NOM:
+👤 ${emailLabels.name_label || 'NOM'}:
 ${nom}
 
-📧 CORREU ELECTRÒNIC:
+📧 ${emailLabels.email_label || 'CORREU ELECTRÒNIC'}:
 ${email}
 
-☎️  TELÈFON:
+☎️  ${emailLabels.phone_label || 'TELÈFON'}:
 ${telefon}
 
-🧘 INTERÉS EN CLASSE DE PROVA:
+🧘 ${emailLabels.trial_label_email || 'INTERÉS EN CLASSE DE PROVA'}:
 ${trialText}
 
 ─────────────────────────────────────────────
 
-📝 MISSATGE:
+📝 ${emailLabels.message_label || 'MISSATGE'}:
 
 ${missatge}
 
@@ -1030,7 +1030,7 @@ function buildPoliticaPrivacitat() {
     <section class="policy-contact-section">
       <div class="container">
         <div class="policy-contact-box reveal">
-          <h3>Tenim preguntes?</h3>
+          <h3>${DATA.global_labels?.privacy_contact_section_title || 'Tenim preguntes?'}</h3>
           <p>Si tens qualsevol pregunta sobre aquesta política de privacitat o sobre com tractem les teves dades:</p>
           <div class="contact-details">
             <div class="contact-item">
@@ -1151,8 +1151,8 @@ function buildActivitats(actData) {
               <path d="M22 36 Q16 32 18 28 Q22 32 22 36Z" fill="#4A8A72" opacity="0.6"/>
             </svg>
           </span>
-            <h2>Aquest mes no hi han activitats</h2>
-            <p>Properament s'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!</p>
+            <h2>${DATA.global_labels?.activities_empty_title || 'Aquest mes no hi han activitats'}</h2>
+            <p>${DATA.global_labels?.activities_empty_desc || 'Properament s\'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!'}</p>
           </div>
         </div>
       </section>`;
@@ -1190,8 +1190,8 @@ function buildActivitats(actData) {
           <path d="M22 36 Q16 32 18 28 Q22 32 22 36Z" fill="#4A8A72" opacity="0.6"/>
         </svg>
       </span>
-      <h2>Aquest mes no hi han activitats</h2>
-      <p>Properament s'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!</p>
+      <h2>${DATA.global_labels?.activities_empty_title || 'Aquest mes no hi han activitats'}</h2>
+      <p>${DATA.global_labels?.activities_empty_desc || 'Properament s\'anunciaran noves activitats i tallers. Segueix-nos per estar al dia!'}</p>
     </div>
   `;
 
@@ -1200,8 +1200,8 @@ function buildActivitats(actData) {
     ? `<section style="background: var(--cream-dark);">
         <div class="container">
           <div class="section-header" style="margin-bottom: 3rem;">
-            <span class="pretitle reveal">Memòria</span>
-            <h2 class="reveal stagger-1">${g.titol || 'Activitats anteriors'}</h2>
+            <span class="pretitle reveal">${DATA.global_labels?.activities_gallery_pretitle || 'Memòria'}</span>
+            <h2 class="reveal stagger-1">${DATA.global_labels?.activities_gallery_title || 'Activitats anteriors'}</h2>
             <span class="divider reveal stagger-2"></span>
           </div>
           <div class="activitats-gallery">

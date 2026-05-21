@@ -335,7 +335,6 @@ function buildQuiSoc() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -398,7 +397,6 @@ function buildTipusIoga() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -413,7 +411,6 @@ function buildTipusIoga() {
             <span class="pretitle reveal">${p.intro.title}</span>
             ${p.intro.paragraphs.map((par, i) => `
               <p class="reveal stagger-${i + 1}" style="margin-bottom:1.2rem; font-size:1.05rem; text-align: ${getTextAlign(par)};">${par}</p>
-              ${i === 0 ? `<img src="${p.images.middle}" alt="" class="middle-image">` : ''}
             `).join('')}
           </div>
           <div class="reveal-right" style="display: flex; justify-content: center; align-items: center;">
@@ -483,7 +480,6 @@ function buildClasses() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -624,7 +620,6 @@ function buildPreus() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -636,7 +631,6 @@ function buildPreus() {
       <div class="container">
         <div class="pricing-intro reveal">
           <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 4rem; text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
-          <img src="${p.images.middle}" alt="" class="middle-image">
         </div>
 
         <div style="margin-bottom: 6rem;">
@@ -723,7 +717,6 @@ function buildCondicions() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -734,7 +727,6 @@ function buildCondicions() {
     <section>
       <div class="container">
         <div style="max-width:800px; margin:0 auto;">
-          <img src="${p.images.middle}" alt="" class="middle-image">
           <div class="conditions-sections">
             ${sectionsHtml}
           </div>
@@ -783,7 +775,6 @@ function buildContacte() {
 
   main.innerHTML = `
     <section class="page-hero" aria-label="${p.hero.title}">
-      <img src="${p.images.hero}" alt="" class="hero-bg-image">
       <div class="container">
         <span class="pretitle reveal">${p.hero.pretitle}</span>
         <h1 class="reveal stagger-1">${p.hero.title}</h1>
@@ -799,7 +790,6 @@ function buildContacte() {
             <h2>${p.form.contact_heading}</h2>
             <span class="divider divider--left"></span>
             <p style="text-align: ${getTextAlign(p.intro)};">${p.intro}</p>
-            <img src="${p.images.middle}" alt="" class="middle-image" style="margin: 2rem 0;">
             <div class="contact-details">
               <div class="contact-detail">
                 <div class="contact-detail-icon">${iconSVG('map-pin')}</div>

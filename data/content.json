@@ -71,6 +71,10 @@
       "nav_label": "Navegació",
       "centre_label": "El centre",
       "legal_label": "Legal"
+    },
+    "social": {
+      "instagram": "https://www.instagram.com/om_ioga_igualada/",
+      "facebook": "https://www.facebook.com/omiogaigualada/"
     }
   },
   "pages": {
@@ -131,11 +135,16 @@
           "label": "Reserva la teva plaça",
           "href": "preus.html#prova"
         }
+      },
+      
+      "meta": {
+        "title": "OM Ioga Igualada — Hatha Ioga | Classes per a Tots els Nivells",
+        "description": "Centre de hatha ioga a Igualada (Anoia). Classes en grups reduïts de màxim 12 persones, per a tots els nivells. Primera classe gratuïta. Reserva ara."
       }
     },
     "qui-soc": {
       "images": {
-          "gallery": [
+        "gallery": [
           "assets/images/quisoc2.jpg",
           "assets/images/entrada.jpg"
         ]
@@ -173,6 +182,36 @@
           {
             "title": "Espai segur",
             "text": "Un ambient càlid on sentir-se còmode per explorar lliurement sense judici ni competició."
+          }
+        ]
+      },
+      "credentials": {
+        "title": "Formació i certificacions",
+        "items": [
+          {
+            "year": "2012–2013",
+            "title": "Formació professora de ioga",
+            "place": "Yoga Studio Barcelona"
+          },
+          {
+            "year": "2013",
+            "title": "Inici de l'activitat docent",
+            "place": "Igualada i rodalies"
+          },
+          {
+            "year": "2022",
+            "title": "Obertura d'OM Ioga",
+            "place": "Igualada"
+          },
+          {
+            "year": "2024–avui",
+            "title": "Estudis de sànscrit",
+            "place": "Universitat de Barcelona (UB)"
+          },
+          {
+            "year": "En curs",
+            "title": "Formació contínua amb Tomàs Zorzo",
+            "place": "Hatha ioga tradicional"
           }
         ]
       }
@@ -224,7 +263,7 @@
       },
       "meta": {
         "title": "Les Classes | OM Ioga",
-        "description": "Classes de hatha ioga a Igualada. Grups reduïts, adaptades a tots els nivells."
+        "description": "Classes de hatha ioga a Igualada en grups reduïts. Tots els nivells, horaris flexibles. Centre OM Ioga, Carrer de les Gardènies 20."
       },
       "hero": {
         "pretitle": "La pràctica",
@@ -261,7 +300,7 @@
       ]
     },
     "horaris": {
-      "images": {        
+      "images": {
         "gallery": []
       },
       "meta": {
@@ -367,7 +406,7 @@
       },
       "meta": {
         "title": "Preus | OM Ioga",
-        "description": "Consulta les tarifes de les classes de ioga a Igualada. Sense matrícula."
+        "description": "Preus i quotes mensuals OM Ioga Igualada. Des de 42€/mes. Primera classe de prova gratuïta sense compromís."
       },
       "hero": {
         "pretitle": "Transparent i flexible",
@@ -445,8 +484,7 @@
       }
     },
     "condicions": {
-      "images": {
-      },
+      "images": {},
       "meta": {
         "title": "Condicions | OM Ioga",
         "description": "Condicions generals del centre OM Ioga."

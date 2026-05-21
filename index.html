@@ -3,17 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Centre de hatha ioga a Igualada. Classes en grups reduïts per a tots els nivells. Primera classe gratuïta." />
+  <meta name="description" content="Centre de hatha ioga a Igualada (Anoia). Classes en grups reduïts de màxim 12 persones, per a tots els nivells. Primera classe gratuïta. Reserva ara." />
   <meta name="theme-color" content="#2A4130" />
-  <title>OM Ioga — Inici</title>
+  <title>OM Ioga Igualada — Hatha Ioga | Classes per a Tots els Nivells</title>
 
   <!-- Open Graph -->
-  <meta property="og:title"       content="OM Ioga — Igualada" />
-  <meta property="og:description" content="Centre de hatha ioga a Igualada. Classes en grups reduïts per a tots els nivells." />
+  <meta property="og:title"       content="OM Ioga — Hatha Ioga a Igualada" />
+  <meta property="og:description" content="Centre de hatha ioga a Igualada. Classes en grups reduïts de màxim 12 persones, per a tots els nivells. Primera classe gratuïta." />
   <meta property="og:type"        content="website" />
   <meta property="og:locale"      content="ca_ES" />
+  <meta property="og:url"         content="https://omioga.github.io/" />
+  <meta property="og:image"       content="assets/images/centre1.jpg" />
 
-  <link rel="canonical" href="index.html" />
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://omioga.github.io/",
+    "name": "OM Ioga",
+    "description": "Centre de hatha ioga a Igualada. Classes en grups reduïts per a tots els nivells.",
+    "url": "https://omioga.github.io/",
+    "telephone": "+34623013935",
+    "email": "omiogaigualada@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de les Gardènies, 20, baixos",
+      "addressLocality": "Igualada",
+      "postalCode": "08700",
+      "addressRegion": "Catalunya",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.5806,
+      "longitude": 1.6236
+    },
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Transferència bancària, Efectiu",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "21:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/om_ioga_igualada/",
+      "https://www.facebook.com/omiogaigualada/"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Classes de ioga",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hatha Ioga en grup reduït" }, "price": "42", "priceCurrency": "EUR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Classe de prova gratuïta" }, "price": "0", "priceCurrency": "EUR" }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="canonical" href="https://omioga.github.io/" />
   <link rel="icon" type="image/png" href="assets/images/logo-fondo-blanc.png">
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +79,7 @@
   </nav>
   <main id="main" role="main"></main>
   <footer id="footer" role="contentinfo"></footer>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

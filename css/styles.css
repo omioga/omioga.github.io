@@ -2537,3 +2537,231 @@ footer {
   margin: 0;
   line-height: 1.6;
 }
+
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS
+   ══════════════════════════════════════════ */
+
+.testimonials-section {
+  background: var(--cream-dark);
+  padding: var(--section-gap) 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.testimonial-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+  font-style: italic;
+  flex: 1;
+  text-align: left;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  color: var(--green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* ══════════════════════════════════════════
+   SOCIAL FOOTER
+   ══════════════════════════════════════════ */
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  transition: color var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  color: var(--gold-light);
+}
+
+.footer-social-link svg {
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   CREDENTIALS TIMELINE
+   ══════════════════════════════════════════ */
+
+.credentials-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.credential-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+
+.credential-item:last-child {
+  border-bottom: none;
+}
+
+.credential-year {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 3px;
+}
+
+.credential-title {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.credential-place {
+  font-size: 0.88rem;
+  color: var(--text-light);
+}
+
+/* ══════════════════════════════════════════
+   HERO PHOTO (image-based hero improvement)
+   ══════════════════════════════════════════ */
+
+.home-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 50% -10%, rgba(138, 175, 142, 0.10) 0%, transparent 65%),
+              radial-gradient(ellipse 50% 50% at 85% 80%, rgba(184, 150, 96, 0.06) 0%, transparent 60%);
+}
+
+/* Hero with a real background photo (for future use) */
+.home-hero--photo .home-hero__bg {
+  background: linear-gradient(105deg, rgba(250,250,248,0.96) 45%, rgba(250,250,248,0.7) 70%, rgba(250,250,248,0.1) 100%);
+}
+
+/* ══════════════════════════════════════════
+   NAV SIMPLIFICATION — reduce visual noise
+   ══════════════════════════════════════════ */
+
+.nav-menu li:last-child a {
+  background: var(--green-deep);
+  color: var(--cream) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.nav-menu li:last-child a:hover {
+  background: var(--green-mid);
+  color: var(--cream) !important;
+}
+
+.nav-menu li:last-child a::after {
+  display: none !important;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — Testimonials & Timeline
+   ══════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .credential-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .credential-year {
+    font-size: 0.7rem;
+  }
+
+  .footer-social {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    padding: 1.75rem 1.5rem;
+  }
+}

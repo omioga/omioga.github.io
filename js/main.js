@@ -12,6 +12,10 @@ let navInitialized = false;  // Track if nav has been initialized
 
 /* ─── Init ─── */
 document.addEventListener('DOMContentLoaded', async () => {
+  /* Init EmailJS */
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
+  }
   await loadData();
   buildNav();
   buildFooter();
@@ -185,6 +189,18 @@ function buildFooter() {
           <a href="condicions.html">Condicions Generals</a>
         </div>
       </div>
+      <div class="footer-social">
+        ${DATA.site.social ? `
+        <a href="${DATA.site.social.instagram}" target="_blank" rel="noopener noreferrer" aria-label="Instagram OM Ioga" class="footer-social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="${DATA.site.social.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook OM Ioga" class="footer-social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        ` : ''}
+      </div>
       <div class="footer-bottom">
         <span>${ft.copy}</span>
         <span class="footer-om">OM</span>
@@ -306,6 +322,7 @@ function buildHome() {
       </div>
     </section>
 
+    
     <!-- CTA -->
     <section class="cta-section">
       <div class="container">
@@ -355,7 +372,7 @@ function buildQuiSoc() {
           <div class="reveal-right" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-content: start;">
             ${p.images.gallery.slice(0, 2).map((img, i) => `
               <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: 4/3;">
-                <img src="${img}" alt="Foto ${i + 1}" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="${img}" alt="Foto ${i + 1}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             `).join('')}
           </div>
@@ -375,6 +392,29 @@ function buildQuiSoc() {
         </div>
       </div>
     </section>
+
+    ${p.credentials ? `
+    <section style="background: var(--white); padding: var(--section-gap) 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="pretitle reveal">Trajectòria</span>
+          <h2 class="reveal stagger-1">${p.credentials.title}</h2>
+          <span class="divider reveal stagger-2"></span>
+        </div>
+        <div class="credentials-timeline">
+          ${p.credentials.items.map((item, i) => `
+            <div class="credential-item reveal stagger-${(i % 3) + 1}">
+              <div class="credential-year">${item.year}</div>
+              <div class="credential-content">
+                <div class="credential-title">${item.title}</div>
+                <div class="credential-place">${item.place}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+    ` : ''}
 
     <section class="cta-section">
       <div class="container">
@@ -416,7 +456,7 @@ function buildTipusIoga() {
           <div class="reveal-right" style="display: flex; justify-content: center; align-items: center;">
             ${p.intro.gallery ? p.intro.gallery.map(img => `
               <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%;">
-                <img src="${img}" alt="Foto introducció" style="width: 100%; height: auto; object-fit: cover;">
+                <img src="${img}" alt="Foto introducció" loading="lazy" style="width: 100%; height: auto; object-fit: cover;">
               </div>
             `).join('') : ''}
           </div>
@@ -500,7 +540,7 @@ function buildClasses() {
           <div class="reveal-right" style="flex: 1; display: grid; grid-template-columns: repeat(${Math.min(p.images.gallery.length, 3)}, 1fr); gap: 1.5rem; align-content: start;">
             ${p.images.gallery.slice(0, 3).map((img, i) => `
               <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: ${p.images.gallery.length === 2 ? '3/4' : '1'};">
-                <img src="${img}" alt="Foto classe ${i + 1}" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="${img}" alt="Foto classe ${i + 1}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             `).join('')}
           </div>

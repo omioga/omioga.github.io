@@ -14,10 +14,10 @@ let navInitialized = false;  // Track if nav has been initialized
 document.addEventListener('DOMContentLoaded', async () => {
   /* Init EmailJS */
   if (typeof emailjs !== 'undefined') {
-    emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
+    emailjs.init('W8vyDNuQN7pdNUSUK');
   }
   await loadData();
-  buildNav();
+  buildNav(); 
   buildFooter();
   buildPage();
   initNav();

@@ -736,35 +736,6 @@
           "label": "Reserva la teva plaça",
           "href": "contacte.html"
         }
-      },
-      "galeria_anterior": {
-        "titol": "Activitats anteriors",
-        "fotos": [
-          {
-            "src": "assets/images/classes-1.jpg",
-            "alt": "Taller de ioga"
-          },
-          {
-            "src": "assets/images/classes-2.jpg",
-            "alt": "Activitat especial"
-          },
-          {
-            "src": "assets/images/classes-3.jpg",
-            "alt": "Sessió grupal"
-          },
-          {
-            "src": "assets/images/classes-4.jpg",
-            "alt": "Taller de respiració"
-          },
-          {
-            "src": "assets/images/centre1.jpg",
-            "alt": "El centre"
-          },
-          {
-            "src": "assets/images/centre2.jpg",
-            "alt": "Espai de ioga"
-          }
-        ]
       }
     }
   }

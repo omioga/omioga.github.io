@@ -725,7 +725,7 @@
         "title": "Activitats"
       },
       "activitat_actual": {
-        "image": "assets/images/activitat.jpg",
+        "image": null,
         "titol": "Activitat",
         "data": "6 de juny del 2026",
         "hora": "Tot el dia",

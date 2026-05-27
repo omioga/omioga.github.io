@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /data/
 
-Sitemap: https://omioga.github.io/sitemap.xml
+Sitemap: https://www.omioga.cat/sitemap.xml

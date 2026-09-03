@@ -329,10 +329,15 @@
           "day": "Dilluns",
           "slots": [
             {
+              "time": "09:00 – 09:45",
+              "type": "Meditacó",
+              "level": "Tots els nivells"
+            },
+            {
               "time": "10:00 – 11:30",
               "type": "",
               "level": "Tots els nivells"
-            },
+            }, 
             {
               "time": "18:00 – 19:30",
               "type": "",
@@ -406,6 +411,11 @@
             {
               "time": "15:15 – 16:45",
               "type": "",
+              "level": "Tots els nivells"
+            },
+            {
+              "time": "17:00 – 19:00",
+              "type": "Autopràctica",
               "level": "Tots els nivells"
             }
           ]

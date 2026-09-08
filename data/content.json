@@ -471,6 +471,18 @@
         "price": "15€",
         "description": "Per a qui vol assistir de manera puntual."
       },
+          {
+            "days": "Meditació",
+            "price": "25€",
+            "al": "mes",
+            "highlight": false
+          },
+          {
+            "days": "1 sessió de meditació",
+            "price": "8€",
+            "al": "",
+            "highlight": false
+          },
       "bonus": {
         "title": "Bonus trimestrals",
         "section_pretitle": "Flexibilitat màxima",
@@ -488,6 +500,10 @@
           {
             "classes": "15 classes",
             "price": "180€"
+          }
+          {
+            "classes": "5 sessions de meditació",
+            "price": "35€"
           }
         ]
       },

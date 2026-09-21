@@ -461,15 +461,6 @@
             "price": "77€",
             "al": "mes",
             "highlight": false
-          }
-        ],
-        "plan_badge": "Més popular",
-        "plan_cta": "Comença ara"
-          },
-            "single": {
-            "title": "Una classe sola",
-            "price": "15€",
-            "description": "Per a qui vol assistir de manera puntual."
           },
           {
             "days": "Meditació",
@@ -482,6 +473,17 @@
             "price": "8€",
             "al": "",
             "highlight": false
+
+          }
+        ],
+        "plan_badge": "Més popular",
+        "plan_cta": "Comença ara"
+          },
+            "single": {
+            "title": "Una classe sola",
+            "price": "15€",
+            "description": "Per a qui vol assistir de manera puntual."
+          }
           },
       "bonus": {
         "title": "Bonus trimestrals",
@@ -500,7 +502,7 @@
           {
             "classes": "15 classes",
             "price": "180€"
-          }
+          },
           {
             "classes": "5 sessions de meditació",
             "price": "35€"
@@ -519,8 +521,7 @@
           "label": "Reserva la classe de prova",
           "href": "contacte.html"
         }
-      }
-    },
+      },
     "condicions": {
       "images": {},
       "meta": {

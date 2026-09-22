@@ -477,8 +477,7 @@
           }
         ],
         "plan_badge": "Més popular",
-        "plan_cta": "Comença ara"
-          },
+        "plan_cta": "Comença ara",
             "single": {
             "title": "Una classe sola",
             "price": "15€",
@@ -521,7 +520,8 @@
           "label": "Reserva la classe de prova",
           "href": "contacte.html"
         }
-      },
+      }
+    },
     "condicions": {
       "images": {},
       "meta": {

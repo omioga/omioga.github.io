@@ -477,13 +477,13 @@
           }
         ],
         "plan_badge": "Més popular",
-        "plan_cta": "Comença ara",
-            "single": {
-            "title": "Una classe sola",
-            "price": "15€",
-            "description": "Per a qui vol assistir de manera puntual."
-          }
-          },
+        "plan_cta": "Comença ara"
+      },
+      "single": {
+        "title": "Una classe sola",
+        "price": "15€",
+        "description": "Per a qui vol assistir de manera puntual."
+      },
       "bonus": {
         "title": "Bonus trimestrals",
         "section_pretitle": "Flexibilitat màxima",

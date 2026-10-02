@@ -21,8 +21,6 @@
     "_COM_IMATGES": "3) Les imatges estan al final de cada pàgina en 'images' → busca per 'assets/images/'",
     "_IMPORTANT": "⚠️ NO BORRIS les estructures [...], {...} - només canvia el text dins de les COMETES!",
     "_AYUDA": "Si veus un text estrany i no saps on es, busca-ho amb Ctrl+F i trobaràs el lloc!"
- 
-    
   },
   "global_labels": {
     "cta_section_pretitle": "Comença avui",
@@ -104,7 +102,7 @@
         "pretitle": "Benvingut a",
         "title": "OM Ioga",
         "subtitle": "Cos · Ment · Respiració",
-        "description": "Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.",
+        "description": "Un espai de calma i connexió. Classes de hatha ioga en grups reduïts, adaptades a cada persona.\nprova-prova<b>prova</b><br> borrar",
         "cta_primary": {
           "label": "Descobreix les classes",
           "href": "classes.html"
@@ -152,7 +150,6 @@
           "href": "preus.html#prova"
         }
       },
-      
       "meta": {
         "title": "OM Ioga Igualada — Hatha Ioga | Classes per a Tots els Nivells",
         "description": "Centre de hatha ioga a Igualada (Anoia). Classes en grups reduïts de màxim 12 persones, per a tots els nivells. Primera classe gratuïta. Reserva ara."
@@ -337,7 +334,7 @@
               "time": "10:00 – 11:30",
               "type": "",
               "level": "Tots els nivells"
-            }, 
+            },
             {
               "time": "18:00 – 19:30",
               "type": "",
@@ -473,7 +470,6 @@
             "price": "8€",
             "al": "",
             "highlight": false
-
           }
         ],
         "plan_badge": "Més popular",
@@ -487,7 +483,7 @@
       "bonus": {
         "title": "Bonus trimestrals",
         "section_pretitle": "Flexibilitat màxima",
-          "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos. <br> Els bonus caduquen als 3 mesos de la seva compra </br>",
+        "description": "Flexibilitat màxima per venir quan vulguis durant tres mesos. <br> Els bonus caduquen als 3 mesos de la seva compra </br>",
         "expiry_text": "",
         "packs": [
           {

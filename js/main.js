@@ -460,6 +460,11 @@ function buildTipusIoga() {
           <h3>${p.breath.title}</h3>
           <p style="text-align: ${getTextAlign(p.breath.text)};">${p.breath.text}</p>
         </div>
+
+        <div class="reveal" style="margin-top:3rem;">
+          <h3>${p.meditation.title}</h3>
+          <p style="text-align: ${getTextAlign(p.meditation.text)};">${p.meditation.text}</p>
+        </div>
       </div>
     </section>
 
@@ -517,21 +522,25 @@ function buildClasses() {
 
     <section>
       <div class="container">
-        <div class="intro-grid classes-layout">
-          <div style="flex: 1;">
-            <span class="pretitle reveal">${p.description.pretitle || 'La pràctica'}</span>
-            <h2 class="reveal stagger-1" style="margin-bottom:1.5rem;">${p.description.title}</h2>
-            ${p.description.paragraphs.map((par, i) => `
-              <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem; text-align: ${getTextAlign(par)};">${par}</p>
-            `).join('')}
-          </div>
-          <div class="reveal-right" style="flex: 1; display: grid; grid-template-columns: repeat(${Math.min(p.images.gallery.length, 3)}, 1fr); gap: 1.5rem; align-content: start;">
+        <div>
+          <span class="pretitle reveal">${p.description.pretitle || 'La pràctica'}</span>
+          <h2 class="reveal stagger-1" style="margin-bottom:1.5rem;">${p.description.title}</h2>
+          ${p.description.paragraphs.map((par, i) => `
+            <p class="reveal stagger-${i + 1}" style="margin-bottom:0.8rem; font-size:1rem; text-align: ${getTextAlign(par)};">${par}</p>
+          `).join('')}
+        </div>
+
+        <div class="reveal" style="margin-top:2.5rem;">
+          <h3>${p.autopractice.title}</h3>
+          <p style="text-align: ${getTextAlign(p.autopractice.text)};">${p.autopractice.text}</p>
+        </div>
+
+        <div class="classes-gallery reveal-right" style="display: grid; grid-template-columns: repeat(${Math.min(p.images.gallery.length, 3)}, 1fr); gap: 1.5rem; margin-top:2.5rem; align-content: start;">
             ${p.images.gallery.slice(0, 3).map((img, i) => `
               <div style="overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: ${p.images.gallery.length === 2 ? '3/4' : '1'};">
                 <img src="${img}" alt="Foto classe ${i + 1}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             `).join('')}
-          </div>
         </div>
       </div>
     </section>

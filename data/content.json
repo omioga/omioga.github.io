@@ -260,6 +260,10 @@
       "breath": {
         "title": "Prāṇāyāma: l'art de la respiració",
         "text": "El prāṇāyāma és control i expansió de la respiració. Hi ha varis tipus de prāṇāyāma on es combinen diferents ritmes i seqüències d'inhalació, retenció i exhalació. Aquestes combinacions ajuden a activar, calmar i equilibrar el sistema nerviós. D'aquesta manera podem tranquil·litzar la ment, preparant-la per a la meditació, i així obtenir més quietud i més claredat mental."
+      },
+      "meditation": {
+        "title": "Meditació",
+        "text": "La meditació és una pràctica que ens convida a aturar-nos i observar el moment present. A través de l'atenció a la respiració i a les sensacions, podem cultivar més calma, concentració i claredat mental."
       }
     },
     "classes": {
@@ -284,6 +288,10 @@
           "Les classes s'adapten a cada persona, independentment del seu nivell, experiència o estat físic. Cada postura té variants perquè cadascú trobi la seva opció.",
           "El ioga no és competitiu. Es tracta de respectar el cos i connectar interiorment amb el què s'està sentint. Respirem conscientment amb l'objectiu de sortir de la sessió millor de com s'hi ha entrat."
         ]
+      },
+      "autopractice": {
+        "title": "Autopràctica",
+        "text": "L'autopràctica és un espai per practicar ioga al teu ritme i escoltar les necessitats del teu cos. Et permet aprofundir en la pràctica amb autonomia, respectant el teu moment i mantenint l'atenció en la respiració."
       },
       "features_section": {
         "pretitle": "Característiques",
